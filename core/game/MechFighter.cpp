@@ -6,6 +6,12 @@
 
 #include <GLFW/glfw3.h>
 
+class mech {
+
+};
+
+
+
 int main(void)
 {
     GLFWwindow* window;
