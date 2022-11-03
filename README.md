@@ -21,9 +21,9 @@ Create your own mech to fight against other mechs and acquire unique and rare lo
 ## Developing On Windows
 Building the Visual Studio project
 ```
+$> cd $ROOTOFMECHFIGHTER3000
 $> mkdir build
-$> cd build/
-$> cmake ..
+$> cmake -S . -B build/
 ```
 Now just open the mechfighter3000.sln file and set the project as the startup project through
 the solution explorer window.
