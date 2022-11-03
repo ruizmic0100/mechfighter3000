@@ -2,11 +2,9 @@ if( MSVC )
     SET( CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /ENTRY:mainCRTStartup" )
 endif()
 
-set ( GLFW-CMAKE-MECHFIGHTER-SRC
-      MechFighter.cpp
-      )
+set ( GLFW-CMAKE-MECHFIGHTER-SRC ./game/MechFighter.cpp)
 
-add_executable( MechFighter3000 WIN32 ${GLFW-CMAKE-MECHFIGHTER-SRC} )
+add_executable( MechFighter3000 WIN32 ${GLFW-CMAKE-MECHFIGHTER-SRC} ./graphics/renderer.cpp ./util/logging.cpp)
 target_link_libraries( MechFighter3000 ${OPENGL_LIBRARIES} glfw )
 if( MSVC )
     if( ${CMAKE_VERSION} VERSION_LESS "3.6.0" )

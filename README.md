@@ -28,6 +28,8 @@ $> cmake ..
 Now just open the mechfighter3000.sln file and set the project as the startup project through
 the solution explorer window.
 
+If you want to see the log messages on a console instead of debugger consoler. Change the Project's Linker->System->SubSystem to Console
+
 Then proceed to run the project.
 
 ## Contributing

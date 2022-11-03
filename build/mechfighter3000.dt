@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-16"?>
-<DevTrackerData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SolutionTotalEditTime="PT0S" SolutionTotalViewTime="PT0S" SolutionTotalDebugTime="PT1.8676087S">
+<DevTrackerData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SolutionTotalEditTime="PT0S" SolutionTotalViewTime="PT2M27.316288S" SolutionTotalDebugTime="PT5M25.988587S">
   <FileVersion>
     <Major>1</Major>
     <Minor>0</Minor>
@@ -8,44 +8,94 @@
   <SolutionCreattionDate>2022-10-21T20:27:56.0074088-05:00</SolutionCreattionDate>
   <ProjectsCreatedDateList>
     <ProjectCreated>
-      <ProjectName>C:\Users\Michael\mechfighter3000\build\app\core\MechFighter3000.vcxproj</ProjectName>
-      <CreatedDate>2022-10-21T20:35:45.4086457-05:00</CreatedDate>
+      <ProjectName>C:\Users\Michael\mechfighter3000\build\core\MechFighter3000.vcxproj</ProjectName>
+      <CreatedDate>2022-11-02T21:44:15.8327386-05:00</CreatedDate>
     </ProjectCreated>
   </ProjectsCreatedDateList>
   <SessionTimeList />
   <LastSessionTimeList>
-    <DevTrackerDataItem ViewActiveTime="PT1.8816069S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT5M24.7802704S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
       <Item>Debug Mode</Item>
       <ItemType>DebugModeItem</ItemType>
       <ProjectName />
-      <CreatedDate>2022-10-21T20:41:11.1979071-05:00</CreatedDate>
+      <CreatedDate>2022-11-03T03:06:02.8049137-05:00</CreatedDate>
+      <ViewedBy>Michael</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M58.1360369S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Michael\mechfighter3000\core\game\MechFighter.cpp</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Michael\mechfighter3000\build\core\MechFighter3000.vcxproj</ProjectName>
+      <CreatedDate>2022-11-03T03:02:39.4049128-05:00</CreatedDate>
       <ViewedBy>Michael</ViewedBy>
     </DevTrackerDataItem>
   </LastSessionTimeList>
   <TotalTimeList>
-    <DevTrackerDataItem ViewActiveTime="PT1.8676087S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT5M25.988587S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
+      <ViewedCount>2</ViewedCount>
       <Item>Debug Mode</Item>
       <ItemType>DebugModeItem</ItemType>
       <ProjectName />
-      <CreatedDate>2022-10-21T20:41:11.1979071-05:00</CreatedDate>
+      <CreatedDate>2022-11-03T02:54:27.4741616-05:00</CreatedDate>
+      <ViewedBy>Michael</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2M27.316288S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>2</ViewedCount>
+      <Item>C:\Users\Michael\mechfighter3000\core\game\MechFighter.cpp</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Michael\mechfighter3000\build\core\MechFighter3000.vcxproj</ProjectName>
+      <CreatedDate>2022-11-03T02:53:59.8081678-05:00</CreatedDate>
       <ViewedBy>Michael</ViewedBy>
     </DevTrackerDataItem>
   </TotalTimeList>
   <HistoryTimeList>
-    <DevTrackerDataItem ViewActiveTime="PT1.8676087S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT5M24.7762709S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
       <Item>Debug Mode</Item>
       <ItemType>DebugModeItem</ItemType>
       <ProjectName />
-      <CreatedDate>2022-10-21T20:41:11.1979071-05:00</CreatedDate>
+      <CreatedDate>2022-11-03T03:06:02.8049137-05:00</CreatedDate>
+      <ViewedBy>Michael</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M58.1360369S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Michael\mechfighter3000\core\game\MechFighter.cpp</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Michael\mechfighter3000\build\core\MechFighter3000.vcxproj</ProjectName>
+      <CreatedDate>2022-11-03T03:02:39.4049128-05:00</CreatedDate>
+      <ViewedBy>Michael</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1.2123161S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>Debug Mode</Item>
+      <ItemType>DebugModeItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2022-11-03T02:54:27.4741616-05:00</CreatedDate>
+      <ViewedBy>Michael</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT29.1802511S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Michael\mechfighter3000\core\game\MechFighter.cpp</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Michael\mechfighter3000\build\core\MechFighter3000.vcxproj</ProjectName>
+      <CreatedDate>2022-11-03T02:53:59.8081678-05:00</CreatedDate>
       <ViewedBy>Michael</ViewedBy>
     </DevTrackerDataItem>
   </HistoryTimeList>
