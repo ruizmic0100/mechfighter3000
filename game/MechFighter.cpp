@@ -66,5 +66,6 @@ int main(void)
     Frame frameOne("Frame One", "Developer", "Dev1", 1, 1, frameOneDefenses);
 
     renderer(); // Initializes the renderer.
+    GLuint test = 3;
 
 }

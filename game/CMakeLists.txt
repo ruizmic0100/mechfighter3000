@@ -1,0 +1,1 @@
+add_library( game GameEventHandler.cpp Player.cpp )
