@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-16"?>
-<DevTrackerData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SolutionTotalEditTime="PT16.1124445S" SolutionTotalViewTime="PT11M48.6308936S" SolutionTotalDebugTime="PT6.6903312S">
+<DevTrackerData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SolutionTotalEditTime="PT0S" SolutionTotalViewTime="PT5M28.1271153S" SolutionTotalDebugTime="PT1.1830046S">
   <FileVersion>
     <Major>1</Major>
     <Minor>0</Minor>
@@ -8,223 +8,124 @@
   <SolutionCreattionDate>2022-10-21T20:27:56.0074088-05:00</SolutionCreattionDate>
   <ProjectsCreatedDateList>
     <ProjectCreated>
-      <ProjectName>C:\Users\Michael\mechfighter3000\build\core\MechFighter3000.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T18:03:46.4703111-05:00</CreatedDate>
+      <ProjectName>C:\Users\Michael\mechfighter3000\build\MechFighter3000.vcxproj</ProjectName>
+      <CreatedDate>2022-11-03T22:26:53.5446381-05:00</CreatedDate>
+    </ProjectCreated>
+    <ProjectCreated>
+      <ProjectName>C:\Users\Michael\mechfighter3000\build\copy_resources.vcxproj</ProjectName>
+      <CreatedDate>2022-11-03T22:26:53.5386367-05:00</CreatedDate>
+    </ProjectCreated>
+    <ProjectCreated>
+      <ProjectName>C:\Users\Michael\mechfighter3000\build\game\game.vcxproj</ProjectName>
+      <CreatedDate>2022-11-03T22:26:53.6746361-05:00</CreatedDate>
     </ProjectCreated>
     <ProjectCreated>
       <ProjectName>C:\Users\Michael\mechfighter3000\build\glad\glad.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T18:03:46.474311-05:00</CreatedDate>
+      <CreatedDate>2022-11-03T22:26:53.6686361-05:00</CreatedDate>
+    </ProjectCreated>
+    <ProjectCreated>
+      <ProjectName>C:\Users\Michael\mechfighter3000\build\graphics\graphics.vcxproj</ProjectName>
+      <CreatedDate>2022-11-03T22:26:53.6796362-05:00</CreatedDate>
+    </ProjectCreated>
+    <ProjectCreated>
+      <ProjectName>C:\Users\Michael\mechfighter3000\build\util\util.vcxproj</ProjectName>
+      <CreatedDate>2022-11-03T22:26:53.6846363-05:00</CreatedDate>
     </ProjectCreated>
   </ProjectsCreatedDateList>
   <SessionTimeList />
   <LastSessionTimeList>
-    <DevTrackerDataItem ViewActiveTime="PT1.2200012S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT3M24.4878693S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\Users\Michael\mechfighter3000\graphics\renderer.cpp</Item>
+      <Item>C:\Users\Michael\mechfighter3000\CMakeLists.txt</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\Users\Michael\mechfighter3000\build\copy_resources.vcxproj</ProjectName>
+      <CreatedDate>2022-11-03T22:28:13.6450971-05:00</CreatedDate>
+      <ViewedBy>Michael</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1.1830046S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>Debug Mode</Item>
+      <ItemType>DebugModeItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2022-11-03T22:28:32.1792401-05:00</CreatedDate>
+      <ViewedBy>Michael</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2M3.6602478S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Michael\mechfighter3000\graphics\shaderClass.cpp</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\Users\Michael\mechfighter3000\build\graphics\graphics.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T19:39:00.6836807-05:00</CreatedDate>
+      <CreatedDate>2022-11-03T22:28:33.0852399-05:00</CreatedDate>
       <ViewedBy>Michael</ViewedBy>
     </DevTrackerDataItem>
   </LastSessionTimeList>
   <TotalTimeList>
-    <DevTrackerDataItem ViewActiveTime="PT1M32.5856606S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT3M24.4678679S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
-      <ViewedCount>3</ViewedCount>
-      <Item>C:\Users\Michael\mechfighter3000\graphics\CMakeLists.txt</Item>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Michael\mechfighter3000\CMakeLists.txt</Item>
       <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\Michael\mechfighter3000\build\graphics\graphics.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T18:33:25.8419461-05:00</CreatedDate>
+      <ProjectName>C:\Users\Michael\mechfighter3000\build\copy_resources.vcxproj</ProjectName>
+      <CreatedDate>2022-11-03T22:28:13.6450971-05:00</CreatedDate>
       <ViewedBy>Michael</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT6.6903312S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT1.1830046S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
       <Item>Debug Mode</Item>
       <ItemType>DebugModeItem</ItemType>
       <ProjectName />
-      <CreatedDate>2022-11-03T19:12:18.5548771-05:00</CreatedDate>
+      <CreatedDate>2022-11-03T22:28:32.1792401-05:00</CreatedDate>
       <ViewedBy>Michael</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT19.9367528S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT2M3.6602478S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
-      <ViewedCount>2</ViewedCount>
-      <Item>C:\Users\Michael\mechfighter3000\game\GameEventHandler.cpp</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\Michael\mechfighter3000\build\game\game.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T19:00:51.5526836-05:00</CreatedDate>
-      <ViewedBy>Michael</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT37.9112545S" EditActiveTime="PT6.4040743S">
-      <ModifiedDate>2022-11-03T18:49:11.3132357-05:00</ModifiedDate>
-      <ModifiedBy>Michael</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>2</ViewedCount>
-      <Item>C:\Users\Michael\mechfighter3000\game\MechFighter.cpp</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\Michael\mechfighter3000\build\MechFighter3000.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T18:32:17.0910569-05:00</CreatedDate>
-      <ViewedBy>Michael</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT9M18.1972257S" EditActiveTime="PT9.7083702S">
-      <ModifiedDate>2022-11-03T18:48:31.856607-05:00</ModifiedDate>
-      <ModifiedBy>Michael</ModifiedBy>
-      <EditedCount>2</EditedCount>
-      <ViewedCount>6</ViewedCount>
-      <Item>C:\Users\Michael\mechfighter3000\graphics\renderer.cpp</Item>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\Michael\mechfighter3000\graphics\shaderClass.cpp</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\Users\Michael\mechfighter3000\build\graphics\graphics.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T18:26:07.2341057-05:00</CreatedDate>
+      <CreatedDate>2022-11-03T22:28:33.0852399-05:00</CreatedDate>
       <ViewedBy>Michael</ViewedBy>
     </DevTrackerDataItem>
   </TotalTimeList>
   <HistoryTimeList>
-    <DevTrackerDataItem ViewActiveTime="PT1.2200012S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT2M3.6602478S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\Users\Michael\mechfighter3000\graphics\renderer.cpp</Item>
+      <Item>C:\Users\Michael\mechfighter3000\graphics\shaderClass.cpp</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\Users\Michael\mechfighter3000\build\graphics\graphics.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T19:39:00.6836807-05:00</CreatedDate>
+      <CreatedDate>2022-11-03T22:28:33.0852399-05:00</CreatedDate>
       <ViewedBy>Michael</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT6.6903312S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT1.1830046S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
       <Item>Debug Mode</Item>
       <ItemType>DebugModeItem</ItemType>
       <ProjectName />
-      <CreatedDate>2022-11-03T19:12:18.5548771-05:00</CreatedDate>
+      <CreatedDate>2022-11-03T22:28:32.1792401-05:00</CreatedDate>
       <ViewedBy>Michael</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT1.902397S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT3M24.4678679S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\Users\Michael\mechfighter3000\game\GameEventHandler.cpp</Item>
+      <Item>C:\Users\Michael\mechfighter3000\CMakeLists.txt</Item>
       <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\Michael\mechfighter3000\build\game\game.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T19:11:25.3566788-05:00</CreatedDate>
-      <ViewedBy>Michael</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT1M11.5814201S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\Users\Michael\mechfighter3000\graphics\renderer.cpp</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\Michael\mechfighter3000\build\graphics\graphics.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T19:10:47.8572957-05:00</CreatedDate>
-      <ViewedBy>Michael</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT18.0343558S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\Users\Michael\mechfighter3000\game\GameEventHandler.cpp</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\Michael\mechfighter3000\build\game\game.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T19:00:51.5526836-05:00</CreatedDate>
-      <ViewedBy>Michael</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT33.569761S" EditActiveTime="PT6.4040743S">
-      <ModifiedDate>2022-11-03T18:49:11.3132357-05:00</ModifiedDate>
-      <ModifiedBy>Michael</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\Users\Michael\mechfighter3000\game\MechFighter.cpp</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\Michael\mechfighter3000\build\MechFighter3000.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T18:48:49.1679526-05:00</CreatedDate>
-      <ViewedBy>Michael</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT2M14.5451223S" EditActiveTime="PT5.8654815S">
-      <ModifiedDate>2022-11-03T18:48:31.856607-05:00</ModifiedDate>
-      <ModifiedBy>Michael</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\Users\Michael\mechfighter3000\graphics\renderer.cpp</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\Michael\mechfighter3000\build\graphics\graphics.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T18:48:01.6469106-05:00</CreatedDate>
-      <ViewedBy>Michael</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT3.0303356S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>c:\users\michael\mechfighter3000\graphics\CMakeLists.txt</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\Michael\mechfighter3000\build\graphics\graphics.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T18:44:18.1829179-05:00</CreatedDate>
-      <ViewedBy>Michael</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT1M22.6494338S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\Users\Michael\mechfighter3000\graphics\renderer.cpp</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\Michael\mechfighter3000\build\graphics\graphics.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T18:40:47.5205413-05:00</CreatedDate>
-      <ViewedBy>Michael</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT22.4565917S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>c:\users\michael\mechfighter3000\graphics\renderer.cpp</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\Michael\mechfighter3000\build\graphics\graphics.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T18:38:04.1565475-05:00</CreatedDate>
-      <ViewedBy>Michael</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT28.6271179S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\Users\Michael\mechfighter3000\graphics\CMakeLists.txt</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\Michael\mechfighter3000\build\graphics\graphics.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T18:37:35.5254322-05:00</CreatedDate>
-      <ViewedBy>Michael</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT1M0.929207S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\Users\Michael\mechfighter3000\graphics\CMakeLists.txt</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\Michael\mechfighter3000\build\graphics\graphics.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T18:33:25.8419461-05:00</CreatedDate>
-      <ViewedBy>Michael</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT4.3414935S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\Users\Michael\mechfighter3000\game\MechFighter.cpp</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\Michael\mechfighter3000\build\MechFighter3000.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T18:32:17.0910569-05:00</CreatedDate>
-      <ViewedBy>Michael</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT4M5.7446566S" EditActiveTime="PT3.8428887S">
-      <ModifiedDate>2022-11-03T18:31:58.6320892-05:00</ModifiedDate>
-      <ModifiedBy>Michael</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\Users\Michael\mechfighter3000\graphics\renderer.cpp</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Users\Michael\mechfighter3000\build\graphics\graphics.vcxproj</ProjectName>
-      <CreatedDate>2022-11-03T18:26:07.2341057-05:00</CreatedDate>
+      <ProjectName>C:\Users\Michael\mechfighter3000\build\copy_resources.vcxproj</ProjectName>
+      <CreatedDate>2022-11-03T22:28:13.6450971-05:00</CreatedDate>
       <ViewedBy>Michael</ViewedBy>
     </DevTrackerDataItem>
   </HistoryTimeList>

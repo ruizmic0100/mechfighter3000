@@ -3,6 +3,7 @@ cmake_minimum_required( VERSION 3.1 )
 project( mechfighter3000 )
 
 find_package( OpenGL REQUIRED )
+set( CMAKE_CXX_STANDARD 17 )
 
 
 if( MSVC )
@@ -22,6 +23,14 @@ set( GLFW-CMAKE-MECHFIGHTER-SRC ./game/MechFighter.cpp )
 
 # add_executable(MechFighter3000 WIN32 ${GLFW-CMAKE-MECHFIGHTER-SRC} ./game/graphics/renderer.cpp ./game/util/logging.cpp ./glad/src/glad.c)
 add_executable( MechFighter3000 WIN32 ${GLFW-CMAKE-MECHFIGHTER-SRC} )
+
+add_custom_target(copy_resources ALL
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${PROJECT_SOURCE_DIR}/graphics/shaders
+        ${PROJECT_BINARY_DIR}/graphics/shaders
+        COMMENT "Copying shaders into binary directory...")
+
+add_dependencies(MechFighter3000 copy_resources)
 
 target_include_directories( MechFighter3000 PUBLIC ${OPENGL_INCLUDE_DIRS} glad/include/glad )
 target_link_libraries( MechFighter3000 ${OPENGL_LIBRARIES} glfw glad graphics util game)

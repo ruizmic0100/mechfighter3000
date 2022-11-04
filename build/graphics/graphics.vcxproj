@@ -84,6 +84,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -115,6 +116,7 @@
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -148,6 +150,7 @@
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <Optimization>MinSpace</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -182,6 +185,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
       <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -266,6 +270,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\renderer.cpp" />
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\EBO.cpp" />
+    <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\EBO.h" />
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\VAO.cpp" />
+    <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\VAO.h" />
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\VBO.cpp" />
+    <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\VBO.h" />
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\shaderClass.cpp" />
+    <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\shaderClass.h" />
     <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\renderer.h" />
   </ItemGroup>
   <ItemGroup>

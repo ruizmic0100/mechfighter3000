@@ -4,8 +4,32 @@
     <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\EBO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\VAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\VBO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\shaderClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\EBO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\VAO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\VBO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\shaderClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
