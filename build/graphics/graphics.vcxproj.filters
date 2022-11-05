@@ -22,6 +22,9 @@
     <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\Texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\EBO.h">
