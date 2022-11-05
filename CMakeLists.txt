@@ -37,7 +37,7 @@ add_custom_target(copy_resources ALL
 
 add_dependencies(MechFighter3000 copy_resources)
 
-target_include_directories( MechFighter3000 PUBLIC ${OPENGL_INCLUDE_DIRS} glad/include/glad)
+target_include_directories( MechFighter3000 PUBLIC ${OPENGL_INCLUDE_DIRS} glad/include/glad glm)
 target_link_libraries( MechFighter3000 ${OPENGL_LIBRARIES} glfw glad graphics util game)
 
 if( MSVC )
