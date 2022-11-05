@@ -3,11 +3,14 @@
 #endif
 
 #include <iostream>
+#include <filesystem>
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include "../stb/stb_image.h"
 
 #include "renderer.h"
+#include "Texture.h"
 #include "shaderClass.h"
 #include "VAO.h"
 #include "VBO.h"
@@ -16,20 +19,17 @@
 
 // Vertices coordinates.
 GLfloat vertices[] =
-{
-    -0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,    // Lower left corner.
-    0.5f, -0.5f * float(sqrt(3)) / 3, 0.0f,     // Lower right corner.
-    0.0f, 0.5f * float(sqrt(3)) * 2 / 3, 0.0f   // Upper corner.
-    -0.5f / 2, 0.5f * float(sqrt(3)) / 6, 0.0f, // Inner left.
-    0.5f / 2, 0.5f * float(sqrt(3)) / 6, 0.0f,  // Inner right.
-    0.0f, -0.5f * float(sqrt(3)) / 3, 0.0f      // Inner down
+{   //  COORDINATES      /  COLORS          /       TexCoord //
+    -0.5f, -0.5f, 0.0f,     1.0f, 0.0f, 0.0f,     0.0f, 0.0f, // Lower left corner.
+    -0.5f,  0.5f, 0.0f,     0.0f, 1.0f, 0.0f,     0.0f, 1.0f, // Lower right corner.
+     0.5f,  0.5f, 0.0f,     0.0f, 0.0f, 1.0f,     1.0f, 1.0f, // Upper corner.
+     0.5f, -0.5f, 0.0f,     1.0f, 1.0f, 1.0f,     1.0f, 0.0f // Inner left.
 };
 
 GLuint indices[] =
 {
-    0, 3, 5, // Lower left triangle.
-    3, 2, 4, // Lower right triangle.
-    5, 4, 1  // Upper triangle.
+    0, 2, 1, // Upper Triangle
+    0, 3, 2, // Lower right triangle.
 };
 
 /**
@@ -80,24 +80,40 @@ int renderer()
     EBO EBO1(indices, sizeof(indices));
 
     // Links VBO to VAO
-    VAO1.LinkVBO(VBO1, 0);
+    VAO1.LinkAttrib(VBO1, 0, 3, GL_FLOAT, 8 * sizeof(float), (void*)0);
+    VAO1.LinkAttrib(VBO1, 1, 3, GL_FLOAT, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+    VAO1.LinkAttrib(VBO1, 2, 2, GL_FLOAT, 8 * sizeof(float), (void*)(6 * sizeof(float)));
     // Unbind all to prevent accidentally modifying them:
     VAO1.Unbind();
     VBO1.Unbind();
     EBO1.Unbind();
 
+    GLuint uniID = glGetUniformLocation(shaderProgram.ID, "scale");
+
+    // Texture relative path.
+    std::string parentDir = (std::filesystem::current_path().std::filesystem::path::parent_path()).string();
+    std::string texPath = "/build/graphics/assets/";
+
+    // Texture:
+    Texture spaceShipTexture((parentDir + texPath + "spaceship_texture.jpg").c_str(), GL_TEXTURE_2D, GL_TEXTURE0, GL_RGB, GL_UNSIGNED_BYTE);
+    spaceShipTexture.texUnit(shaderProgram, "tex0", 0);
 
     // Loop until the user closes the window:
     while(!glfwWindowShouldClose(window)) {
         // Render Here:
-        glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClearColor(0.07f, 0.13f, 0.17f, 1.0f); // Color of the background.
+        glClear(GL_COLOR_BUFFER_BIT); // Clean the back buffer and assign the new color to it.
         // Tell OpenGL which shader program we want to use:
         shaderProgram.Activate();
+        // Assign a value to the uniform; NOTE: Must always be done after activiating the Shader Program.
+        glUniform1f(uniID, 0.5f);
+        // Binds texture so that it appears in rendering:
+        spaceShipTexture.Bind();
         // Bind the VAO so OpenGL knows to use it:
         VAO1.Bind();
         // Draw the triangle using the GL_TRIANGLES primitive
-        glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        // Sawp the back buffer with the front buffer:
         glfwSwapBuffers(window);
 
         // Poll for and process events(Refreshes the window basically):
@@ -108,6 +124,7 @@ int renderer()
     VAO1.Delete();
     VBO1.Delete();
     EBO1.Delete();
+    spaceShipTexture.Delete();
     shaderProgram.Delete();
 
     // Delete window before ending the program

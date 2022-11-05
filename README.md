@@ -22,7 +22,6 @@ Create your own mech to fight against other mechs and acquire unique and rare lo
 Building the Visual Studio project
 ```
 $> cd $ROOTOFMECHFIGHTER3000
-$> mkdir build
 $> cmake -S . -B build/
 ```
 Now just open the mechfighter3000.sln file and set the project as the startup project through
@@ -31,6 +30,9 @@ the solution explorer window.
 If you want to see the log messages on a console instead of debugger consoler. Change the Project's Linker->System->SubSystem to Console
 
 Then proceed to run the project.
+
+### Things To Note
+Might need to compile stb atleast once before running.
 
 ## Contributing
 (WIP)

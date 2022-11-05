@@ -25,14 +25,19 @@ set( GLFW-CMAKE-MECHFIGHTER-SRC ./game/MechFighter.cpp )
 add_executable( MechFighter3000 WIN32 ${GLFW-CMAKE-MECHFIGHTER-SRC} )
 
 add_custom_target(copy_resources ALL
+        COMMENT "Copying shaders into binary directory..."
         COMMAND ${CMAKE_COMMAND} -E copy_directory
         ${PROJECT_SOURCE_DIR}/graphics/shaders
         ${PROJECT_BINARY_DIR}/graphics/shaders
-        COMMENT "Copying shaders into binary directory...")
+        COMMENT "Copying assets into binary directory..."
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${PROJECT_SOURCE_DIR}/graphics/assets/
+        ${PROJECT_BINARY_DIR}/graphics/assets/
+)
 
 add_dependencies(MechFighter3000 copy_resources)
 
-target_include_directories( MechFighter3000 PUBLIC ${OPENGL_INCLUDE_DIRS} glad/include/glad )
+target_include_directories( MechFighter3000 PUBLIC ${OPENGL_INCLUDE_DIRS} glad/include/glad)
 target_link_libraries( MechFighter3000 ${OPENGL_LIBRARIES} glfw glad graphics util game)
 
 if( MSVC )
