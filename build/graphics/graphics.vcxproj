@@ -269,19 +269,20 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\renderer.cpp" />
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\Renderer.cpp" />
     <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\EBO.cpp" />
     <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\EBO.h" />
     <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\VAO.cpp" />
     <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\VAO.h" />
     <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\VBO.cpp" />
     <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\VBO.h" />
-    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\shaderClass.cpp" />
-    <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\shaderClass.h" />
-    <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\renderer.h" />
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\ShaderClass.cpp" />
+    <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\ShaderClass.h" />
+    <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\Renderer.h" />
     <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\stb.cpp" />
     <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\Texture.cpp" />
     <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\Camera.cpp" />
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\Mesh.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\ZERO_CHECK.vcxproj">
