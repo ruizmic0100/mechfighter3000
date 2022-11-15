@@ -94,7 +94,7 @@ int renderer()
         glStencilMask(0x00);
         glDisable(GL_DEPTH_TEST);
         outliningProgram.Activate();
-        glUniform1f(glGetUniformLocation(outliningProgram.ID, "outlining"), 1.08f);
+        glUniform1f(glGetUniformLocation(outliningProgram.ID, "outlining"), 0.08f);
         model.Draw(outliningProgram, camera);
 
         glStencilMask(0xFF);
