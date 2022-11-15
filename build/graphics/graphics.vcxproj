@@ -283,6 +283,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\Texture.cpp" />
     <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\Camera.cpp" />
     <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\Mesh.cpp" />
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\Model.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\ZERO_CHECK.vcxproj">

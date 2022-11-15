@@ -33,6 +33,11 @@ add_custom_target(copy_resources ALL
         COMMAND ${CMAKE_COMMAND} -E copy_directory
         ${PROJECT_SOURCE_DIR}/graphics/assets/
         ${PROJECT_BINARY_DIR}/graphics/assets/
+        COMMENT "Copying models into binary directory..."
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${PROJECT_SOURCE_DIR}/graphics/models/
+        ${PROJECT_BINARY_DIR}/graphics/models/
+        COMMENT "FINISHED COPYING ALL RESOURCES INTO BINARY DIRECTORY!"
 )
 
 add_dependencies(MechFighter3000 copy_resources)
@@ -44,7 +49,9 @@ if( MSVC )
     if( ${CMAKE_VERSION} VERSION_LESS "3.6.0" )
         message( "\n\t[ WARNING ]\n\n\tCMake version lower than 3.6.\n\n\t - Please update CMAKE and rerun; OR\n\t - Manually set 'GLFW-CMAKE-starter' as StartUp Project in Visual Studio.\n" )
     else()
-        message( "\n\t[ SET PROPERTY ] MechFighter3000 as vs startup project.\n" )
         set_property( DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT MechFighter3000 )
+        message( "\n\t[ SET PROPERTY ] MechFighter3000 as vs startup project.\n" )
+        set_property( DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY LINK_FLAGS /SUBSYSTEM:CONSOLE)
+        message( "\n\t[ SET PROPERTY ] Set subsystem to console.\n")
     endif()
 endif()

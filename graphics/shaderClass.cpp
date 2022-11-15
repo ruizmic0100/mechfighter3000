@@ -2,7 +2,6 @@
 
 std::string get_file_contents(const char* filename)
 {
-    std::cout << "Current Working Directory: " << std::filesystem::current_path().string() << std::endl;
     std::ifstream in(filename, std::ios::binary);
 
     if (in) {

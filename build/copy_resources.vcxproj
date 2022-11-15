@@ -106,11 +106,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\Michael\mechfighter3000\build\CMakeFiles\7239bceb98c8da74728cab3dc8c9a110\copy_resources.rule">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Copying assets into binary directory...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FINISHED COPYING ALL RESOURCES INTO BINARY DIRECTORY!</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/shaders C:/Users/Michael/mechfighter3000/build/graphics/shaders
 if %errorlevel% neq 0 goto :cmEnd
 "C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/assets/ C:/Users/Michael/mechfighter3000/build/graphics/assets/
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/models/ C:/Users/Michael/mechfighter3000/build/graphics/models/
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -122,11 +124,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Michael\mechfighter3000\build\CMakeFiles\copy_resources</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Copying assets into binary directory...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FINISHED COPYING ALL RESOURCES INTO BINARY DIRECTORY!</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/shaders C:/Users/Michael/mechfighter3000/build/graphics/shaders
 if %errorlevel% neq 0 goto :cmEnd
 "C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/assets/ C:/Users/Michael/mechfighter3000/build/graphics/assets/
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/models/ C:/Users/Michael/mechfighter3000/build/graphics/models/
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -138,11 +142,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Michael\mechfighter3000\build\CMakeFiles\copy_resources</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</VerifyInputsAndOutputsExist>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Copying assets into binary directory...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">FINISHED COPYING ALL RESOURCES INTO BINARY DIRECTORY!</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/shaders C:/Users/Michael/mechfighter3000/build/graphics/shaders
 if %errorlevel% neq 0 goto :cmEnd
 "C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/assets/ C:/Users/Michael/mechfighter3000/build/graphics/assets/
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/models/ C:/Users/Michael/mechfighter3000/build/graphics/models/
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -154,11 +160,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Michael\mechfighter3000\build\CMakeFiles\copy_resources</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</VerifyInputsAndOutputsExist>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Copying assets into binary directory...</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">FINISHED COPYING ALL RESOURCES INTO BINARY DIRECTORY!</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
 "C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/shaders C:/Users/Michael/mechfighter3000/build/graphics/shaders
 if %errorlevel% neq 0 goto :cmEnd
 "C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/assets/ C:/Users/Michael/mechfighter3000/build/graphics/assets/
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/models/ C:/Users/Michael/mechfighter3000/build/graphics/models/
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
