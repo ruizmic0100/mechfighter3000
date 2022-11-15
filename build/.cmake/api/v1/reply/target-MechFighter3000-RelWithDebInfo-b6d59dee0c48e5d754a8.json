@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Debug/MechFighter3000.exe"
+			"path" : "RelWithDebInfo/MechFighter3000.exe"
 		},
 		{
-			"path" : "Debug/MechFighter3000.pdb"
+			"path" : "RelWithDebInfo/MechFighter3000.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -59,7 +59,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG"
 				},
 				{
 					"fragment" : "-std:c++17"
@@ -106,15 +106,16 @@
 	"dependencies" : 
 	[
 		{
+			"backtrace" : 2,
+			"id" : "glfw::@12507ebf64a5258d241e"
+		},
+		{
 			"backtrace" : 3,
 			"id" : "copy_resources::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 2,
-			"id" : "glfw::@12507ebf64a5258d241e"
-		},
-		{
-			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+			"id" : "util::@5865449b717dd869d2cd"
 		},
 		{
 			"backtrace" : 2,
@@ -129,8 +130,7 @@
 			"id" : "graphics::@708b9b26fb9b6631b242"
 		},
 		{
-			"backtrace" : 2,
-			"id" : "util::@5865449b717dd869d2cd"
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "MechFighter3000::@6890427a1f51a3e7e1df",
@@ -139,7 +139,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1",
+				"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG",
 				"role" : "flags"
 			},
 			{
@@ -158,27 +158,27 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "glfw\\src\\Debug\\glfw3.lib",
+				"fragment" : "glfw\\src\\RelWithDebInfo\\glfw3.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "glad\\Debug\\glad.lib",
+				"fragment" : "glad\\RelWithDebInfo\\glad.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "graphics\\Debug\\graphics.lib",
+				"fragment" : "graphics\\RelWithDebInfo\\graphics.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "util\\Debug\\util.lib",
+				"fragment" : "util\\RelWithDebInfo\\util.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "game\\Debug\\game.lib",
+				"fragment" : "game\\RelWithDebInfo\\game.lib",
 				"role" : "libraries"
 			},
 			{
@@ -193,12 +193,12 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "glfw\\src\\Debug\\glfw3.lib",
+				"fragment" : "glfw\\src\\RelWithDebInfo\\glfw3.lib",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "glad\\Debug\\glad.lib",
+				"fragment" : "glad\\RelWithDebInfo\\glad.lib",
 				"role" : "libraries"
 			},
 			{

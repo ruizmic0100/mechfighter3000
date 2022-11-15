@@ -17,12 +17,6 @@
 	"dependencies" : 
 	[
 		{
-			"id" : "MechFighter3000::@6890427a1f51a3e7e1df"
-		},
-		{
-			"id" : "copy_resources::@6890427a1f51a3e7e1df"
-		},
-		{
 			"id" : "glfw::@12507ebf64a5258d241e"
 		},
 		{
@@ -30,6 +24,12 @@
 		},
 		{
 			"id" : "gears::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "MechFighter3000::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "copy_resources::@6890427a1f51a3e7e1df"
 		},
 		{
 			"id" : "heightmap::@91b33b97678d17ce013a"
@@ -56,7 +56,10 @@
 			"id" : "clipboard::@b9c82d214eb3193853de"
 		},
 		{
-			"id" : "cursor::@b9c82d214eb3193853de"
+			"id" : "joysticks::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "glfwinfo::@b9c82d214eb3193853de"
 		},
 		{
 			"id" : "msaa::@b9c82d214eb3193853de"
@@ -65,43 +68,34 @@
 			"id" : "events::@b9c82d214eb3193853de"
 		},
 		{
+			"id" : "cursor::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "gamma::@b9c82d214eb3193853de"
+		},
+		{
 			"id" : "iconify::@b9c82d214eb3193853de"
 		},
 		{
 			"id" : "icon::@b9c82d214eb3193853de"
 		},
 		{
-			"id" : "empty::@b9c82d214eb3193853de"
-		},
-		{
-			"id" : "gamma::@b9c82d214eb3193853de"
+			"id" : "inputlag::@b9c82d214eb3193853de"
 		},
 		{
 			"id" : "reopen::@b9c82d214eb3193853de"
 		},
 		{
-			"id" : "inputlag::@b9c82d214eb3193853de"
-		},
-		{
-			"id" : "glfwinfo::@b9c82d214eb3193853de"
-		},
-		{
-			"id" : "joysticks::@b9c82d214eb3193853de"
-		},
-		{
 			"id" : "monitors::@b9c82d214eb3193853de"
 		},
 		{
-			"id" : "tearing::@b9c82d214eb3193853de"
-		},
-		{
-			"id" : "windows::@b9c82d214eb3193853de"
+			"id" : "empty::@b9c82d214eb3193853de"
 		},
 		{
 			"id" : "threads::@b9c82d214eb3193853de"
 		},
 		{
-			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+			"id" : "util::@5865449b717dd869d2cd"
 		},
 		{
 			"id" : "triangle-vulkan::@b9c82d214eb3193853de"
@@ -110,22 +104,28 @@
 			"id" : "game::@0c53ff3c4131f9152fd3"
 		},
 		{
-			"id" : "glad::@74ca6b3581f0d7366b1f"
+			"id" : "tearing::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "title::@b9c82d214eb3193853de"
 		},
 		{
 			"id" : "timeout::@b9c82d214eb3193853de"
 		},
 		{
-			"id" : "graphics::@708b9b26fb9b6631b242"
-		},
-		{
-			"id" : "util::@5865449b717dd869d2cd"
+			"id" : "windows::@b9c82d214eb3193853de"
 		},
 		{
 			"id" : "opacity::@b9c82d214eb3193853de"
 		},
 		{
-			"id" : "title::@b9c82d214eb3193853de"
+			"id" : "glad::@74ca6b3581f0d7366b1f"
+		},
+		{
+			"id" : "graphics::@708b9b26fb9b6631b242"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
 	],
 	"folder" : 

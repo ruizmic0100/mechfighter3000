@@ -24,7 +24,6 @@ void Model::Draw(Shader& shader, Camera& camera)
 
 void Model::loadMesh(unsigned int indMesh)
 {
-    std::cout << "loadMesh()" << std::endl;
     // Get all accessor indices:
     unsigned int posAccInd    = JSON["meshes"][indMesh]["primitives"][0]["attributes"]["POSITION"];
     unsigned int normalAccInd = JSON["meshes"][indMesh]["primitives"][0]["attributes"]["NORMAL"];
@@ -46,7 +45,6 @@ void Model::loadMesh(unsigned int indMesh)
 
     // Combine the vertices, indices, and textures into a mesh.
     meshes.push_back(Mesh(vertices, indices, textures));
-    std::cout << "loadMesh() Finished" << std::endl;
 }
 
 void Model::traverseNode(unsigned int nextNode, glm::mat4 matrix)
@@ -95,7 +93,6 @@ void Model::traverseNode(unsigned int nextNode, glm::mat4 matrix)
     glm::mat4 translation = glm::mat4(1.0f);
     glm::mat4 rot = glm::mat4(1.0f);
     glm::mat4 sca = glm::mat4(1.0f);
-    std::cout << "I made it this far." << std::endl;
 
     // Use translation, rotation, and scale to change the intiialized matrices:
     translation = glm::translate(translation, Translation);
@@ -141,7 +138,6 @@ std::vector<unsigned char> Model::getData()
 std::vector<float> Model::getFloats(json accessor)
 {
     std::vector<float> floatVec;
-    std::cout << "getFloats() begin" << std::endl;
 
     // get properties form the accessor:
     unsigned int buffViewInd = accessor.value("bufferView", 1);
@@ -161,8 +157,6 @@ std::vector<float> Model::getFloats(json accessor)
     else if (type == "VEC4") numPerVert = 4;
     else throw std::invalid_argument("Type is invalid (not SCALAR, VEC2, VEC3, or VEC4)");
 
-    std::cout << "Halfway through getfloats()" << std::endl;
-
     // Go over all the bytes in the data at the correct place using the properties from above:
     unsigned int beginningOfData = byteOffset + accByteOffset;
     unsigned int lengthOfData = count * 4 * numPerVert;
@@ -172,7 +166,6 @@ std::vector<float> Model::getFloats(json accessor)
         std::memcpy(&value, bytes, sizeof(float));
         floatVec.push_back(value);
     }
-    std::cout << "Got floats!" << std::endl;
     return floatVec;
 }
 
@@ -216,7 +209,6 @@ std::vector<GLuint> Model::getIndices(json accessor)
             indices.push_back((GLuint) value);
         }
     }
-    std::cout << "Grabbed Indices" << std::endl;
     return indices;
 }
 
@@ -269,7 +261,6 @@ std::vector<Vertex> Model::assembleVertices(std::vector<glm::vec3> positions, st
     for (int i = 0; i < positions.size(); i++) {
         vertices.push_back(Vertex { positions[i], normals[i], glm::vec3(1.0f, 1.0f, 1.0f), texUVs[i] });
     }
-    std::cout << "Assembled Verticies" << std::endl;
     return vertices;
 }
 
@@ -279,7 +270,6 @@ std::vector<glm::vec2> Model::groupFloatsVec2(std::vector<float> floatVec)
     for (int i = 0; i < floatVec.size(); i) {
         vectors.push_back(glm::vec2(floatVec[i++], floatVec[i++]));
     }
-    std::cout << "groupedFloatsVec2 Finished!" << std::endl;
     return vectors;
 }
 
@@ -289,7 +279,6 @@ std::vector<glm::vec3> Model::groupFloatsVec3(std::vector<float> floatVec)
     for (int i = 0; i < floatVec.size(); i) {
         vectors.push_back(glm::vec3(floatVec[i++], floatVec[i++], floatVec[i++]));
     }
-    std::cout << "groupedFloatsVec3 Finished!" << std::endl;
     return vectors;
 }
 
@@ -299,6 +288,5 @@ std::vector<glm::vec4> Model::groupFloatsVec4(std::vector<float> floatVec)
     for (int i = 0; i < floatVec.size(); i) {
         vectors.push_back(glm::vec4(floatVec[i++], floatVec[i++], floatVec[i++], floatVec[i++]));
     }
-    std::cout << "groupedFloatsVec4 Finished!" << std::endl;
     return vectors;
 }

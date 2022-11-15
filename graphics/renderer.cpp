@@ -59,6 +59,7 @@ int renderer()
 
     // Enables the depth buffer:
     glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
 
     Camera camera(width, height, glm::vec3(0.0f, 0.0f, 2.0f));
 
@@ -72,7 +73,7 @@ int renderer()
     // Loop until the user closes the window:
     while(!glfwWindowShouldClose(window)) {
         // Render Here:
-        glClearColor(0.07f, 0.13f, 0.17f, 1.0f); // Color of the background.
+        glClearColor(0.85f, 0.85f, 0.90f, 1.0f); // Color of the background.
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Clean the back buffer and assign the new color to it.
 
         // Handles camera inputs:

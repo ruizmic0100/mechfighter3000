@@ -12,7 +12,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "graphics/RelWithDebInfo/graphics.lib"
+			"path" : "graphics/Debug/graphics.lib"
 		}
 	],
 	"backtrace" : 1,
@@ -59,7 +59,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MD /Zi /O2 /Ob1 /DNDEBUG"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1"
 				},
 				{
 					"fragment" : "-std:c++17"
@@ -123,7 +123,8 @@
 			"id" : "glfw::@12507ebf64a5258d241e"
 		},
 		{
-			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+			"backtrace" : 2,
+			"id" : "util::@5865449b717dd869d2cd"
 		},
 		{
 			"backtrace" : 2,
@@ -134,8 +135,7 @@
 			"id" : "glad::@74ca6b3581f0d7366b1f"
 		},
 		{
-			"backtrace" : 2,
-			"id" : "util::@5865449b717dd869d2cd"
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "graphics::@708b9b26fb9b6631b242",
