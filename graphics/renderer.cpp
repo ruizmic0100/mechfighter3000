@@ -61,8 +61,13 @@ int renderer()
 
     // Enables the depth buffer:
     glEnable(GL_DEPTH_TEST);
-    glEnable(GL_STENCIL_TEST);
-    glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
+
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_FRONT);
+    glFrontFace(GL_CCW);
+
+    // glEnable(GL_STENCIL_TEST);
+    // glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
     glDepthFunc(GL_LESS);
 
     Camera camera(width, height, glm::vec3(0.0f, 0.0f, 2.0f));
@@ -74,32 +79,53 @@ int renderer()
     // Load in a model:
     Model model((parentModelDir + modelPath).c_str());
 
+    double prevTime = 0.0;
+    double currTime = 0.0;
+    double timeDiff;
+    unsigned int counter = 0;
+
     // Loop until the user closes the window:
     while(!glfwWindowShouldClose(window)) {
         // Render Here:
+
+        // FPS counter logic:
+        currTime = glfwGetTime();
+        timeDiff = currTime - prevTime;
+        counter++;
+        if (timeDiff >= 1.0 / 30.0) {
+            std::string FPS = std::to_string((1.0 / timeDiff) * counter);
+            std::string ms = std::to_string((timeDiff / counter) * 1000);
+            std::string newTitle = "MechFighter3000 - " + FPS + "FPS / " + ms + "ms";
+            glfwSetWindowTitle(window, newTitle.c_str());
+            prevTime = currTime;
+            counter = 0;
+        }
+
+
         glClearColor(0.85f, 0.85f, 0.90f, 1.0f); // Color of the background.
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT); // Clean the back buffer and assign the new color to it.
 
         // Handles camera inputs:
+        // NOTE: this might need to be placed in a time loop to make it not dependent on FPS.
         camera.Inputs(window);
         // Updates and exports the camera matrix to the vertex shader:
         camera.updateMatrix(45.0f, 0.1f, 400.0f);
 
         // Draw a model:
-        glStencilFunc(GL_ALWAYS, 1, 0xFF);
-        glStencilMask(0xFF);
+        // glStencilFunc(GL_ALWAYS, 1, 0xFF);
+        // glStencilMask(0xFF);
         model.Draw(shaderProgram, camera);
 
-        glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
-        glStencilMask(0x00);
-        glDisable(GL_DEPTH_TEST);
-        outliningProgram.Activate();
-        glUniform1f(glGetUniformLocation(outliningProgram.ID, "outlining"), 0.08f);
-        model.Draw(outliningProgram, camera);
+        // glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
+        // glStencilMask(0x00);
+        // glDisable(GL_DEPTH_TEST);
+        // outliningProgram.Activate();
+        // glUniform1f(glGetUniformLocation(outliningProgram.ID, "outlining"), 0.08f);
+        // model.Draw(outliningProgram, camera);
 
-        glStencilMask(0xFF);
-        glStencilFunc(GL_ALWAYS, 0, 0xFF);
-        glEnable(GL_DEPTH_TEST);
+        // glStencilMask(0xFF);
+        // glStencilFunc(GL_ALWAYS, 0, 0xFF);
+        // glEnable(GL_DEPTH_TEST);
 
         // Sawp the back buffer with the front buffer:
         glfwSwapBuffers(window);
