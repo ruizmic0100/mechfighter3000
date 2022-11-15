@@ -1,0 +1,127 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"glfw/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "glfw::@12507ebf64a5258d241e"
+		},
+		{
+			"id" : "boing::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "gears::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "heightmap::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "offscreen::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "particles::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "sharing::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "simple::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "splitview::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "wave::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "clipboard::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "cursor::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "msaa::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "events::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "iconify::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "icon::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "empty::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "gamma::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "reopen::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "inputlag::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "glfwinfo::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "joysticks::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "monitors::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "tearing::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "windows::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "threads::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "triangle-vulkan::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "timeout::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "opacity::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "title::@b9c82d214eb3193853de"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "CMakePredefinedTargets"
+	},
+	"id" : "ALL_BUILD::@eb154563b92743f6cbb3",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"paths" : 
+	{
+		"build" : "glfw",
+		"source" : "glfw"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

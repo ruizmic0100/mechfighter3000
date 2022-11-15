@@ -3,6 +3,8 @@ cmake_minimum_required( VERSION 3.1 )
 project( mechfighter3000 )
 
 find_package( OpenGL REQUIRED )
+
+include_directories( ${OPENGL_INCLUDE_DIRS} )
 set( CMAKE_CXX_STANDARD 17 )
 
 
@@ -42,7 +44,7 @@ add_custom_target(copy_resources ALL
 
 add_dependencies(MechFighter3000 copy_resources)
 
-target_include_directories( MechFighter3000 PUBLIC ${OPENGL_INCLUDE_DIRS} glad/include/glad glm)
+target_include_directories( MechFighter3000 PUBLIC ${OPENGL_INCLUDE_DIRS} glad glm)
 target_link_libraries( MechFighter3000 ${OPENGL_LIBRARIES} glfw glad graphics util game)
 
 if( MSVC )

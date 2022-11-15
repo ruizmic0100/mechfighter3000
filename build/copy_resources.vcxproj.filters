@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Michael\mechfighter3000\build\CMakeFiles\7239bceb98c8da74728cab3dc8c9a110\copy_resources.rule">
+    <CustomBuild Include="C:\Users\ruizm\mechfighter3000\build\CMakeFiles\7e604168fa1ba2c247d390248ca0905a\copy_resources.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\Michael\mechfighter3000\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\ruizm\mechfighter3000\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Users\Michael\mechfighter3000\build\CMakeFiles\copy_resources" />
+    <None Include="C:\Users\ruizm\mechfighter3000\build\CMakeFiles\copy_resources" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{59A8BB84-5A49-390D-8204-90AB17FFF998}</UniqueIdentifier>
+      <UniqueIdentifier>{5E039E6D-406E-3547-963F-7E7CC9A9F9C5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

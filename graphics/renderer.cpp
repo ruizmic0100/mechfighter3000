@@ -64,7 +64,7 @@ int renderer()
 
     // Relative path setup:
     std::string parentModelDir = (std::filesystem::current_path().std::filesystem::path::parent_path()).string();
-    std::string modelPath = "/graphics/models/bunny/scene.gltf";
+    std::string modelPath = "/graphics/models/grindstone/scene.gltf";
 
     // Load in a model:
     Model model((parentModelDir + modelPath).c_str());
@@ -78,7 +78,7 @@ int renderer()
         // Handles camera inputs:
         camera.Inputs(window);
         // Updates and exports the camera matrix to the vertex shader:
-        camera.updateMatrix(45.0f, 0.1f, 100.0f);
+        camera.updateMatrix(45.0f, 0.1f, 400.0f);
 
         // Draw a model:
         model.Draw(shaderProgram, camera);

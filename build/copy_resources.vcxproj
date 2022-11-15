@@ -1,54 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+    <PreferredToolArchitecture>x86</PreferredToolArchitecture>
   </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|x64">
+    <ProjectConfiguration Include="Debug|win32">
       <Configuration>Debug</Configuration>
-      <Platform>x64</Platform>
+      <Platform>win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|x64">
+    <ProjectConfiguration Include="Release|win32">
       <Configuration>Release</Configuration>
-      <Platform>x64</Platform>
+      <Platform>win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="MinSizeRel|x64">
+    <ProjectConfiguration Include="MinSizeRel|win32">
       <Configuration>MinSizeRel</Configuration>
-      <Platform>x64</Platform>
+      <Platform>win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="RelWithDebInfo|x64">
+    <ProjectConfiguration Include="RelWithDebInfo|win32">
       <Configuration>RelWithDebInfo</Configuration>
-      <Platform>x64</Platform>
+      <Platform>win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{89A6755A-5C34-3695-898C-2B87385AB76A}</ProjectGuid>
+    <ProjectGuid>{9584404F-F379-3B11-8E85-1EB6F9E0591D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
-    <Platform>x64</Platform>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>win32</Platform>
     <ProjectName>copy_resources</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'" Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'" Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'" Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'" Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -59,12 +59,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">
     <Midl>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
@@ -74,7 +74,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'">
     <Midl>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
@@ -84,7 +84,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">
     <Midl>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
@@ -94,7 +94,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">
     <Midl>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
@@ -105,32 +105,14 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Michael\mechfighter3000\build\CMakeFiles\7239bceb98c8da74728cab3dc8c9a110\copy_resources.rule">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">FINISHED COPYING ALL RESOURCES INTO BINARY DIRECTORY!</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/shaders C:/Users/Michael/mechfighter3000/build/graphics/shaders
+    <CustomBuild Include="C:\Users\ruizm\mechfighter3000\build\CMakeFiles\7e604168fa1ba2c247d390248ca0905a\copy_resources.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">FINISHED COPYING ALL RESOURCES INTO BINARY DIRECTORY!</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/ruizm/mechfighter3000/graphics/shaders C:/Users/ruizm/mechfighter3000/build/graphics/shaders
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/assets/ C:/Users/Michael/mechfighter3000/build/graphics/assets/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/ruizm/mechfighter3000/graphics/assets/ C:/Users/ruizm/mechfighter3000/build/graphics/assets/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/models/ C:/Users/Michael/mechfighter3000/build/graphics/models/
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Michael\mechfighter3000\build\CMakeFiles\copy_resources</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">FINISHED COPYING ALL RESOURCES INTO BINARY DIRECTORY!</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/shaders C:/Users/Michael/mechfighter3000/build/graphics/shaders
-if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/assets/ C:/Users/Michael/mechfighter3000/build/graphics/assets/
-if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/models/ C:/Users/Michael/mechfighter3000/build/graphics/models/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/ruizm/mechfighter3000/graphics/models/ C:/Users/ruizm/mechfighter3000/build/graphics/models/
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -138,35 +120,17 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Michael\mechfighter3000\build\CMakeFiles\copy_resources</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</VerifyInputsAndOutputsExist>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">FINISHED COPYING ALL RESOURCES INTO BINARY DIRECTORY!</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/shaders C:/Users/Michael/mechfighter3000/build/graphics/shaders
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\ruizm\mechfighter3000\build\CMakeFiles\copy_resources</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|win32'">FINISHED COPYING ALL RESOURCES INTO BINARY DIRECTORY!</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/ruizm/mechfighter3000/graphics/shaders C:/Users/ruizm/mechfighter3000/build/graphics/shaders
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/assets/ C:/Users/Michael/mechfighter3000/build/graphics/assets/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/ruizm/mechfighter3000/graphics/assets/ C:/Users/ruizm/mechfighter3000/build/graphics/assets/
 if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/models/ C:/Users/Michael/mechfighter3000/build/graphics/models/
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Michael\mechfighter3000\build\CMakeFiles\copy_resources</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</VerifyInputsAndOutputsExist>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">FINISHED COPYING ALL RESOURCES INTO BINARY DIRECTORY!</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/shaders C:/Users/Michael/mechfighter3000/build/graphics/shaders
-if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/assets/ C:/Users/Michael/mechfighter3000/build/graphics/assets/
-if %errorlevel% neq 0 goto :cmEnd
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/Michael/mechfighter3000/graphics/models/ C:/Users/Michael/mechfighter3000/build/graphics/models/
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/ruizm/mechfighter3000/graphics/models/ C:/Users/ruizm/mechfighter3000/build/graphics/models/
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -174,18 +138,54 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Michael\mechfighter3000\build\CMakeFiles\copy_resources</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
-      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</VerifyInputsAndOutputsExist>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\ruizm\mechfighter3000\build\CMakeFiles\copy_resources</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">FINISHED COPYING ALL RESOURCES INTO BINARY DIRECTORY!</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/ruizm/mechfighter3000/graphics/shaders C:/Users/ruizm/mechfighter3000/build/graphics/shaders
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/ruizm/mechfighter3000/graphics/assets/ C:/Users/ruizm/mechfighter3000/build/graphics/assets/
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/ruizm/mechfighter3000/graphics/models/ C:/Users/ruizm/mechfighter3000/build/graphics/models/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">C:\Users\ruizm\mechfighter3000\build\CMakeFiles\copy_resources</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">FINISHED COPYING ALL RESOURCES INTO BINARY DIRECTORY!</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/ruizm/mechfighter3000/graphics/shaders C:/Users/ruizm/mechfighter3000/build/graphics/shaders
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/ruizm/mechfighter3000/graphics/assets/ C:/Users/ruizm/mechfighter3000/build/graphics/assets/
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Users/ruizm/mechfighter3000/graphics/models/ C:/Users/ruizm/mechfighter3000/build/graphics/models/
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">C:\Users\ruizm\mechfighter3000\build\CMakeFiles\copy_resources</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">false</VerifyInputsAndOutputsExist>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Michael\mechfighter3000\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\ruizm\mechfighter3000\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Michael/mechfighter3000/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Michael/mechfighter3000 -BC:/Users/Michael/mechfighter3000/build --check-stamp-file C:/Users/Michael/mechfighter3000/build/CMakeFiles/generate.stamp
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Building Custom Rule C:/Users/ruizm/mechfighter3000/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/ruizm/mechfighter3000 -BC:/Users/ruizm/mechfighter3000/build --check-stamp-file C:/Users/ruizm/mechfighter3000/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -193,12 +193,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;C:\Users\Michael\mechfighter3000\build\CMakeFiles\3.25.0-rc2\CMakeCCompiler.cmake;C:\Users\Michael\mechfighter3000\build\CMakeFiles\3.25.0-rc2\CMakeCXXCompiler.cmake;C:\Users\Michael\mechfighter3000\build\CMakeFiles\3.25.0-rc2\CMakeRCCompiler.cmake;C:\Users\Michael\mechfighter3000\build\CMakeFiles\3.25.0-rc2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Michael\mechfighter3000\build\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Michael/mechfighter3000/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Michael/mechfighter3000 -BC:/Users/Michael/mechfighter3000/build --check-stamp-file C:/Users/Michael/mechfighter3000/build/CMakeFiles/generate.stamp
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.25\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;C:\Users\ruizm\mechfighter3000\build\CMakeFiles\3.25.0-rc4\CMakeCCompiler.cmake;C:\Users\ruizm\mechfighter3000\build\CMakeFiles\3.25.0-rc4\CMakeCXXCompiler.cmake;C:\Users\ruizm\mechfighter3000\build\CMakeFiles\3.25.0-rc4\CMakeRCCompiler.cmake;C:\Users\ruizm\mechfighter3000\build\CMakeFiles\3.25.0-rc4\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\ruizm\mechfighter3000\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Building Custom Rule C:/Users/ruizm/mechfighter3000/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/ruizm/mechfighter3000 -BC:/Users/ruizm/mechfighter3000/build --check-stamp-file C:/Users/ruizm/mechfighter3000/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -206,12 +206,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;C:\Users\Michael\mechfighter3000\build\CMakeFiles\3.25.0-rc2\CMakeCCompiler.cmake;C:\Users\Michael\mechfighter3000\build\CMakeFiles\3.25.0-rc2\CMakeCXXCompiler.cmake;C:\Users\Michael\mechfighter3000\build\CMakeFiles\3.25.0-rc2\CMakeRCCompiler.cmake;C:\Users\Michael\mechfighter3000\build\CMakeFiles\3.25.0-rc2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Michael\mechfighter3000\build\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Michael/mechfighter3000/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Michael/mechfighter3000 -BC:/Users/Michael/mechfighter3000/build --check-stamp-file C:/Users/Michael/mechfighter3000/build/CMakeFiles/generate.stamp
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.25\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;C:\Users\ruizm\mechfighter3000\build\CMakeFiles\3.25.0-rc4\CMakeCCompiler.cmake;C:\Users\ruizm\mechfighter3000\build\CMakeFiles\3.25.0-rc4\CMakeCXXCompiler.cmake;C:\Users\ruizm\mechfighter3000\build\CMakeFiles\3.25.0-rc4\CMakeRCCompiler.cmake;C:\Users\ruizm\mechfighter3000\build\CMakeFiles\3.25.0-rc4\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\ruizm\mechfighter3000\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">Building Custom Rule C:/Users/ruizm/mechfighter3000/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/ruizm/mechfighter3000 -BC:/Users/ruizm/mechfighter3000/build --check-stamp-file C:/Users/ruizm/mechfighter3000/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -219,12 +219,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;C:\Users\Michael\mechfighter3000\build\CMakeFiles\3.25.0-rc2\CMakeCCompiler.cmake;C:\Users\Michael\mechfighter3000\build\CMakeFiles\3.25.0-rc2\CMakeCXXCompiler.cmake;C:\Users\Michael\mechfighter3000\build\CMakeFiles\3.25.0-rc2\CMakeRCCompiler.cmake;C:\Users\Michael\mechfighter3000\build\CMakeFiles\3.25.0-rc2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Michael\mechfighter3000\build\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Michael/mechfighter3000/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Michael/mechfighter3000 -BC:/Users/Michael/mechfighter3000/build --check-stamp-file C:/Users/Michael/mechfighter3000/build/CMakeFiles/generate.stamp
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.25\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;C:\Users\ruizm\mechfighter3000\build\CMakeFiles\3.25.0-rc4\CMakeCCompiler.cmake;C:\Users\ruizm\mechfighter3000\build\CMakeFiles\3.25.0-rc4\CMakeCXXCompiler.cmake;C:\Users\ruizm\mechfighter3000\build\CMakeFiles\3.25.0-rc4\CMakeRCCompiler.cmake;C:\Users\ruizm\mechfighter3000\build\CMakeFiles\3.25.0-rc4\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">C:\Users\ruizm\mechfighter3000\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">Building Custom Rule C:/Users/ruizm/mechfighter3000/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/ruizm/mechfighter3000 -BC:/Users/ruizm/mechfighter3000/build --check-stamp-file C:/Users/ruizm/mechfighter3000/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -232,18 +232,18 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;C:\Users\Michael\mechfighter3000\build\CMakeFiles\3.25.0-rc2\CMakeCCompiler.cmake;C:\Users\Michael\mechfighter3000\build\CMakeFiles\3.25.0-rc2\CMakeCXXCompiler.cmake;C:\Users\Michael\mechfighter3000\build\CMakeFiles\3.25.0-rc2\CMakeRCCompiler.cmake;C:\Users\Michael\mechfighter3000\build\CMakeFiles\3.25.0-rc2\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Michael\mechfighter3000\build\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseImplicitIncludeInfo.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeParseLibraryArchitecture.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\ARMClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\LCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\NVHPC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Tasking-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.25\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Platform\WindowsPaths.cmake;C:\Users\ruizm\mechfighter3000\build\CMakeFiles\3.25.0-rc4\CMakeCCompiler.cmake;C:\Users\ruizm\mechfighter3000\build\CMakeFiles\3.25.0-rc4\CMakeCXXCompiler.cmake;C:\Users\ruizm\mechfighter3000\build\CMakeFiles\3.25.0-rc4\CMakeRCCompiler.cmake;C:\Users\ruizm\mechfighter3000\build\CMakeFiles\3.25.0-rc4\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">C:\Users\ruizm\mechfighter3000\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Users\Michael\mechfighter3000\build\CMakeFiles\copy_resources">
+    <None Include="C:\Users\ruizm\mechfighter3000\build\CMakeFiles\copy_resources">
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\ZERO_CHECK.vcxproj">
-      <Project>{2E442467-91EB-3F04-8630-F409467BC5F4}</Project>
+    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\ZERO_CHECK.vcxproj">
+      <Project>{2B1528DB-327E-3345-AEB1-146F1161EDD7}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
