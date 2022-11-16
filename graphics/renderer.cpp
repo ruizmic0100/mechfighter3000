@@ -18,6 +18,18 @@ float rotationsWin[numWindows];
 unsigned int orderDraw[numWindows];
 float distanceCamera[numWindows];
 
+float rectangleVertices[] =
+{
+    // Coords       // texCoords
+    1.0f, -1.0f, 1.0f, 0.0f,
+    -1.0f, -1.0f, 0.0f, 0.0f,
+    -1.0f, 1.0f, 0.0f, 1.0f,
+
+    1.0f, 1.0f, 1.0f, 1.0f,
+    1.0f, -1.0f, 1.0f, 0.0f,
+    -1.0f, 1.0f, 0.0f, 1.0f
+};
+
 // Compare function:
 int compare(const void* a, const void* b)
 {
@@ -65,6 +77,7 @@ int renderer()
     Shader shaderProgram("graphics/shaders/default.vert", "graphics/shaders/default.frag");
     Shader grassProgram("graphics/shaders/default.vert", "graphics/shaders/grass.frag");
     Shader winProgram("graphics/shaders/default.vert", "graphics/shaders/windows.frag");
+    Shader framebufferProgram("graphics/shaders/framebuffer.vert", "graphics/shaders/framebuffer.frag");
     // Shader outliningProgram("graphics/shaders/outlining.vert", "graphics/shaders/outlining.frag");
 
     // Take care of all the light related things:
@@ -79,6 +92,8 @@ int renderer()
     grassProgram.Activate();
     glUniform4f(glGetUniformLocation(grassProgram.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
     glUniform3f(glGetUniformLocation(grassProgram.ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
+    framebufferProgram.Activate();
+    glUniform1i(glGetUniformLocation(framebufferProgram.ID, "screenTexture"), 0);
 
     // Enables the depth buffer:
     glEnable(GL_DEPTH_TEST);
@@ -111,11 +126,46 @@ int renderer()
     Model grass((parentDir + grassPath).c_str());
     Model windows((parentDir + winPath).c_str());
 
+    unsigned int rectVAO, rectVBO;
+    glGenVertexArrays(1, &rectVAO);
+    glGenBuffers(1, &rectVBO);
+    glBindVertexArray(rectVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, rectVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(rectangleVertices), &rectangleVertices, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void*)(2 * sizeof(float)));
+
 
     double prevTime = 0.0;
     double currTime = 0.0;
     double timeDiff;
     unsigned int counter = 0;
+
+    unsigned int FBO;
+    glGenFramebuffers(1, &FBO);
+    glBindFramebuffer(GL_FRAMEBUFFER, FBO);
+
+    unsigned int framebufferTexture;
+    glGenTextures(1, &framebufferTexture);
+    glBindTexture(GL_TEXTURE_2D, framebufferTexture);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, framebufferTexture, 0);
+
+    unsigned int RBO;
+    glGenRenderbuffers(1, &RBO);
+    glBindRenderbuffer(GL_RENDERBUFFER, RBO);
+    glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, width, height);
+    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, RBO);
+    
+    auto fboStatus = glCheckFramebufferStatus(GL_FRAMEBUFFER);
+    if (fboStatus != GL_FRAMEBUFFER_COMPLETE)
+        std::cout << "Framebuffer error: " << fboStatus << std::endl;
 
     // Generates all windows:
     for (unsigned int i = 0; i < numWindows; i++) {
@@ -146,9 +196,10 @@ int renderer()
             counter = 0;
         }
 
-
+        glBindFramebuffer(GL_FRAMEBUFFER, FBO);
         glClearColor(0.07f, 0.13f, 0.17f, 1.0f); // Color of the background.
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Clean the back buffer and assign the new color to it.
+        glEnable(GL_DEPTH_TEST);
 
         // Handles camera inputs:
         // NOTE: this might need to be placed in a time loop to make it not dependent on FPS.
@@ -179,6 +230,13 @@ int renderer()
         }
         glDisable(GL_BLEND);
         glEnable(GL_CULL_FACE);
+
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);
+        framebufferProgram.Activate();
+        glBindVertexArray(rectVAO);
+        glDisable(GL_DEPTH_TEST);
+        glBindTexture(GL_TEXTURE_2D, framebufferTexture);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
         
 
         // glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
