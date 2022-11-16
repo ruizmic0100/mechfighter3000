@@ -1,0 +1,2268 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5,
+						6,
+						7,
+						8
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						4,
+						7
+					]
+				},
+				{
+					"build" : "glfw",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-glfw-Debug-cf58ed5279965a2ab5ce.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "glfw",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "glfw/src",
+					"jsonFile" : "directory-glfw.src-Debug-05cc6ab1369fc8fc5a1d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "glfw/src",
+					"targetIndexes" : 
+					[
+						15,
+						37
+					]
+				},
+				{
+					"build" : "glfw/examples",
+					"jsonFile" : "directory-glfw.examples-Debug-2f5ed2d5c6ca7dee95c7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "glfw/examples",
+					"targetIndexes" : 
+					[
+						5,
+						13,
+						18,
+						25,
+						27,
+						29,
+						30,
+						31,
+						39
+					]
+				},
+				{
+					"build" : "glfw/tests",
+					"jsonFile" : "directory-glfw.tests-Debug-d7846098afa25a1678ea.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "glfw/tests",
+					"targetIndexes" : 
+					[
+						6,
+						8,
+						9,
+						10,
+						12,
+						16,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						26,
+						28,
+						32,
+						33,
+						34,
+						35,
+						36,
+						40
+					]
+				},
+				{
+					"build" : "glad",
+					"jsonFile" : "directory-glad-Debug-6aad498c2c8cd39e25f8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "glad",
+					"targetIndexes" : 
+					[
+						2,
+						14
+					]
+				},
+				{
+					"build" : "game",
+					"jsonFile" : "directory-game-Debug-b67dffe3df9019a6d767.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "game",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"build" : "graphics",
+					"jsonFile" : "directory-graphics-Debug-e53be08289d1beb6d2a1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "graphics",
+					"targetIndexes" : 
+					[
+						17
+					]
+				},
+				{
+					"build" : "util",
+					"jsonFile" : "directory-util-Debug-88dfab35cbcc10198186.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "util",
+					"targetIndexes" : 
+					[
+						38
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						6,
+						7,
+						8
+					],
+					"name" : "mechfighter3000",
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						4,
+						7,
+						11,
+						17,
+						38
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "GLFW",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						5,
+						6,
+						8,
+						9,
+						10,
+						12,
+						13,
+						15,
+						16,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37,
+						39,
+						40
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "Glad",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2,
+						14
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Debug-fae4faeb2278f3902547.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@eb154563b92743f6cbb3",
+					"jsonFile" : "target-ALL_BUILD-Debug-b5665d92db4ea9ea8760.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@74ca6b3581f0d7366b1f",
+					"jsonFile" : "target-ALL_BUILD-Debug-9a7da3101ddf6eb3e097.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "MechFighter3000::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MechFighter3000-Debug-576ad768fa9b6227a2ff.json",
+					"name" : "MechFighter3000",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Debug-80c7551749c9c87541bf.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "boing::@91b33b97678d17ce013a",
+					"jsonFile" : "target-boing-Debug-2b57b55863b642cf7d67.json",
+					"name" : "boing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "clipboard::@b9c82d214eb3193853de",
+					"jsonFile" : "target-clipboard-Debug-868ac6bc81b7e6faab04.json",
+					"name" : "clipboard",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "copy_resources::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-copy_resources-Debug-3850ca11b82d04c97207.json",
+					"name" : "copy_resources",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "cursor::@b9c82d214eb3193853de",
+					"jsonFile" : "target-cursor-Debug-8bfff13fe168609ebc04.json",
+					"name" : "cursor",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "empty::@b9c82d214eb3193853de",
+					"jsonFile" : "target-empty-Debug-4be2ec502d7629c7f036.json",
+					"name" : "empty",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "events::@b9c82d214eb3193853de",
+					"jsonFile" : "target-events-Debug-2017c1b46511021e965d.json",
+					"name" : "events",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "game::@0c53ff3c4131f9152fd3",
+					"jsonFile" : "target-game-Debug-6c578c2492cb779054d4.json",
+					"name" : "game",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "gamma::@b9c82d214eb3193853de",
+					"jsonFile" : "target-gamma-Debug-0569478a8e0617a01b29.json",
+					"name" : "gamma",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gears::@91b33b97678d17ce013a",
+					"jsonFile" : "target-gears-Debug-5ccc4f0646a398ad58b8.json",
+					"name" : "gears",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "glad::@74ca6b3581f0d7366b1f",
+					"jsonFile" : "target-glad-Debug-7b9ce2bca86d8cc8374a.json",
+					"name" : "glad",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "glfw::@12507ebf64a5258d241e",
+					"jsonFile" : "target-glfw-Debug-d0d0edfa1a85e368cfb4.json",
+					"name" : "glfw",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "glfwinfo::@b9c82d214eb3193853de",
+					"jsonFile" : "target-glfwinfo-Debug-98f6c72b3b89d6d8139f.json",
+					"name" : "glfwinfo",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "graphics::@708b9b26fb9b6631b242",
+					"jsonFile" : "target-graphics-Debug-b5415ac8d31eea295f22.json",
+					"name" : "graphics",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "heightmap::@91b33b97678d17ce013a",
+					"jsonFile" : "target-heightmap-Debug-de565c67a4d05f274626.json",
+					"name" : "heightmap",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "icon::@b9c82d214eb3193853de",
+					"jsonFile" : "target-icon-Debug-81112322bfa2baa8f7fb.json",
+					"name" : "icon",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "iconify::@b9c82d214eb3193853de",
+					"jsonFile" : "target-iconify-Debug-3da33a14879ac271022d.json",
+					"name" : "iconify",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "inputlag::@b9c82d214eb3193853de",
+					"jsonFile" : "target-inputlag-Debug-60440d4087bbfb96fa29.json",
+					"name" : "inputlag",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "joysticks::@b9c82d214eb3193853de",
+					"jsonFile" : "target-joysticks-Debug-f55f556689aba1f71cb2.json",
+					"name" : "joysticks",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "monitors::@b9c82d214eb3193853de",
+					"jsonFile" : "target-monitors-Debug-73232d79acd404d8c08d.json",
+					"name" : "monitors",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "msaa::@b9c82d214eb3193853de",
+					"jsonFile" : "target-msaa-Debug-9f8971fbbb16ab0c9dd1.json",
+					"name" : "msaa",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "offscreen::@91b33b97678d17ce013a",
+					"jsonFile" : "target-offscreen-Debug-1137ba84890bfe2626fe.json",
+					"name" : "offscreen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "opacity::@b9c82d214eb3193853de",
+					"jsonFile" : "target-opacity-Debug-d98202b558c7c453279c.json",
+					"name" : "opacity",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "particles::@91b33b97678d17ce013a",
+					"jsonFile" : "target-particles-Debug-437be3206be33f991893.json",
+					"name" : "particles",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "reopen::@b9c82d214eb3193853de",
+					"jsonFile" : "target-reopen-Debug-6ff8613f06138f52b956.json",
+					"name" : "reopen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "sharing::@91b33b97678d17ce013a",
+					"jsonFile" : "target-sharing-Debug-eeef170ba01604cc2533.json",
+					"name" : "sharing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "simple::@91b33b97678d17ce013a",
+					"jsonFile" : "target-simple-Debug-9ab187cc477e1b358fbf.json",
+					"name" : "simple",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "splitview::@91b33b97678d17ce013a",
+					"jsonFile" : "target-splitview-Debug-8a9b061435973353ad33.json",
+					"name" : "splitview",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "tearing::@b9c82d214eb3193853de",
+					"jsonFile" : "target-tearing-Debug-0e10f8dcd1cfd0574d71.json",
+					"name" : "tearing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "threads::@b9c82d214eb3193853de",
+					"jsonFile" : "target-threads-Debug-8ef94e9177fbc4a85f7e.json",
+					"name" : "threads",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "timeout::@b9c82d214eb3193853de",
+					"jsonFile" : "target-timeout-Debug-6c6e15bee422e5e72666.json",
+					"name" : "timeout",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "title::@b9c82d214eb3193853de",
+					"jsonFile" : "target-title-Debug-ead521fe534b8ec69e23.json",
+					"name" : "title",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "triangle-vulkan::@b9c82d214eb3193853de",
+					"jsonFile" : "target-triangle-vulkan-Debug-988825a482b88761bc9f.json",
+					"name" : "triangle-vulkan",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "update_mappings::@12507ebf64a5258d241e",
+					"jsonFile" : "target-update_mappings-Debug-ed7dc6bb207721607fa4.json",
+					"name" : "update_mappings",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "util::@5865449b717dd869d2cd",
+					"jsonFile" : "target-util-Debug-9c908c49057fa331ddb0.json",
+					"name" : "util",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "wave::@91b33b97678d17ce013a",
+					"jsonFile" : "target-wave-Debug-dfde10846f04cf964373.json",
+					"name" : "wave",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "windows::@b9c82d214eb3193853de",
+					"jsonFile" : "target-windows-Debug-e2fb7ddb25b7e2173766.json",
+					"name" : "windows",
+					"projectIndex" : 1
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5,
+						6,
+						7,
+						8
+					],
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						4,
+						7
+					]
+				},
+				{
+					"build" : "glfw",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-glfw-Release-cf58ed5279965a2ab5ce.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "glfw",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "glfw/src",
+					"jsonFile" : "directory-glfw.src-Release-05cc6ab1369fc8fc5a1d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "glfw/src",
+					"targetIndexes" : 
+					[
+						15,
+						37
+					]
+				},
+				{
+					"build" : "glfw/examples",
+					"jsonFile" : "directory-glfw.examples-Release-2f5ed2d5c6ca7dee95c7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "glfw/examples",
+					"targetIndexes" : 
+					[
+						5,
+						13,
+						18,
+						25,
+						27,
+						29,
+						30,
+						31,
+						39
+					]
+				},
+				{
+					"build" : "glfw/tests",
+					"jsonFile" : "directory-glfw.tests-Release-d7846098afa25a1678ea.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "glfw/tests",
+					"targetIndexes" : 
+					[
+						6,
+						8,
+						9,
+						10,
+						12,
+						16,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						26,
+						28,
+						32,
+						33,
+						34,
+						35,
+						36,
+						40
+					]
+				},
+				{
+					"build" : "glad",
+					"jsonFile" : "directory-glad-Release-6aad498c2c8cd39e25f8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "glad",
+					"targetIndexes" : 
+					[
+						2,
+						14
+					]
+				},
+				{
+					"build" : "game",
+					"jsonFile" : "directory-game-Release-b67dffe3df9019a6d767.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "game",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"build" : "graphics",
+					"jsonFile" : "directory-graphics-Release-e53be08289d1beb6d2a1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "graphics",
+					"targetIndexes" : 
+					[
+						17
+					]
+				},
+				{
+					"build" : "util",
+					"jsonFile" : "directory-util-Release-88dfab35cbcc10198186.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "util",
+					"targetIndexes" : 
+					[
+						38
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						6,
+						7,
+						8
+					],
+					"name" : "mechfighter3000",
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						4,
+						7,
+						11,
+						17,
+						38
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "GLFW",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						5,
+						6,
+						8,
+						9,
+						10,
+						12,
+						13,
+						15,
+						16,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37,
+						39,
+						40
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "Glad",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2,
+						14
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Release-fae4faeb2278f3902547.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@eb154563b92743f6cbb3",
+					"jsonFile" : "target-ALL_BUILD-Release-b5665d92db4ea9ea8760.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@74ca6b3581f0d7366b1f",
+					"jsonFile" : "target-ALL_BUILD-Release-9a7da3101ddf6eb3e097.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "MechFighter3000::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MechFighter3000-Release-a6d8a9e0a44f8cee9cc8.json",
+					"name" : "MechFighter3000",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Release-80c7551749c9c87541bf.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "boing::@91b33b97678d17ce013a",
+					"jsonFile" : "target-boing-Release-de4f36f0ab06ff899915.json",
+					"name" : "boing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "clipboard::@b9c82d214eb3193853de",
+					"jsonFile" : "target-clipboard-Release-c86e09bb0dc6281428fa.json",
+					"name" : "clipboard",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "copy_resources::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-copy_resources-Release-3850ca11b82d04c97207.json",
+					"name" : "copy_resources",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "cursor::@b9c82d214eb3193853de",
+					"jsonFile" : "target-cursor-Release-5ff283c370d30290d1c5.json",
+					"name" : "cursor",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "empty::@b9c82d214eb3193853de",
+					"jsonFile" : "target-empty-Release-3e7c930b7de1d9ba7ae9.json",
+					"name" : "empty",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "events::@b9c82d214eb3193853de",
+					"jsonFile" : "target-events-Release-6a0a95f3ca8885e97dfc.json",
+					"name" : "events",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "game::@0c53ff3c4131f9152fd3",
+					"jsonFile" : "target-game-Release-3f522e40f52c66b494ee.json",
+					"name" : "game",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "gamma::@b9c82d214eb3193853de",
+					"jsonFile" : "target-gamma-Release-58b8b8828f6b84fd5a15.json",
+					"name" : "gamma",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gears::@91b33b97678d17ce013a",
+					"jsonFile" : "target-gears-Release-bf996fe1217faf8925f9.json",
+					"name" : "gears",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "glad::@74ca6b3581f0d7366b1f",
+					"jsonFile" : "target-glad-Release-42b84e291b4190487252.json",
+					"name" : "glad",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "glfw::@12507ebf64a5258d241e",
+					"jsonFile" : "target-glfw-Release-becdf60810f53c1b7723.json",
+					"name" : "glfw",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "glfwinfo::@b9c82d214eb3193853de",
+					"jsonFile" : "target-glfwinfo-Release-cf2a9a1d6fe06a0b5b55.json",
+					"name" : "glfwinfo",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "graphics::@708b9b26fb9b6631b242",
+					"jsonFile" : "target-graphics-Release-c919c303c0bc3c3199e8.json",
+					"name" : "graphics",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "heightmap::@91b33b97678d17ce013a",
+					"jsonFile" : "target-heightmap-Release-16bdc707911e07385671.json",
+					"name" : "heightmap",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "icon::@b9c82d214eb3193853de",
+					"jsonFile" : "target-icon-Release-e5b000dda2c474356b57.json",
+					"name" : "icon",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "iconify::@b9c82d214eb3193853de",
+					"jsonFile" : "target-iconify-Release-f2f4e1f35782ee164068.json",
+					"name" : "iconify",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "inputlag::@b9c82d214eb3193853de",
+					"jsonFile" : "target-inputlag-Release-292a3ec9a878badf00ee.json",
+					"name" : "inputlag",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "joysticks::@b9c82d214eb3193853de",
+					"jsonFile" : "target-joysticks-Release-9b4c7803f206208849ed.json",
+					"name" : "joysticks",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "monitors::@b9c82d214eb3193853de",
+					"jsonFile" : "target-monitors-Release-7dbeeed977f9258935e0.json",
+					"name" : "monitors",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "msaa::@b9c82d214eb3193853de",
+					"jsonFile" : "target-msaa-Release-6ee9220c85ae30abd945.json",
+					"name" : "msaa",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "offscreen::@91b33b97678d17ce013a",
+					"jsonFile" : "target-offscreen-Release-c3e4837b41f9bc0f08b3.json",
+					"name" : "offscreen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "opacity::@b9c82d214eb3193853de",
+					"jsonFile" : "target-opacity-Release-fccf2afa45e01185a449.json",
+					"name" : "opacity",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "particles::@91b33b97678d17ce013a",
+					"jsonFile" : "target-particles-Release-5eeae1bccff1a8837a41.json",
+					"name" : "particles",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "reopen::@b9c82d214eb3193853de",
+					"jsonFile" : "target-reopen-Release-88244838dd083d3f681f.json",
+					"name" : "reopen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "sharing::@91b33b97678d17ce013a",
+					"jsonFile" : "target-sharing-Release-81cad323839ca6ea1671.json",
+					"name" : "sharing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "simple::@91b33b97678d17ce013a",
+					"jsonFile" : "target-simple-Release-a3a0fdd97fc2b04b7481.json",
+					"name" : "simple",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "splitview::@91b33b97678d17ce013a",
+					"jsonFile" : "target-splitview-Release-afc6fd35dd720a3388a9.json",
+					"name" : "splitview",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "tearing::@b9c82d214eb3193853de",
+					"jsonFile" : "target-tearing-Release-f189979e6f8a6be200c2.json",
+					"name" : "tearing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "threads::@b9c82d214eb3193853de",
+					"jsonFile" : "target-threads-Release-3cb98065e68237ea3be7.json",
+					"name" : "threads",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "timeout::@b9c82d214eb3193853de",
+					"jsonFile" : "target-timeout-Release-55090675370d04959da8.json",
+					"name" : "timeout",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "title::@b9c82d214eb3193853de",
+					"jsonFile" : "target-title-Release-9d7773f60dd2842c48e5.json",
+					"name" : "title",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "triangle-vulkan::@b9c82d214eb3193853de",
+					"jsonFile" : "target-triangle-vulkan-Release-f7f4c369fc7d975db40b.json",
+					"name" : "triangle-vulkan",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "update_mappings::@12507ebf64a5258d241e",
+					"jsonFile" : "target-update_mappings-Release-ed7dc6bb207721607fa4.json",
+					"name" : "update_mappings",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "util::@5865449b717dd869d2cd",
+					"jsonFile" : "target-util-Release-d5fb45858efe56870b8c.json",
+					"name" : "util",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "wave::@91b33b97678d17ce013a",
+					"jsonFile" : "target-wave-Release-fd601c8a7bc784c18446.json",
+					"name" : "wave",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "windows::@b9c82d214eb3193853de",
+					"jsonFile" : "target-windows-Release-d9c31564e9e8b0eef492.json",
+					"name" : "windows",
+					"projectIndex" : 1
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5,
+						6,
+						7,
+						8
+					],
+					"jsonFile" : "directory-.-MinSizeRel-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						4,
+						7
+					]
+				},
+				{
+					"build" : "glfw",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-glfw-MinSizeRel-cf58ed5279965a2ab5ce.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "glfw",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "glfw/src",
+					"jsonFile" : "directory-glfw.src-MinSizeRel-05cc6ab1369fc8fc5a1d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "glfw/src",
+					"targetIndexes" : 
+					[
+						15,
+						37
+					]
+				},
+				{
+					"build" : "glfw/examples",
+					"jsonFile" : "directory-glfw.examples-MinSizeRel-2f5ed2d5c6ca7dee95c7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "glfw/examples",
+					"targetIndexes" : 
+					[
+						5,
+						13,
+						18,
+						25,
+						27,
+						29,
+						30,
+						31,
+						39
+					]
+				},
+				{
+					"build" : "glfw/tests",
+					"jsonFile" : "directory-glfw.tests-MinSizeRel-d7846098afa25a1678ea.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "glfw/tests",
+					"targetIndexes" : 
+					[
+						6,
+						8,
+						9,
+						10,
+						12,
+						16,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						26,
+						28,
+						32,
+						33,
+						34,
+						35,
+						36,
+						40
+					]
+				},
+				{
+					"build" : "glad",
+					"jsonFile" : "directory-glad-MinSizeRel-6aad498c2c8cd39e25f8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "glad",
+					"targetIndexes" : 
+					[
+						2,
+						14
+					]
+				},
+				{
+					"build" : "game",
+					"jsonFile" : "directory-game-MinSizeRel-b67dffe3df9019a6d767.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "game",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"build" : "graphics",
+					"jsonFile" : "directory-graphics-MinSizeRel-e53be08289d1beb6d2a1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "graphics",
+					"targetIndexes" : 
+					[
+						17
+					]
+				},
+				{
+					"build" : "util",
+					"jsonFile" : "directory-util-MinSizeRel-88dfab35cbcc10198186.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "util",
+					"targetIndexes" : 
+					[
+						38
+					]
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						6,
+						7,
+						8
+					],
+					"name" : "mechfighter3000",
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						4,
+						7,
+						11,
+						17,
+						38
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "GLFW",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						5,
+						6,
+						8,
+						9,
+						10,
+						12,
+						13,
+						15,
+						16,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37,
+						39,
+						40
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "Glad",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2,
+						14
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-fae4faeb2278f3902547.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@eb154563b92743f6cbb3",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-b5665d92db4ea9ea8760.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@74ca6b3581f0d7366b1f",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-9a7da3101ddf6eb3e097.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "MechFighter3000::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MechFighter3000-MinSizeRel-1075dbb3b3b1d246991a.json",
+					"name" : "MechFighter3000",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-80c7551749c9c87541bf.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "boing::@91b33b97678d17ce013a",
+					"jsonFile" : "target-boing-MinSizeRel-6d92e3f93884ddc57a69.json",
+					"name" : "boing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "clipboard::@b9c82d214eb3193853de",
+					"jsonFile" : "target-clipboard-MinSizeRel-f5adf30cb5e969f98dd8.json",
+					"name" : "clipboard",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "copy_resources::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-copy_resources-MinSizeRel-3850ca11b82d04c97207.json",
+					"name" : "copy_resources",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "cursor::@b9c82d214eb3193853de",
+					"jsonFile" : "target-cursor-MinSizeRel-116fa7773bac31ef3c3b.json",
+					"name" : "cursor",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "empty::@b9c82d214eb3193853de",
+					"jsonFile" : "target-empty-MinSizeRel-ea47dd309028b0a1f2a6.json",
+					"name" : "empty",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "events::@b9c82d214eb3193853de",
+					"jsonFile" : "target-events-MinSizeRel-8105d5c09fd4724e5e79.json",
+					"name" : "events",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "game::@0c53ff3c4131f9152fd3",
+					"jsonFile" : "target-game-MinSizeRel-1002305e811a7926ee45.json",
+					"name" : "game",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "gamma::@b9c82d214eb3193853de",
+					"jsonFile" : "target-gamma-MinSizeRel-3177f1126e9032a318e8.json",
+					"name" : "gamma",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gears::@91b33b97678d17ce013a",
+					"jsonFile" : "target-gears-MinSizeRel-14f3598a10ac5ad24875.json",
+					"name" : "gears",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "glad::@74ca6b3581f0d7366b1f",
+					"jsonFile" : "target-glad-MinSizeRel-277840bfefcbb4e2d9fa.json",
+					"name" : "glad",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "glfw::@12507ebf64a5258d241e",
+					"jsonFile" : "target-glfw-MinSizeRel-8e3a46bf29e2ebc59a23.json",
+					"name" : "glfw",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "glfwinfo::@b9c82d214eb3193853de",
+					"jsonFile" : "target-glfwinfo-MinSizeRel-ab5cb51908cd96f7048a.json",
+					"name" : "glfwinfo",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "graphics::@708b9b26fb9b6631b242",
+					"jsonFile" : "target-graphics-MinSizeRel-f986f55e06bdacb1a1c3.json",
+					"name" : "graphics",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "heightmap::@91b33b97678d17ce013a",
+					"jsonFile" : "target-heightmap-MinSizeRel-94e0a0b43c51bf380669.json",
+					"name" : "heightmap",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "icon::@b9c82d214eb3193853de",
+					"jsonFile" : "target-icon-MinSizeRel-2d8b9d578c45776811c2.json",
+					"name" : "icon",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "iconify::@b9c82d214eb3193853de",
+					"jsonFile" : "target-iconify-MinSizeRel-e4fef3f95be522e0b6bb.json",
+					"name" : "iconify",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "inputlag::@b9c82d214eb3193853de",
+					"jsonFile" : "target-inputlag-MinSizeRel-395d0c772679810e70fc.json",
+					"name" : "inputlag",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "joysticks::@b9c82d214eb3193853de",
+					"jsonFile" : "target-joysticks-MinSizeRel-cc5c0357ed62234cf06b.json",
+					"name" : "joysticks",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "monitors::@b9c82d214eb3193853de",
+					"jsonFile" : "target-monitors-MinSizeRel-7458e4a97a2f58e6b349.json",
+					"name" : "monitors",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "msaa::@b9c82d214eb3193853de",
+					"jsonFile" : "target-msaa-MinSizeRel-77023152870a1b2a1539.json",
+					"name" : "msaa",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "offscreen::@91b33b97678d17ce013a",
+					"jsonFile" : "target-offscreen-MinSizeRel-17d1e27f9b11d93fea0f.json",
+					"name" : "offscreen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "opacity::@b9c82d214eb3193853de",
+					"jsonFile" : "target-opacity-MinSizeRel-5e601bae7d76d1bcc3f0.json",
+					"name" : "opacity",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "particles::@91b33b97678d17ce013a",
+					"jsonFile" : "target-particles-MinSizeRel-75c6e729900cb908ffc9.json",
+					"name" : "particles",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "reopen::@b9c82d214eb3193853de",
+					"jsonFile" : "target-reopen-MinSizeRel-025d6927d470061e661b.json",
+					"name" : "reopen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "sharing::@91b33b97678d17ce013a",
+					"jsonFile" : "target-sharing-MinSizeRel-250d3173ac217257f2be.json",
+					"name" : "sharing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "simple::@91b33b97678d17ce013a",
+					"jsonFile" : "target-simple-MinSizeRel-eb8b14cbd541e0ca21d0.json",
+					"name" : "simple",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "splitview::@91b33b97678d17ce013a",
+					"jsonFile" : "target-splitview-MinSizeRel-a58e0151a47a7c60b768.json",
+					"name" : "splitview",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "tearing::@b9c82d214eb3193853de",
+					"jsonFile" : "target-tearing-MinSizeRel-18fe4a2a9d882f231c92.json",
+					"name" : "tearing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "threads::@b9c82d214eb3193853de",
+					"jsonFile" : "target-threads-MinSizeRel-193bc4304558711b848b.json",
+					"name" : "threads",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "timeout::@b9c82d214eb3193853de",
+					"jsonFile" : "target-timeout-MinSizeRel-bae4d22f94c8b0f30d18.json",
+					"name" : "timeout",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "title::@b9c82d214eb3193853de",
+					"jsonFile" : "target-title-MinSizeRel-679414c31377e995b125.json",
+					"name" : "title",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "triangle-vulkan::@b9c82d214eb3193853de",
+					"jsonFile" : "target-triangle-vulkan-MinSizeRel-a9f465d14dbbe0e8bbdb.json",
+					"name" : "triangle-vulkan",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "update_mappings::@12507ebf64a5258d241e",
+					"jsonFile" : "target-update_mappings-MinSizeRel-ed7dc6bb207721607fa4.json",
+					"name" : "update_mappings",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "util::@5865449b717dd869d2cd",
+					"jsonFile" : "target-util-MinSizeRel-078b890fd55ee9693dfe.json",
+					"name" : "util",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "wave::@91b33b97678d17ce013a",
+					"jsonFile" : "target-wave-MinSizeRel-0b59cd31d56e26001a20.json",
+					"name" : "wave",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "windows::@b9c82d214eb3193853de",
+					"jsonFile" : "target-windows-MinSizeRel-190343c167c58c1ed604.json",
+					"name" : "windows",
+					"projectIndex" : 1
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5,
+						6,
+						7,
+						8
+					],
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						4,
+						7
+					]
+				},
+				{
+					"build" : "glfw",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-glfw-RelWithDebInfo-cf58ed5279965a2ab5ce.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "glfw",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "glfw/src",
+					"jsonFile" : "directory-glfw.src-RelWithDebInfo-05cc6ab1369fc8fc5a1d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "glfw/src",
+					"targetIndexes" : 
+					[
+						15,
+						37
+					]
+				},
+				{
+					"build" : "glfw/examples",
+					"jsonFile" : "directory-glfw.examples-RelWithDebInfo-2f5ed2d5c6ca7dee95c7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "glfw/examples",
+					"targetIndexes" : 
+					[
+						5,
+						13,
+						18,
+						25,
+						27,
+						29,
+						30,
+						31,
+						39
+					]
+				},
+				{
+					"build" : "glfw/tests",
+					"jsonFile" : "directory-glfw.tests-RelWithDebInfo-d7846098afa25a1678ea.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "glfw/tests",
+					"targetIndexes" : 
+					[
+						6,
+						8,
+						9,
+						10,
+						12,
+						16,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						26,
+						28,
+						32,
+						33,
+						34,
+						35,
+						36,
+						40
+					]
+				},
+				{
+					"build" : "glad",
+					"jsonFile" : "directory-glad-RelWithDebInfo-6aad498c2c8cd39e25f8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "glad",
+					"targetIndexes" : 
+					[
+						2,
+						14
+					]
+				},
+				{
+					"build" : "game",
+					"jsonFile" : "directory-game-RelWithDebInfo-b67dffe3df9019a6d767.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "game",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"build" : "graphics",
+					"jsonFile" : "directory-graphics-RelWithDebInfo-e53be08289d1beb6d2a1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "graphics",
+					"targetIndexes" : 
+					[
+						17
+					]
+				},
+				{
+					"build" : "util",
+					"jsonFile" : "directory-util-RelWithDebInfo-88dfab35cbcc10198186.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "util",
+					"targetIndexes" : 
+					[
+						38
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						6,
+						7,
+						8
+					],
+					"name" : "mechfighter3000",
+					"targetIndexes" : 
+					[
+						0,
+						3,
+						4,
+						7,
+						11,
+						17,
+						38
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "GLFW",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						1,
+						5,
+						6,
+						8,
+						9,
+						10,
+						12,
+						13,
+						15,
+						16,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						24,
+						25,
+						26,
+						27,
+						28,
+						29,
+						30,
+						31,
+						32,
+						33,
+						34,
+						35,
+						36,
+						37,
+						39,
+						40
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "Glad",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2,
+						14
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-fae4faeb2278f3902547.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@eb154563b92743f6cbb3",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-b5665d92db4ea9ea8760.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@74ca6b3581f0d7366b1f",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-9a7da3101ddf6eb3e097.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "MechFighter3000::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MechFighter3000-RelWithDebInfo-bb24f01a242548242bd2.json",
+					"name" : "MechFighter3000",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-80c7551749c9c87541bf.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "boing::@91b33b97678d17ce013a",
+					"jsonFile" : "target-boing-RelWithDebInfo-78a73d5e752885c6d9bc.json",
+					"name" : "boing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "clipboard::@b9c82d214eb3193853de",
+					"jsonFile" : "target-clipboard-RelWithDebInfo-953135dcfc104a343f1f.json",
+					"name" : "clipboard",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "copy_resources::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-copy_resources-RelWithDebInfo-3850ca11b82d04c97207.json",
+					"name" : "copy_resources",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "cursor::@b9c82d214eb3193853de",
+					"jsonFile" : "target-cursor-RelWithDebInfo-3fe9ee09fa975f0556f3.json",
+					"name" : "cursor",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "empty::@b9c82d214eb3193853de",
+					"jsonFile" : "target-empty-RelWithDebInfo-54c7bcba272486529054.json",
+					"name" : "empty",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "events::@b9c82d214eb3193853de",
+					"jsonFile" : "target-events-RelWithDebInfo-f94887dcb29273e6623e.json",
+					"name" : "events",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "game::@0c53ff3c4131f9152fd3",
+					"jsonFile" : "target-game-RelWithDebInfo-3d87fdb8f854d944033a.json",
+					"name" : "game",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "gamma::@b9c82d214eb3193853de",
+					"jsonFile" : "target-gamma-RelWithDebInfo-a4fe3906dffc8fb718ae.json",
+					"name" : "gamma",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gears::@91b33b97678d17ce013a",
+					"jsonFile" : "target-gears-RelWithDebInfo-d1b2847e53f89d7d902e.json",
+					"name" : "gears",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "glad::@74ca6b3581f0d7366b1f",
+					"jsonFile" : "target-glad-RelWithDebInfo-08dc2fd3dca6c8deb256.json",
+					"name" : "glad",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "glfw::@12507ebf64a5258d241e",
+					"jsonFile" : "target-glfw-RelWithDebInfo-7b0cf51f3b29b711bd31.json",
+					"name" : "glfw",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "glfwinfo::@b9c82d214eb3193853de",
+					"jsonFile" : "target-glfwinfo-RelWithDebInfo-d2a3cecaebf7237ebadc.json",
+					"name" : "glfwinfo",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "graphics::@708b9b26fb9b6631b242",
+					"jsonFile" : "target-graphics-RelWithDebInfo-3e45fdf868429f79eab2.json",
+					"name" : "graphics",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "heightmap::@91b33b97678d17ce013a",
+					"jsonFile" : "target-heightmap-RelWithDebInfo-3db7bb042963ee25c54e.json",
+					"name" : "heightmap",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "icon::@b9c82d214eb3193853de",
+					"jsonFile" : "target-icon-RelWithDebInfo-3ed771fe43d060233486.json",
+					"name" : "icon",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "iconify::@b9c82d214eb3193853de",
+					"jsonFile" : "target-iconify-RelWithDebInfo-88756d5381c20f5408cf.json",
+					"name" : "iconify",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "inputlag::@b9c82d214eb3193853de",
+					"jsonFile" : "target-inputlag-RelWithDebInfo-eb6101431f2f46ae4abe.json",
+					"name" : "inputlag",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "joysticks::@b9c82d214eb3193853de",
+					"jsonFile" : "target-joysticks-RelWithDebInfo-46af119658dac6d87b66.json",
+					"name" : "joysticks",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "monitors::@b9c82d214eb3193853de",
+					"jsonFile" : "target-monitors-RelWithDebInfo-b64c540d3990157ac3d2.json",
+					"name" : "monitors",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "msaa::@b9c82d214eb3193853de",
+					"jsonFile" : "target-msaa-RelWithDebInfo-2c27d6f8a8c1345cd943.json",
+					"name" : "msaa",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "offscreen::@91b33b97678d17ce013a",
+					"jsonFile" : "target-offscreen-RelWithDebInfo-80437f666863d0476e4a.json",
+					"name" : "offscreen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "opacity::@b9c82d214eb3193853de",
+					"jsonFile" : "target-opacity-RelWithDebInfo-7306ed7d1dce54da9ef8.json",
+					"name" : "opacity",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "particles::@91b33b97678d17ce013a",
+					"jsonFile" : "target-particles-RelWithDebInfo-21a7aa47467a65ce04e5.json",
+					"name" : "particles",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "reopen::@b9c82d214eb3193853de",
+					"jsonFile" : "target-reopen-RelWithDebInfo-9cec73004a647e315e60.json",
+					"name" : "reopen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "sharing::@91b33b97678d17ce013a",
+					"jsonFile" : "target-sharing-RelWithDebInfo-cd6f7428ff382a84c5bf.json",
+					"name" : "sharing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "simple::@91b33b97678d17ce013a",
+					"jsonFile" : "target-simple-RelWithDebInfo-fdf3658d93b21065e996.json",
+					"name" : "simple",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "splitview::@91b33b97678d17ce013a",
+					"jsonFile" : "target-splitview-RelWithDebInfo-deb6247ba38e0d334fdc.json",
+					"name" : "splitview",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "tearing::@b9c82d214eb3193853de",
+					"jsonFile" : "target-tearing-RelWithDebInfo-7c560f96fb0ef7ca693a.json",
+					"name" : "tearing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "threads::@b9c82d214eb3193853de",
+					"jsonFile" : "target-threads-RelWithDebInfo-2253a03101f234196d15.json",
+					"name" : "threads",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "timeout::@b9c82d214eb3193853de",
+					"jsonFile" : "target-timeout-RelWithDebInfo-f3850760a1b5b054cd01.json",
+					"name" : "timeout",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "title::@b9c82d214eb3193853de",
+					"jsonFile" : "target-title-RelWithDebInfo-d2c6dba1a3032a0ee7ae.json",
+					"name" : "title",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "triangle-vulkan::@b9c82d214eb3193853de",
+					"jsonFile" : "target-triangle-vulkan-RelWithDebInfo-adf5837377f9f098b2f6.json",
+					"name" : "triangle-vulkan",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "update_mappings::@12507ebf64a5258d241e",
+					"jsonFile" : "target-update_mappings-RelWithDebInfo-ed7dc6bb207721607fa4.json",
+					"name" : "update_mappings",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "util::@5865449b717dd869d2cd",
+					"jsonFile" : "target-util-RelWithDebInfo-30e8c77c21f63e9d24d9.json",
+					"name" : "util",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "wave::@91b33b97678d17ce013a",
+					"jsonFile" : "target-wave-RelWithDebInfo-6d9480db7706b501839e.json",
+					"name" : "wave",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "windows::@b9c82d214eb3193853de",
+					"jsonFile" : "target-windows-RelWithDebInfo-ced6b7fd64457fb6eed6.json",
+					"name" : "windows",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/ruizm/mechfighter3000/build",
+		"source" : "C:/Users/ruizm/mechfighter3000"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

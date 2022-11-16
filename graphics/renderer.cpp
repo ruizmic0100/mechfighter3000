@@ -9,6 +9,22 @@
 const unsigned int width = 800;
 const unsigned int height = 800;
 
+// Takes care of the information needed to draw the windows.
+const unsigned int numWindows = 100;
+glm::vec3 positionsWin[numWindows];
+float rotationsWin[numWindows];
+
+// Takes care of drawing the windows in the right order.
+unsigned int orderDraw[numWindows];
+float distanceCamera[numWindows];
+
+// Compare function:
+int compare(const void* a, const void* b)
+{
+    double diff = distanceCamera[*(int*)b] - distanceCamera[*(int*)a];
+    return (0 < diff) - (diff < 0);
+}
+
 /**
  * @brief Steps taken to render the window.
  * 
@@ -36,18 +52,20 @@ int renderer()
 
     // Make the window's context current:
     glfwMakeContextCurrent(window);
-
     // Load GLAD so it configure opengl.
     gladLoadGL();
-
     // Specifying the viewport:
     glViewport(0, 0, width, height);
 
 
+
+
+
     // Generates Shader object using shaders default.vert and default.frag:
     Shader shaderProgram("graphics/shaders/default.vert", "graphics/shaders/default.frag");
-
-    Shader outliningProgram("graphics/shaders/outlining.vert", "graphics/shaders/outlining.frag");
+    Shader grassProgram("graphics/shaders/default.vert", "graphics/shaders/grass.frag");
+    Shader winProgram("graphics/shaders/default.vert", "graphics/shaders/windows.frag");
+    // Shader outliningProgram("graphics/shaders/outlining.vert", "graphics/shaders/outlining.frag");
 
     // Take care of all the light related things:
     glm::vec4 lightColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
@@ -58,31 +76,58 @@ int renderer()
     shaderProgram.Activate();
     glUniform4f(glGetUniformLocation(shaderProgram.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
     glUniform3f(glGetUniformLocation(shaderProgram.ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
+    grassProgram.Activate();
+    glUniform4f(glGetUniformLocation(grassProgram.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
+    glUniform3f(glGetUniformLocation(grassProgram.ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
 
     // Enables the depth buffer:
     glEnable(GL_DEPTH_TEST);
-
+    // Enables Cull Facing:
     glEnable(GL_CULL_FACE);
+    // Keeps front fraces.
     glCullFace(GL_FRONT);
+    // Uses counter clock-wise standard.
     glFrontFace(GL_CCW);
+    // Configures the blending function.
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     // glEnable(GL_STENCIL_TEST);
     // glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);
-    glDepthFunc(GL_LESS);
+    // glDepthFunc(GL_LESS);
 
+    // Creates camera object.
     Camera camera(width, height, glm::vec3(0.0f, 0.0f, 2.0f));
 
     // Relative path setup:
-    std::string parentModelDir = (std::filesystem::current_path().std::filesystem::path::parent_path()).string();
+    std::string parentDir = (std::filesystem::current_path().std::filesystem::path::parent_path()).string();
+    std::string groundPath = "/graphics/models/ground/scene.gltf";
     std::string modelPath = "/graphics/models/grindstone/scene.gltf";
+    std::string grassPath = "/graphics/models/grass/scene.gltf";
+    std::string winPath = "/graphics/models/windows/scene.gltf";
 
-    // Load in a model:
-    Model model((parentModelDir + modelPath).c_str());
+    // Load in models:
+    Model model((parentDir + modelPath).c_str());
+    Model ground((parentDir + groundPath).c_str());
+    Model grass((parentDir + grassPath).c_str());
+    Model windows((parentDir + winPath).c_str());
+
 
     double prevTime = 0.0;
     double currTime = 0.0;
     double timeDiff;
     unsigned int counter = 0;
+
+    // Generates all windows:
+    for (unsigned int i = 0; i < numWindows; i++) {
+        positionsWin[i] = glm::vec3 
+        (
+            -15.0f + static_cast<float> (rand()) / (static_cast<float> (RAND_MAX / (15.0f - (-15.0f)))),
+            1.0f + static_cast<float> (rand()) / (static_cast<float> (RAND_MAX / (4.0f - 1.0f))),
+            -15.0f + static_cast<float> (rand()) / (static_cast<float> (RAND_MAX / (15.0f - (-15.0f))))
+        );
+        rotationsWin[i] = static_cast<float> (rand()) / (static_cast<float> (RAND_MAX / 1.0f));
+        orderDraw[i] = i;
+    }
 
     // Loop until the user closes the window:
     while(!glfwWindowShouldClose(window)) {
@@ -102,8 +147,8 @@ int renderer()
         }
 
 
-        glClearColor(0.85f, 0.85f, 0.90f, 1.0f); // Color of the background.
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT); // Clean the back buffer and assign the new color to it.
+        glClearColor(0.07f, 0.13f, 0.17f, 1.0f); // Color of the background.
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Clean the back buffer and assign the new color to it.
 
         // Handles camera inputs:
         // NOTE: this might need to be placed in a time loop to make it not dependent on FPS.
@@ -114,7 +159,27 @@ int renderer()
         // Draw a model:
         // glStencilFunc(GL_ALWAYS, 1, 0xFF);
         // glStencilMask(0xFF);
+        ground.Draw(shaderProgram, camera);
         model.Draw(shaderProgram, camera);
+
+        // Disable cull face so that grass and windows have both faces:
+        glDisable(GL_CULL_FACE);
+        grass.Draw(grassProgram, camera);
+        // Enable blending for windows.
+        glEnable(GL_BLEND);
+        // Get distance from each window to the camera:
+        for (unsigned int i = 0; i < numWindows; i++) {
+            distanceCamera[i] = glm::length(camera.Position - positionsWin[i]);
+        }
+        // Sort windows by distance from camera.
+        qsort(orderDraw, numWindows, sizeof(unsigned int), compare);
+        // Draw windows:
+        for (unsigned int i = 0; i < numWindows; i++) {
+            windows.Draw(winProgram, camera, positionsWin[orderDraw[i]], glm::quat(1.0f, 0.0f, rotationsWin[orderDraw[i]], 0.0f));
+        }
+        glDisable(GL_BLEND);
+        glEnable(GL_CULL_FACE);
+        
 
         // glStencilFunc(GL_NOTEQUAL, 1, 0xFF);
         // glStencilMask(0x00);
@@ -125,7 +190,7 @@ int renderer()
 
         // glStencilMask(0xFF);
         // glStencilFunc(GL_ALWAYS, 0, 0xFF);
-        // glEnable(GL_DEPTH_TEST);
+        glEnable(GL_DEPTH_TEST);
 
         // Sawp the back buffer with the front buffer:
         glfwSwapBuffers(window);
@@ -136,6 +201,8 @@ int renderer()
 
     // Delete all the objects that were created:
     shaderProgram.Delete();
+    grassProgram.Delete();
+    winProgram.Delete();
     // Delete window before ending the program
     glfwDestroyWindow(window);
     // Terminate GLFW before ending the program.

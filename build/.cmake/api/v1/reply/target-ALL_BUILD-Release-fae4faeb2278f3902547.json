@@ -1,0 +1,145 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "MechFighter3000::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "particles::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "glfw::@12507ebf64a5258d241e"
+		},
+		{
+			"id" : "copy_resources::@6890427a1f51a3e7e1df"
+		},
+		{
+			"id" : "heightmap::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "offscreen::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "boing::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "gears::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "gamma::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "sharing::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "threads::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "simple::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "timeout::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "cursor::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "triangle-vulkan::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "windows::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "events::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "inputlag::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "glad::@74ca6b3581f0d7366b1f"
+		},
+		{
+			"id" : "monitors::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "title::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "icon::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "wave::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "clipboard::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "msaa::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "glfwinfo::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "reopen::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "empty::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "joysticks::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "tearing::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "splitview::@91b33b97678d17ce013a"
+		},
+		{
+			"id" : "iconify::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "opacity::@b9c82d214eb3193853de"
+		},
+		{
+			"id" : "game::@0c53ff3c4131f9152fd3"
+		},
+		{
+			"id" : "graphics::@708b9b26fb9b6631b242"
+		},
+		{
+			"id" : "util::@5865449b717dd869d2cd"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "CMakePredefinedTargets"
+	},
+	"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}
