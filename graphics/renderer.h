@@ -12,7 +12,7 @@
  *      SUBTASK: Create LOADOUT SCREEN
  *      SUBTASK: Create BATTLE SCREEN
  * TODO: Create Display State Manager
- * TODO: Create 
+ * TODO: Add underscores after each member variable.
  */
 
 #ifndef RENDERER_H

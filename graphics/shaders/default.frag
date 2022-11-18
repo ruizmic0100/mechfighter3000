@@ -39,11 +39,15 @@ vec4 pointLight()
     float diffuse = max(dot(normal, lightDirection), 0.0f);
 
     // specular lighting
-    float specularLight = 0.50f;
-    vec3 viewDirection = normalize(camPos - crntPos);
-    vec3 reflectionDirection = reflect(-lightDirection, normal);
-    float specAmount = pow(max(dot(viewDirection, reflectionDirection), 0.0f), 20);
-    float specular = specAmount * specularLight;
+    float specular = 0.0f;
+    if (diffuse != 0.0f)
+    {
+        float specularLight = 0.50f;
+        vec3 viewDirection = normalize(camPos - crntPos);
+        vec3 halfwayVec = normalize(viewDirection + lightDirection);
+        float specAmount = pow(max(dot(normal, halfwayVec), 0.0f), 16);
+        float specular = specAmount * specularLight;
+    }
     return (texture(diffuse0, texCoord) * (diffuse * inten + ambient) + texture(specular0, texCoord).r * specular * inten) * lightColor;
 }
 
@@ -58,11 +62,15 @@ vec4 directLight()
     float diffuse = max(dot(normal, lightDirection), 0.0f);
 
     // specular lighting
-    float specularLight = 0.50f;
-    vec3 viewDirection = normalize(camPos - crntPos);
-    vec3 reflectionDirection = reflect(-lightDirection, normal);
-    float specAmount = pow(max(dot(viewDirection, reflectionDirection), 0.0f), 16);
-    float specular = specAmount * specularLight;
+    float specular = 0.0f;
+    if (diffuse != 0.0f)
+    {
+        float specularLight = 0.50f;
+        vec3 viewDirection = normalize(camPos - crntPos);
+        vec3 halfwayVec = normalize(viewDirection + lightDirection);
+        float specAmount = pow(max(dot(normal, halfwayVec), 0.0f), 16);
+        float specular = specAmount * specularLight;
+    }
     return (texture(diffuse0, texCoord) * (diffuse + ambient) + texture(specular0, texCoord).r * specular) * lightColor;
 }
 
@@ -80,11 +88,15 @@ vec4 spotLight()
     float diffuse = max(dot(normal, lightDirection), 0.0f);
 
     // specular lighting
-    float specularLight = 0.03f;
-    vec3 viewDirection = normalize(camPos - crntPos);
-    vec3 reflectionDirection = reflect(-lightDirection, normal);
-    float specAmount = pow(max(dot(viewDirection, reflectionDirection), 0.0f), 16);
-    float specular = specAmount * specularLight;
+    float specular = 0.0f;
+    if (diffuse != 0.0f)
+    {
+        float specularLight = 0.50f;
+        vec3 viewDirection = normalize(camPos - crntPos);
+        vec3 halfwayVec = normalize(viewDirection + lightDirection);
+        float specAmount = pow(max(dot(normal, halfwayVec), 0.0f), 16);
+        float specular = specAmount * specularLight;
+    }
 
     float angle = dot(vec3(0.0f, -1.0f, 0.0f), -lightDirection);
     float inten = clamp((angle - outerCone) / (innerCone - outerCone), 0.0f, 1.0f);
@@ -114,5 +126,5 @@ void main()
     // Used for fog of war.
     // float depth = logisticDepth(gl_FragCoord.z);
     // FragColor = directLight() * (1.0f - depth) + vec4(depth * vec3(0.85f, 0.85f, 0.90f), 1.0f);
-    FragColor = directLight();
+    FragColor = pointLight();
 }

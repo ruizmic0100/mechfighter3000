@@ -1,63 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\ruizm\mechfighter3000\graphics\renderer.cpp">
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\Renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ruizm\mechfighter3000\graphics\EBO.cpp">
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\EBO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ruizm\mechfighter3000\graphics\VAO.cpp">
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\VAO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ruizm\mechfighter3000\graphics\VBO.cpp">
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\VBO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ruizm\mechfighter3000\graphics\shaderClass.cpp">
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\ShaderClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ruizm\mechfighter3000\graphics\stb.cpp">
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\stb.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ruizm\mechfighter3000\graphics\Texture.cpp">
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\Texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ruizm\mechfighter3000\graphics\Camera.cpp">
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ruizm\mechfighter3000\graphics\Mesh.cpp">
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\Mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\ruizm\mechfighter3000\graphics\Model.cpp">
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Michael\mechfighter3000\graphics\LightCube.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\ruizm\mechfighter3000\graphics\EBO.h">
+    <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\EBO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\ruizm\mechfighter3000\graphics\VAO.h">
+    <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\VAO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\ruizm\mechfighter3000\graphics\VBO.h">
+    <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\VBO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\ruizm\mechfighter3000\graphics\shaderClass.h">
+    <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\ShaderClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\ruizm\mechfighter3000\graphics\renderer.h">
+    <ClInclude Include="C:\Users\Michael\mechfighter3000\graphics\Renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\ruizm\mechfighter3000\graphics\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\Michael\mechfighter3000\graphics\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{0F25DB6C-20BE-3010-9BF6-385F8FB18231}</UniqueIdentifier>
+      <UniqueIdentifier>{772D2D17-0944-3A94-9999-F5DAA4DAA6E1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{F5E5E928-5566-3601-B552-369676FA0243}</UniqueIdentifier>
+      <UniqueIdentifier>{FBD3C00C-87B8-38E4-B9E5-7019C95BEA71}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

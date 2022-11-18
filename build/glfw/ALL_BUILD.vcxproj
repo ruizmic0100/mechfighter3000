@@ -1,57 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PreferredToolArchitecture>x86</PreferredToolArchitecture>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
   </PropertyGroup>
   <PropertyGroup>
     <ResolveNugetPackages>false</ResolveNugetPackages>
   </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
-    <ProjectConfiguration Include="Debug|win32">
+    <ProjectConfiguration Include="Debug|x64">
       <Configuration>Debug</Configuration>
-      <Platform>win32</Platform>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Release|win32">
+    <ProjectConfiguration Include="Release|x64">
       <Configuration>Release</Configuration>
-      <Platform>win32</Platform>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="MinSizeRel|win32">
+    <ProjectConfiguration Include="MinSizeRel|x64">
       <Configuration>MinSizeRel</Configuration>
-      <Platform>win32</Platform>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="RelWithDebInfo|win32">
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
       <Configuration>RelWithDebInfo</Configuration>
-      <Platform>win32</Platform>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{A775DF8C-FDE1-3611-A7D3-9B3F73747F23}</ProjectGuid>
+    <ProjectGuid>{29AC7058-00A9-374C-A64B-C9DD5B95550E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
-    <Platform>win32</Platform>
+    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
     <ProjectName>ALL_BUILD</ProjectName>
     <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
     <ConfigurationType>Utility</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -62,12 +62,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
@@ -77,7 +77,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
@@ -87,7 +87,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <Midl>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
@@ -97,7 +97,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <Midl>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
@@ -108,11 +108,11 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\ruizm\mechfighter3000\glfw\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\Michael\mechfighter3000\glfw\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">Building Custom Rule C:/Users/ruizm/mechfighter3000/glfw/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/ruizm/mechfighter3000 -BC:/Users/ruizm/mechfighter3000/build --check-stamp-file C:/Users/ruizm/mechfighter3000/build/glfw/CMakeFiles/generate.stamp
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Michael/mechfighter3000/glfw/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Michael/mechfighter3000 -BC:/Users/Michael/mechfighter3000/build --check-stamp-file C:/Users/Michael/mechfighter3000/build/glfw/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -120,12 +120,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Program Files\CMake\share\cmake-3.25\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\ruizm\mechfighter3000\glfw\src\glfw3.pc.in;C:\Users\ruizm\mechfighter3000\glfw\src\glfw3Config.cmake.in;C:\Users\ruizm\mechfighter3000\glfw\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">C:\Users\ruizm\mechfighter3000\build\glfw\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|win32'">Building Custom Rule C:/Users/ruizm/mechfighter3000/glfw/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/ruizm/mechfighter3000 -BC:/Users/ruizm/mechfighter3000/build --check-stamp-file C:/Users/ruizm/mechfighter3000/build/glfw/CMakeFiles/generate.stamp
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.25\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\Michael\mechfighter3000\glfw\src\glfw3.pc.in;C:\Users\Michael\mechfighter3000\glfw\src\glfw3Config.cmake.in;C:\Users\Michael\mechfighter3000\glfw\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Michael\mechfighter3000\build\glfw\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Michael/mechfighter3000/glfw/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Michael/mechfighter3000 -BC:/Users/Michael/mechfighter3000/build --check-stamp-file C:/Users/Michael/mechfighter3000/build/glfw/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -133,12 +133,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Program Files\CMake\share\cmake-3.25\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\ruizm\mechfighter3000\glfw\src\glfw3.pc.in;C:\Users\ruizm\mechfighter3000\glfw\src\glfw3Config.cmake.in;C:\Users\ruizm\mechfighter3000\glfw\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|win32'">C:\Users\ruizm\mechfighter3000\build\glfw\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">Building Custom Rule C:/Users/ruizm/mechfighter3000/glfw/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/ruizm/mechfighter3000 -BC:/Users/ruizm/mechfighter3000/build --check-stamp-file C:/Users/ruizm/mechfighter3000/build/glfw/CMakeFiles/generate.stamp
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.25\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\Michael\mechfighter3000\glfw\src\glfw3.pc.in;C:\Users\Michael\mechfighter3000\glfw\src\glfw3Config.cmake.in;C:\Users\Michael\mechfighter3000\glfw\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Michael\mechfighter3000\build\glfw\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Michael/mechfighter3000/glfw/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Michael/mechfighter3000 -BC:/Users/Michael/mechfighter3000/build --check-stamp-file C:/Users/Michael/mechfighter3000/build/glfw/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -146,12 +146,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">C:\Program Files\CMake\share\cmake-3.25\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\ruizm\mechfighter3000\glfw\src\glfw3.pc.in;C:\Users\ruizm\mechfighter3000\glfw\src\glfw3Config.cmake.in;C:\Users\ruizm\mechfighter3000\glfw\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">C:\Users\ruizm\mechfighter3000\build\glfw\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">Building Custom Rule C:/Users/ruizm/mechfighter3000/glfw/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/ruizm/mechfighter3000 -BC:/Users/ruizm/mechfighter3000/build --check-stamp-file C:/Users/ruizm/mechfighter3000/build/glfw/CMakeFiles/generate.stamp
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.25\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\Michael\mechfighter3000\glfw\src\glfw3.pc.in;C:\Users\Michael\mechfighter3000\glfw\src\glfw3Config.cmake.in;C:\Users\Michael\mechfighter3000\glfw\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Michael\mechfighter3000\build\glfw\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Michael/mechfighter3000/glfw/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Michael/mechfighter3000 -BC:/Users/Michael/mechfighter3000/build --check-stamp-file C:/Users/Michael/mechfighter3000/build/glfw/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -159,138 +159,138 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">C:\Program Files\CMake\share\cmake-3.25\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\ruizm\mechfighter3000\glfw\src\glfw3.pc.in;C:\Users\ruizm\mechfighter3000\glfw\src\glfw3Config.cmake.in;C:\Users\ruizm\mechfighter3000\glfw\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">C:\Users\ruizm\mechfighter3000\build\glfw\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|win32'">false</LinkObjects>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.25\Modules\BasicConfigVersion-SameMajorVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.25\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\Michael\mechfighter3000\glfw\src\glfw3.pc.in;C:\Users\Michael\mechfighter3000\glfw\src\glfw3Config.cmake.in;C:\Users\Michael\mechfighter3000\glfw\src\glfw_config.h.in;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Michael\mechfighter3000\build\glfw\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\ZERO_CHECK.vcxproj">
-      <Project>{2B1528DB-327E-3345-AEB1-146F1161EDD7}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\ZERO_CHECK.vcxproj">
+      <Project>{2E442467-91EB-3F04-8630-F409467BC5F4}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\examples\boing.vcxproj">
-      <Project>{C4787EDA-27C1-3A6D-8FFC-CDB2DAB914A3}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\examples\boing.vcxproj">
+      <Project>{51EB6CFB-57C6-37D8-BB64-AC5D18E809AF}</Project>
       <Name>boing</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\clipboard.vcxproj">
-      <Project>{F4B3D1BC-44E9-38B1-9FD7-B0F8A92EFB25}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\clipboard.vcxproj">
+      <Project>{42D5990F-F059-33CC-8903-46AD56C846FC}</Project>
       <Name>clipboard</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\cursor.vcxproj">
-      <Project>{8325FE54-76A5-3688-8534-7FE8D84E588A}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\cursor.vcxproj">
+      <Project>{F9165090-5BDC-35D7-BC19-DBF6AEEC3F6C}</Project>
       <Name>cursor</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\empty.vcxproj">
-      <Project>{6176ACC3-16C3-3755-8991-0533364A5752}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\empty.vcxproj">
+      <Project>{19FC2EA2-66E7-3622-BA5A-351C355940DC}</Project>
       <Name>empty</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\events.vcxproj">
-      <Project>{9E2D14F5-A0B2-337F-94E9-9F4E9BE4FAFB}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\events.vcxproj">
+      <Project>{05F35F13-C651-35D0-8446-653BACF7BDDB}</Project>
       <Name>events</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\gamma.vcxproj">
-      <Project>{A94D5962-1C1A-3D1B-A591-0FC8A7DCDF4B}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\gamma.vcxproj">
+      <Project>{EFB28E24-7643-33CC-B8CF-4B10C53BC0C7}</Project>
       <Name>gamma</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\examples\gears.vcxproj">
-      <Project>{B3319422-E0DF-337A-BE62-7C0A14CC47AA}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\examples\gears.vcxproj">
+      <Project>{3DD7B60D-DE2F-3B71-9FB6-0C9895716E7B}</Project>
       <Name>gears</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\src\glfw.vcxproj">
-      <Project>{EC1CFB9D-A617-365C-841B-B573EFE5D8FE}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\src\glfw.vcxproj">
+      <Project>{AFF0FF34-9072-3120-955B-B4EEDB03E863}</Project>
       <Name>glfw</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\glfwinfo.vcxproj">
-      <Project>{87922668-9BB5-3FC8-843D-3578D65BB99B}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\glfwinfo.vcxproj">
+      <Project>{A09462BD-B0C1-31D6-9CAE-D4CDD97BBC9B}</Project>
       <Name>glfwinfo</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\examples\heightmap.vcxproj">
-      <Project>{EA4B22DF-5707-345C-95EA-34FF72EEDBCD}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\examples\heightmap.vcxproj">
+      <Project>{A46DCA6D-7C8A-3F67-BD5A-CD134BEEDC15}</Project>
       <Name>heightmap</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\icon.vcxproj">
-      <Project>{08DB535F-9D65-3D4A-B4C4-96B45C907587}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\icon.vcxproj">
+      <Project>{845AAE48-2764-33E7-B685-A7A82EF36210}</Project>
       <Name>icon</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\iconify.vcxproj">
-      <Project>{3C8CCD51-656C-3532-BBAE-BE88B5D05A7F}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\iconify.vcxproj">
+      <Project>{52122811-589E-305E-91A5-B20CC55251D0}</Project>
       <Name>iconify</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\inputlag.vcxproj">
-      <Project>{56655E6C-296D-3335-8426-508D6D4FBB3C}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\inputlag.vcxproj">
+      <Project>{3C49A884-A5C8-3C2D-90FA-4905030F3718}</Project>
       <Name>inputlag</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\joysticks.vcxproj">
-      <Project>{C42DF926-53AD-3C30-9C37-47AAA9B848F7}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\joysticks.vcxproj">
+      <Project>{8E1C854C-57FD-31D4-8633-8FC87C579B8F}</Project>
       <Name>joysticks</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\monitors.vcxproj">
-      <Project>{EE7D2C92-81EA-3842-88D8-F5A01A9A2849}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\monitors.vcxproj">
+      <Project>{537C4B64-894F-3363-9E78-0B2B50A76F64}</Project>
       <Name>monitors</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\msaa.vcxproj">
-      <Project>{4D19196B-322B-3C07-8679-69B4646C067F}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\msaa.vcxproj">
+      <Project>{D4911FA2-6BC9-30F8-A174-E61A7442BB05}</Project>
       <Name>msaa</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\examples\offscreen.vcxproj">
-      <Project>{1BF58271-0AB3-392E-A29B-680E29C7CC8F}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\examples\offscreen.vcxproj">
+      <Project>{3C1E16B8-371B-3515-AFF3-9BC18F536E42}</Project>
       <Name>offscreen</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\opacity.vcxproj">
-      <Project>{CF0076A9-CD40-322A-A10D-2A372EC9B0DB}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\opacity.vcxproj">
+      <Project>{DF1AB71B-457A-3EF3-ADF4-BEA5E2D4E810}</Project>
       <Name>opacity</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\examples\particles.vcxproj">
-      <Project>{9DC483DB-C055-355B-ABFE-7D7A9CA0C3A8}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\examples\particles.vcxproj">
+      <Project>{6737366E-0A99-3E10-A66E-0FC4A1344760}</Project>
       <Name>particles</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\reopen.vcxproj">
-      <Project>{46DB9757-9B37-30C4-9C65-D47920F4AAD0}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\reopen.vcxproj">
+      <Project>{D7199686-C4F1-3231-B77A-530018D7A184}</Project>
       <Name>reopen</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\examples\sharing.vcxproj">
-      <Project>{DFAC2A7D-B9CA-30E4-A18A-09D65094F596}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\examples\sharing.vcxproj">
+      <Project>{3A632E6A-A6C6-3B7A-AFBA-AC2FA9F75994}</Project>
       <Name>sharing</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\examples\simple.vcxproj">
-      <Project>{D576C26E-BBA6-34ED-B1AE-13943EFAC37A}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\examples\simple.vcxproj">
+      <Project>{73DFA39E-5E52-3B58-80B6-9C058EC850CB}</Project>
       <Name>simple</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\examples\splitview.vcxproj">
-      <Project>{73BD41C6-5B7C-3F35-8481-BECC19510354}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\examples\splitview.vcxproj">
+      <Project>{51C88A6E-D378-30E7-B62A-27FA3D880DBD}</Project>
       <Name>splitview</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\tearing.vcxproj">
-      <Project>{55CB73C6-8245-3865-A59D-51CE8D341DB8}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\tearing.vcxproj">
+      <Project>{757388EE-A25E-3384-81C9-1DDB5C30ACF2}</Project>
       <Name>tearing</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\threads.vcxproj">
-      <Project>{41B73B99-6DB5-3665-9552-6C391F8E9887}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\threads.vcxproj">
+      <Project>{F8A45366-F98F-3DEB-A398-A361E4A5B1A1}</Project>
       <Name>threads</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\timeout.vcxproj">
-      <Project>{DDC31595-8D7A-3257-A0C6-5FA3009575CE}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\timeout.vcxproj">
+      <Project>{6F8FFAF7-4A82-3136-9F4A-4E2B26741E7E}</Project>
       <Name>timeout</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\title.vcxproj">
-      <Project>{E8125892-7E7E-3271-8C6B-8F76717D9C2A}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\title.vcxproj">
+      <Project>{3B126CA4-9645-36D0-9DB3-48AEC4602AE6}</Project>
       <Name>title</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\triangle-vulkan.vcxproj">
-      <Project>{27B67592-C4DA-3C62-90BE-5C22473CEFEB}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\triangle-vulkan.vcxproj">
+      <Project>{1F953A91-AFEA-3C4E-88A5-CDDD1C0B12F9}</Project>
       <Name>triangle-vulkan</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\examples\wave.vcxproj">
-      <Project>{B8386D9B-EF41-34A4-9044-C93453D1E31C}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\examples\wave.vcxproj">
+      <Project>{942B3EE1-CFED-3B85-85C4-3B8C7CBDE3D5}</Project>
       <Name>wave</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\ruizm\mechfighter3000\build\glfw\tests\windows.vcxproj">
-      <Project>{14F9355B-2EAE-3346-BCD7-874763A35AF1}</Project>
+    <ProjectReference Include="C:\Users\Michael\mechfighter3000\build\glfw\tests\windows.vcxproj">
+      <Project>{40FEC8E8-D05A-39A9-9616-F6C12C35FF97}</Project>
       <Name>windows</Name>
     </ProjectReference>
   </ItemGroup>

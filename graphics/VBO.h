@@ -17,8 +17,12 @@ class VBO
 {
 
     public:
+        // Reference ID of the vertex buffer object.
         GLuint ID;
+        // Contructor that gerneates a Vertex Buffer Object and links it to vertices.
+        VBO(GLfloat* vertices, GLsizeiptr size);
         VBO(std::vector<Vertex>& vertices);
+        VBO(std::vector<glm::mat4>& mat4s);
 
         void Bind();
         void Unbind();

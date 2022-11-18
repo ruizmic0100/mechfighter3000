@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\ruizm\mechfighter3000\build\CMakeFiles\187ff0ea36ae5caf7f30e145912f2ee5\update_mappings.rule">
+    <CustomBuild Include="C:\Users\Michael\mechfighter3000\build\CMakeFiles\b05967bebdfc11822c202d454d4b8206\update_mappings.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\ruizm\mechfighter3000\glfw\src\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\Michael\mechfighter3000\glfw\src\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Users\ruizm\mechfighter3000\glfw\src\mappings.h.in">
+    <None Include="C:\Users\Michael\mechfighter3000\glfw\src\mappings.h.in">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="C:\Users\ruizm\mechfighter3000\glfw\CMake\GenerateMappings.cmake" />
-    <None Include="C:\Users\ruizm\mechfighter3000\build\glfw\src\CMakeFiles\update_mappings" />
+    <None Include="C:\Users\Michael\mechfighter3000\glfw\CMake\GenerateMappings.cmake" />
+    <None Include="C:\Users\Michael\mechfighter3000\build\glfw\src\CMakeFiles\update_mappings" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{5E039E6D-406E-3547-963F-7E7CC9A9F9C5}</UniqueIdentifier>
+      <UniqueIdentifier>{59A8BB84-5A49-390D-8204-90AB17FFF998}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{0F25DB6C-20BE-3010-9BF6-385F8FB18231}</UniqueIdentifier>
+      <UniqueIdentifier>{772D2D17-0944-3A94-9999-F5DAA4DAA6E1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
