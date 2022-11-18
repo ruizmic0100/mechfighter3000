@@ -2,10 +2,20 @@
 #include <windows.h>
 #endif
 
+#include "../imgui/imgui.h"
+#include "../imgui/imgui_impl_glfw.h"
+#include "../imgui/imgui_impl_opengl3.h"
+
 #include <filesystem>
 #include "math.h"
 #include "Model.h"
 #include "LightCube.h"
+
+#include "../game/Mech_Factory.h"
+
+
+// TODO: ADD inputhandler for both imgui and my application. https://github.com/ocornut/imgui/blob/master/docs/FAQ.md#q-how-can-i-tell-whether-to-dispatch-mousekeyboard-to-dear-imgui-or-my-application:~:text=Q%3A%20How%20can%20I%20tell%20whether%20to%20dispatch%20mouse/keyboard%20to%20Dear%20ImGui%20or%20my%20application%3F
+// TODO: Add render dispatcher. It should take care of what gets updated to our next frame.
 
 // Screen dimensions.
 const unsigned int width = 800;
@@ -52,6 +62,8 @@ float randf()
  */
 int renderer()
 {
+    const char* glsl_version = "#version 130";
+
     // Initialize the library.
     if (!glfwInit())
         return -1;
@@ -77,6 +89,20 @@ int renderer()
     // Specifying the viewport:
     glViewport(0, 0, width, height);
 
+    // Setup Dear ImGui context:
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGuiIO& io = ImGui::GetIO(); (void) io;
+    //io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard; // Enable Keyboard Controls
+    
+    // Setup Dear ImGui Style:
+    ImGui::StyleColorsDark();
+    
+    // Setup Platform/Renderer backends:
+    ImGui_ImplGlfw_InitForOpenGL(window, true);
+    ImGui_ImplOpenGL3_Init(glsl_version);
+
+    // TODO: Load Fonts Section
 
 
     // Generates Shader object using shaders default.vert and default.frag:
@@ -161,6 +187,14 @@ int renderer()
     double timeDiff;
     unsigned int counter = 0;
 
+    // Our ImGui State.
+    bool show_demo_window = true;
+    bool show_another_window = false;
+    ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
+
+    // Dev Frame init
+    Frame dev_frame = dev_mech_frame_init();
+
 
     // Loop until the user closes the window:
     while(!glfwWindowShouldClose(window)) {
@@ -220,16 +254,72 @@ int renderer()
         // Render light cube:
         lightcubeinst_1.renderLightCube(camera);
 
-        // Sawp the back buffer with the front buffer:
-        glfwSwapBuffers(window);
+        // Used to capture mouse/keyboard inputs for ImGui and not dispatch input data to main application.
+        io.WantCaptureMouse = true;
 
         // Poll for and process events(Refreshes the window basically):
         glfwPollEvents();
+
+
+        // Start the Dear ImGui Frame:
+        ImGui_ImplOpenGL3_NewFrame();
+        ImGui_ImplGlfw_NewFrame();
+        ImGui::NewFrame();
+
+        // Show a simple window. We use a Begin/End pair to create a named window.
+        {
+            static float f = 0.0f;
+            static int counter = 0;
+
+            ImGui::Begin("Mech Data"); // Create a window called "Hello, World" and append into it.
+            
+            ImGui::Text("Dev Mech"); // Display some text (you can use a format strings too).
+            ImGui::Checkbox("Mech Data Window", &show_demo_window); // Edit bools storing our window open/close state.
+            ImGui::Checkbox("Inventory", &show_another_window);
+
+            ImGui::SliderFloat("float", &f, 0.0f, 1.0f); // Edit 1 float using a slider from 0.0f to 1.0f.
+            ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color.
+
+            if (ImGui::Button("Increase Stat"))        // Buttons return true when clicked (most widgets return true when editted/activated).
+                counter++;
+            
+            ImGui::SameLine();
+            ImGui::Text("counter = %d", counter);
+
+            ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+            ImGui::Text("Name: %s", dev_frame.Name_.c_str());
+            ImGui::Text("Manufacturer: %s", dev_frame.Manufacturer_.c_str());
+            ImGui::Text("Identifier: %s", dev_frame.Identifier_.c_str());
+            ImGui::Text("Price: %d", dev_frame.Price_);
+            ImGui::Text("Name: %d", dev_frame.Weight_);
+            ImGui::Text("Ballistic Defense: %i", dev_frame.Defenses_.ballisticDefense);
+            ImGui::Text("Energy Defense: %i", dev_frame.Defenses_.energyDefense);
+            ImGui::End();
+        }
+
+        if (show_another_window) {
+            ImGui::Begin("Another Window", &show_another_window); // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool)
+            ImGui::Text("Hello from another window!");
+            if (ImGui::Button("Close Me!"))
+                show_another_window = false;
+            ImGui::End();
+        }
+
+        ImGui::Render();
+
+        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+        // Sawp the back buffer with the front buffer:
+        glfwSwapBuffers(window);
     }
 
     // Delete all the objects that were created:
     shaderProgram.Delete();
     grassProgram.Delete();
+    // TODO: Call LightCube.Delete() here.
+    ImGui_ImplOpenGL3_Shutdown();
+    ImGui_ImplGlfw_Shutdown();
+    ImGui::DestroyContext();
     // Delete window before ending the program
     glfwDestroyWindow(window);
     // Terminate GLFW before ending the program.

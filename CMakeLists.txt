@@ -20,6 +20,7 @@ add_subdirectory( glad )
 add_subdirectory( game )
 add_subdirectory( graphics )
 add_subdirectory( util )
+add_subdirectory( imgui )
 
 set( GLFW-CMAKE-MECHFIGHTER-SRC ./game/MechFighter.cpp )
 

@@ -1,1 +1,1 @@
-add_library( game GameEventHandler.cpp Player.cpp )
+add_library( game GameEventHandler.cpp Player.cpp Mech_Factory.cpp )

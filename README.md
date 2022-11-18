@@ -35,5 +35,14 @@ Then proceed to run the project using visual studio's debugger.
 ### Things To Note
 Might need to compile stb atleast once before running.
 
+## Technologies
+
+1. OpenGL3
+2. GLFW
+3. GLAD
+4. STB
+5. IMGUI
+
+
 ## Contributing
 (WIP)
