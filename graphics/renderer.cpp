@@ -80,22 +80,18 @@ int renderer()
 
 
     // Generates Shader object using shaders default.vert and default.frag:
+    LightCube lightcubeinst_1(10);
+    lightcubeinst_1.createLightCube();
     Shader shaderProgram("graphics/shaders/default.vert", "graphics/shaders/default.frag");
     Shader grassProgram("graphics/shaders/default.vert", "graphics/shaders/grass.frag");
     // Shader framebufferProgram("graphics/shaders/framebuffer.vert", "graphics/shaders/framebuffer.frag");
 
-    // Take care of all the light related things:
-    glm::vec4 lightColor = glm::vec4(1.0f, 1.0f, 1.0f, 1.0f);
-    glm::vec3 lightPos = glm::vec3(0.5f, 0.5f, 0.5f);
-    glm::mat4 lightModel = glm::mat4(1.0f);
-    lightModel = glm::translate(lightModel, lightPos);
-
     shaderProgram.Activate();
-    glUniform4f(glGetUniformLocation(shaderProgram.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
-    glUniform3f(glGetUniformLocation(shaderProgram.ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
+    glUniform4f(glGetUniformLocation(shaderProgram.ID, "lightColor"), lightcubeinst_1.lightColor_.x, lightcubeinst_1.lightColor_.y, lightcubeinst_1.lightColor_.z, lightcubeinst_1.lightColor_.w);
+    glUniform3f(glGetUniformLocation(shaderProgram.ID, "lightPos"), lightcubeinst_1.lightColor_.x, lightcubeinst_1.lightColor_.y, lightcubeinst_1.lightColor_.z);
     grassProgram.Activate();
-    glUniform4f(glGetUniformLocation(grassProgram.ID, "lightColor"), lightColor.x, lightColor.y, lightColor.z, lightColor.w);
-    glUniform3f(glGetUniformLocation(grassProgram.ID, "lightPos"), lightPos.x, lightPos.y, lightPos.z);
+    glUniform4f(glGetUniformLocation(grassProgram.ID, "lightColor"), lightcubeinst_1.lightColor_.x, lightcubeinst_1.lightColor_.y, lightcubeinst_1.lightColor_.z, lightcubeinst_1.lightColor_.w);
+    glUniform3f(glGetUniformLocation(grassProgram.ID, "lightPos"), lightcubeinst_1.lightColor_.x, lightcubeinst_1.lightColor_.y, lightcubeinst_1.lightColor_.z);
     // framebufferProgram.Activate();
     // glUniform1i(glGetUniformLocation(framebufferProgram.ID, "screenTexture"), 0);
 
@@ -165,8 +161,6 @@ int renderer()
     double timeDiff;
     unsigned int counter = 0;
 
-    LightCube lightcube(10);
-    lightcube.createLightCube();
 
     // Loop until the user closes the window:
     while(!glfwWindowShouldClose(window)) {
@@ -224,7 +218,7 @@ int renderer()
         // glStencilFunc(GL_ALWAYS, 0, 0xFF);
 
         // Render light cube:
-        lightcube.renderLightCube(camera);
+        lightcubeinst_1.renderLightCube(camera);
 
         // Sawp the back buffer with the front buffer:
         glfwSwapBuffers(window);
