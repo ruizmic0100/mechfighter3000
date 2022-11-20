@@ -1,3 +1,6 @@
+#ifndef MECHFACTORY_H
+#define MECHFACTORY_H
+
 #include <iostream>
 
 struct Stats
@@ -37,10 +40,12 @@ class Frame
         }
 };
 
-class Mech : public Frame
-{
+// class Mech : public Frame
+// {
 
-    public:
-};
+//     public:
+// };
 
-Frame dev_mech_frame_init();
+Frame* dev_mech_frame_init();
+
+#endif // MECHFACTORY_H

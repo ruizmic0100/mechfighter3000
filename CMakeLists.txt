@@ -4,7 +4,7 @@ project( mechfighter3000 )
 
 find_package( OpenGL REQUIRED )
 
-include_directories( ${OPENGL_INCLUDE_DIRS} )
+include_directories( ${OPENGL_INCLUDE_DIRS} glad stb glm glfw imgui game graphics json util)
 set( CMAKE_CXX_STANDARD 17 )
 
 

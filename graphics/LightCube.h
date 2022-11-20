@@ -1,4 +1,7 @@
 // TODO: ADD Delete function to LightCube class.
+#ifndef LIGHTCUBE_CLASS_H
+#define LIGHTCUBE_CLASS_H
+
 #include "VAO.h"
 #include "EBO.h"
 #include "Camera.h"
@@ -20,3 +23,5 @@ class LightCube
 
     void Scale(float scalingFactor);
 };
+
+#endif // LIGHTCUBE_CLASS_H

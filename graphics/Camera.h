@@ -9,7 +9,13 @@
 #include "../glm/gtx/rotate_vector.hpp"
 #include "../glm/gtx/vector_angle.hpp"
 
+#include "../imgui/imgui.h"
+#include "../imgui/imgui_impl_glfw.h"
+#include "../imgui/imgui_impl_opengl3.h"
+
 #include "shaderClass.h"
+#include "MechMenu.h"
+#include "Renderer.h"
 
 class Camera
 {
@@ -31,6 +37,8 @@ class Camera
         // Adjusts the speed of the camera and it's sensitivity when looking around.
         float speed = 0.1f;
         float sensitivity = 100.0f;
+
+        ImGuiIO& io = ImGui::GetIO();
 
         Camera(int width, int height, glm::vec3 position);
 

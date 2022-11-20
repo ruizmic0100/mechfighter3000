@@ -6,17 +6,14 @@
 
 #include <GLFW/glfw3.h>
 
-#include "../graphics/renderer.h"
+#include "../graphics/Renderer.h"
 #include "../util/logging.h"
-
-
-
+#include "GameEventHandler.h"
 
 
 int main(void)
 {
     OutputDebugStringW(L"Test\n");
-   
-    renderer(); // Initializes the renderer.
+    GameStart();
 
 }

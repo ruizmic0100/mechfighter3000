@@ -25,6 +25,7 @@ void Camera::Matrix(Shader& shader, const char* uniform)
 
 void Camera::Inputs(GLFWwindow* window)
 {
+
     if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
         Position += speed * Orientation;
     }
@@ -48,9 +49,12 @@ void Camera::Inputs(GLFWwindow* window)
     } else if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_RELEASE) {
         speed = 0.1f;
     }
+    if (glfwGetKey(window, GLFW_KEY_TAB) == GLFW_PRESS) {
+        RenderMechMenu = true;
+    }
 
     // Handles mouse inputs:
-    if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS) {
+    if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS && !io.WantCaptureMouse) {
         // Hides mouse cursor:
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 

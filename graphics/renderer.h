@@ -18,6 +18,15 @@
 #ifndef RENDERER_H
 #define RENDERER_H
 
+#include <iostream>
+
+inline bool RenderMechMenu, RenderMainMenu, RenderBattleMenu, RenderLootMenu;
+
+class Renderer
+{
+    public:
+};
+
 
 int renderer();
 

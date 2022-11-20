@@ -1,14 +1,12 @@
-#include <iostream>
-
 #include "Mech_Factory.h"
 
-Frame dev_mech_frame_init()
+Frame* dev_mech_frame_init()
 {
     // Dev_mech
-    Defenses frameOneDefenses;
-    frameOneDefenses.ballisticDefense = 10;
-    frameOneDefenses.energyDefense = 10;
-    Frame frameOne("Frame One", "Developer", "Dev1", 1, 1, frameOneDefenses);
+    Defenses devFrameDefenses;
+    devFrameDefenses.ballisticDefense = 10;
+    devFrameDefenses.energyDefense = 10;
+    Frame* devFrame = new Frame("Developer Frame", "Developer", "Devie", 1, 1, devFrameDefenses);
 
-    return frameOne;
+    return devFrame;
 }
