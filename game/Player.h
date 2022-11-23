@@ -17,6 +17,8 @@ class Player {
             this->equippedFrame = frame;
             std::cout << "Frame: " << this->equippedFrame->Name_ << std::endl;
         };
+
+        
 };
 
 
