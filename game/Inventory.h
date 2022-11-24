@@ -3,16 +3,21 @@
 
 #include <vector>
 
-#include "Items.h"
+#include "PartsFactory.h"
 
 class Inventory
 {
     public:
-        int inventorySlots;
-        std::vector<Item> Items;
+        int inventorySlots_;
+        std::vector<Part> Parts_;
 
-        Inventory() {
+        void generateInventory(int invSlots) {
+            PartsFactory partsfactory;
+            this->inventorySlots_ = invSlots;
 
+            for (int i = 0; i < invSlots; i++) {
+                Parts_.push_back(partsfactory.CreatePart());
+            }
         }
 };
 

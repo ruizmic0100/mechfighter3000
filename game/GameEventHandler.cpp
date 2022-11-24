@@ -18,15 +18,16 @@ struct GameState
     int Data[1000];
 } gamestate;
 
+
 void GameStart()
 {
-   gamestate.state = GAME_START;
-   std::cout << "Game Start!" << std::endl;
-   Start = true; // TODO: Make start menu.
+    gamestate.state = GAME_START;
+    std::cout << "Game Start!" << std::endl;
+    Start = true; // TODO: Make start menu.
 
-   if (Start) {
+    if (Start) {
         MainMenuPhase();
-   }
+    }
 }
 
 void SpawnEnemy()

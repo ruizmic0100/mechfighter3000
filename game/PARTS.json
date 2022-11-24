@@ -1,0 +1,16 @@
+{
+    "Heads" : [
+        {
+        "Name": "047AN02",
+        "Manufacturer": "BFF",
+        "PartType": "Head",
+        "Notes": "A Head with high stability and the best camera in the game. It can extend lock range by up to 25%. Otherwise, it's defenses and speed are average, and has an above average drain",
+        "PartID": 0,
+        "Price": 25000,
+        "Weight": 460,
+        "BallisticDefense": 757,
+        "EnergyDefense": 357,
+        "ArmorPoints": 1768
+        }
+    ]
+}

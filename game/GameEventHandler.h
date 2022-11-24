@@ -2,6 +2,7 @@
 #define GAMEEVENTHANDLER_CLASS_H
 
 #include <iostream>
+#include <cstdlib>
 
 #include "Player.h"
 #include "../graphics/Renderer.h"

@@ -2,6 +2,8 @@
 #define MECHFACTORY_H
 
 #include <iostream>
+#include <vector>
+#include <string>
 
 struct Stats
 {
@@ -12,6 +14,35 @@ struct Defenses
 {
     int ballisticDefense;
     int energyDefense;
+};
+
+struct Head
+{
+    Part part;
+    std::string PartType;
+    std::string Name;
+    std::string Manufacturer;
+    std::string Notes;
+};
+
+struct Shoulder
+{
+
+};
+
+struct Core
+{
+    
+};
+
+struct Arms
+{
+
+};
+
+struct Legs
+{
+
 };
 
 
@@ -27,24 +58,21 @@ class Frame
 
         Frame(std::string frameName, std::string frameManufacturer, std::string frameIdentifier, int framePrice, int frameWeight, Defenses frameDefenses) :
                 Name_(frameName), Manufacturer_(frameManufacturer), Identifier_(frameIdentifier), Price_(framePrice), Weight_(frameWeight), Defenses_(frameDefenses) {
-            listFrameSpecs();
-        }
-
-        void listFrameSpecs() {
-            std::cout << "Name: " << Name_ << std::endl;
-            std::cout << "Manufacturer: " << Manufacturer_ << std::endl;
-            std::cout << "Identifier: " << Identifier_ << std::endl;
-            std::cout << "Price: " << Price_ << std::endl;
-            std::cout << "Weight: " << Weight_ << std::endl;
-            std::cout << "Defenses: " << "[BD] " << Defenses_.ballisticDefense << " [ED] " << Defenses_.energyDefense << std::endl;
         }
 };
 
-// class Mech : public Frame
-// {
+class Mech : public Frame
+{
+    public:
+        Part head_, rightShoulder_, leftShoulder_, core_, arms_, legs_;
 
-//     public:
-// };
+        Mech(Part Head, Part RightShoulder, Part LeftShoulder, Part Core, Part Arms, Part Legs) :
+            head_(Head), rightShoulder_(RightShoulder), leftShoulder_(LeftShoulder), core_(Core), arms_(Arms), legs_(Legs)
+        {
+            
+        
+        };
+};
 
 Frame* dev_mech_frame_init();
 

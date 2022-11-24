@@ -1,5 +1,7 @@
 #include "MechMenu.h"
 
+float ImGuiWidth_Inventory = 500.f;
+float ImGuiHeight_Inventory = 500.f;
 
 void MechMenu(Player* player) {
 
@@ -44,10 +46,12 @@ void MechMenu(Player* player) {
     isOpen = true;
 
     if (showInventory) {
+        ImGui::SetNextWindowSize(ImVec2(ImGuiWidth_Inventory, ImGuiHeight_Inventory));
         ImGui::Begin("Inventory", &showInventory); // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool)
         ImGui::Text("Inventory");
-        if (ImGui::Button("Close Inventory"))
-            showInventory = false;
+        ImGui::Text("Inventory Slots: %d", player->PlayerInventory.inventorySlots_);
+        for (int i = 0; i < player->PlayerInventory.inventorySlots_; i++)
+            ImGui::Text("Slot[%d]: %s\t|\tPartID: %d", i, player->PlayerInventory.Parts_.at(i).PartName.c_str(), player->PlayerInventory.Parts_.at(i).PartID);
         ImGui::End();
     }
 

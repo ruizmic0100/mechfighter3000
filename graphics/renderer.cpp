@@ -141,8 +141,8 @@ int renderer()
     Model ground((parentDir + groundPath).c_str());
     Model grass((parentDir + grassPath).c_str());
 
-    Player* player = new Player;
-    player->SetFrame(dev_mech_frame_init());
+    Player* PlayerInstance = PlayerInit();
+
 
     // Loop until the user closes the window:
     while(!glfwWindowShouldClose(window)) {
@@ -174,7 +174,7 @@ int renderer()
         glfwPollEvents();
         
         if (RenderMechMenu) {
-            MechMenu(player);
+            MechMenu(PlayerInstance);
         }
             
 
