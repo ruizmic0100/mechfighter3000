@@ -20,7 +20,7 @@
 
 #include <iostream>
 
-inline bool RenderMechMenu, RenderMainMenu, RenderBattleMenu, RenderLootMenu;
+inline bool RenderMechMenu, RenderMainMenu, RenderBattleMenu, RenderLootMenu, RenderEnemyMenu;
 
 class Renderer
 {

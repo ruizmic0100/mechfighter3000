@@ -30,9 +30,11 @@ void GameStart()
     }
 }
 
-void SpawnEnemy()
+Enemy SpawnEnemy()
 {
+    Enemy enemyInstance;
 
+    return enemyInstance;
 }
 
 void LoadingPhase()
@@ -43,6 +45,12 @@ void LoadingPhase()
 void BattlePhase()
 {
     gamestate.state = BATTLE_PHASE;
+    Enemy enemy = SpawnEnemy();
+
+    // TODO: Find a better way to hold these bools.
+    // NOTE: Might be good that I am doing this after everything is setup.
+    RenderEnemyMenu = true;
+
 }
 
 void LootPhase()

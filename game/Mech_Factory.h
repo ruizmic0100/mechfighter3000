@@ -5,6 +5,8 @@
 #include <vector>
 #include <string>
 
+#include "PartsFactory.h"
+
 struct Stats
 {
     int health;
@@ -16,14 +18,6 @@ struct Defenses
     int energyDefense;
 };
 
-struct Head
-{
-    Part part;
-    std::string PartType;
-    std::string Name;
-    std::string Manufacturer;
-    std::string Notes;
-};
 
 struct Shoulder
 {
@@ -56,6 +50,9 @@ class Frame
         int Weight_;
         Defenses Defenses_;
 
+        // Only here to satisfy frame class being inherited by Mech class.
+        Frame() {}
+
         Frame(std::string frameName, std::string frameManufacturer, std::string frameIdentifier, int framePrice, int frameWeight, Defenses frameDefenses) :
                 Name_(frameName), Manufacturer_(frameManufacturer), Identifier_(frameIdentifier), Price_(framePrice), Weight_(frameWeight), Defenses_(frameDefenses) {
         }
@@ -69,7 +66,7 @@ class Mech : public Frame
         Mech(Part Head, Part RightShoulder, Part LeftShoulder, Part Core, Part Arms, Part Legs) :
             head_(Head), rightShoulder_(RightShoulder), leftShoulder_(LeftShoulder), core_(Core), arms_(Arms), legs_(Legs)
         {
-            
+            std::cout << "Creating Mech..." << std::endl;
         
         };
 };

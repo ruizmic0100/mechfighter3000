@@ -17,6 +17,9 @@ using json = nlohmann::json;
 
 typedef struct
 {
+    std::string Name;
+    std::string Manufacturer;
+    std::string Notes;
     unsigned int PartID;
     unsigned int Price;
     unsigned int Weight;
@@ -33,7 +36,6 @@ class PartsFactory
 
         PartsFactory()
         {
-            Part tempPart;
             std::string parentDir = (std::filesystem::current_path().std::filesystem::path::parent_path()).string();
             std::ifstream f(parentDir + "/game/PARTS.json");
 
@@ -51,6 +53,15 @@ class PartsFactory
             // Create unique name:
             std::string partNameBase = this->data_["Heads"][0]["Name"].get<std::string>();
             std::string partNameComplete = partNameBase + randomNum_str;
+            tempPart.Name = partNameComplete;
+
+            // Set Manufacturer:
+            tempPart.Manufacturer = this->data_["Heads"][0]["Manufacturer"];
+
+            // Set Notes:
+            tempPart.Notes = this->data_["Heads"][0]["Notes"];
+
+            // Create unique PartID:
             tempPart.PartID = this->data_["Heads"][0]["PartID"].get<int>() + randomNum;
 
             // Create unique price:

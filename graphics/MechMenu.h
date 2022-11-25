@@ -10,6 +10,7 @@
 #include "Renderer.h"
 #include "../game/Mech_Factory.h"
 #include "../game/Player.h"
+#include "../game/GameEventHandler.h"
 
 inline bool isOpen, showInventory;
 

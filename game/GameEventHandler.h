@@ -5,6 +5,7 @@
 #include <cstdlib>
 
 #include "Player.h"
+#include "Enemy.h"
 #include "../graphics/Renderer.h"
 
 
@@ -12,7 +13,7 @@ inline bool Start;
 
 void GameStart();
 
-void SpawnEnemy();
+Enemy SpawnEnemy();
 
 void LoadingPhase();
 

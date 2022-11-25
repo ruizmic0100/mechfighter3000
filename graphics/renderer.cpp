@@ -15,6 +15,7 @@
 #include "../game/Mech_Factory.h"
 #include "../game/Player.h"
 #include "MechMenu.h"
+#include "EnemyMenu.h"
 
 
 // TODO: Add render dispatcher. It should take care of what gets updated to our next frame.
@@ -175,6 +176,10 @@ int renderer()
         
         if (RenderMechMenu) {
             MechMenu(PlayerInstance);
+        }
+
+        if (RenderEnemyMenu) {
+            EnemyMenu();
         }
             
 

@@ -5,6 +5,8 @@
 #include <vector>
 #include <string>
 
+#include "PartsFactory.h"
+
 class Enemy
 {
     public:

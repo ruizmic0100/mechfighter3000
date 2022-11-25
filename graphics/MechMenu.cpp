@@ -13,7 +13,7 @@ void MechMenu(Player* player) {
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
 
-    // Show a simple window. We use a Begin/End pair to create a named window.
+    // Show a simple window for the player's Mech Menu. We use a Begin/End pair to create a named window.
     {
         static float f = 0.0f;
         static int counter = 0;
@@ -40,6 +40,10 @@ void MechMenu(Player* player) {
         ImGui::Text("Name: %d", player->equippedFrame->Weight_);
         ImGui::Text("Ballistic Defense: %i", player->equippedFrame->Defenses_.ballisticDefense);
         ImGui::Text("Energy Defense: %i", player->equippedFrame->Defenses_.energyDefense);
+
+        if (ImGui::Button("Fight"))
+            BattlePhase();
+            
         ImGui::End();
     }
 
@@ -51,7 +55,7 @@ void MechMenu(Player* player) {
         ImGui::Text("Inventory");
         ImGui::Text("Inventory Slots: %d", player->PlayerInventory.inventorySlots_);
         for (int i = 0; i < player->PlayerInventory.inventorySlots_; i++)
-            ImGui::Text("Slot[%d]: %s\t|\tPartID: %d", i, player->PlayerInventory.Parts_.at(i).PartName.c_str(), player->PlayerInventory.Parts_.at(i).PartID);
+            ImGui::Text("Slot[%d]: %s\t|\tPartID: %d", i, player->PlayerInventory.Parts_.at(i).Name.c_str(), player->PlayerInventory.Parts_.at(i).PartID);
         ImGui::End();
     }
 
