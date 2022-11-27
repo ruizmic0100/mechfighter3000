@@ -1,12 +1,25 @@
 #include "Mech_Factory.h"
+// TODO: Make a mech setup checker.
 
-Frame* dev_mech_frame_init()
+Frame FrameInit()
 {
-    // Dev_mech
-    Defenses devFrameDefenses;
-    devFrameDefenses.ballisticDefense = 10;
-    devFrameDefenses.energyDefense = 10;
-    Frame* devFrame = new Frame("Developer Frame", "Developer", "Devie", 1, 1, devFrameDefenses);
+    // Empty Dev Frame.
+    Frame devFrame("Developer Frame");
 
     return devFrame;
+}
+
+Mech MechInit()
+{
+    // Empty Dev Mech.
+    Mech devMech;
+
+    // NOTE: Initial Construction Requirements.
+    devMech.SetName("Dev Mech");
+    devMech.SetLevel(0);
+    devMech.BindFrame(FrameInit());
+    devMech.fullyEquipped_ = false;
+    devMech.CalculateTotalAP();
+
+    return devMech;
 }

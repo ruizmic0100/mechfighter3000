@@ -1,5 +1,5 @@
 {
-    "Heads" : [
+    "Heads": [
         {
         "Name": "047AN02",
         "Manufacturer": "BFF",
@@ -11,6 +11,48 @@
         "BallisticDefense": 757,
         "EnergyDefense": 357,
         "ArmorPoints": 1768
+        }
+    ],
+    "Core": [
+        {
+            "Name": "03-AALIYAH/C",
+            "Manufacturer": "Rayleonard",
+            "PartType": "Core",
+            "Notes": "Lightweight part for PA use designed for speedy combat.",
+            "PartID": 1,
+            "Price": 32300,
+            "Weight": 2480,
+            "BallisticDefense": 2574,
+            "EnergyDefense": 2312,
+            "ArmorPoints": 12408
+        }
+    ],
+    "Arms": [
+        {
+            "Name": "A01-TELLUS",
+            "Manufacturer": "Leonemeccaanica",
+            "PartType": "Arms",
+            "Notes": "A part focused on EN supply, designed for certain weapons.",
+            "PartID": 2,
+            "Price": 412300,
+            "Weight": 2690,
+            "BallisticDefense": 1833,
+            "EnergyDefense": 1809,
+            "ArmorPoints": 8432
+        }
+    ],
+    "Legs": [
+        {
+            "Name": "LG-JUDITH",
+            "Manufacturer": "Omer Science Technology",
+            "PartType": "Legs",
+            "Notes": "The second slowest lightweight leg, it makes up for its low speed with higher than average defenses for its class.",
+            "PartID": 3,
+            "Price": 240000,
+            "Weight": 4180,
+            "BallisticDefense": 2310,
+            "EnergyDefense": 2709,
+            "ArmorPoints": 10008
         }
     ]
 }

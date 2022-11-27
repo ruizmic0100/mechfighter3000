@@ -9,15 +9,17 @@ class Inventory
 {
     public:
         int inventorySlots_;
-        std::vector<Part> Parts_;
+        std::vector<Part> Inventory_;
 
         void generateInventory(int invSlots) {
             PartsFactory partsfactory;
             this->inventorySlots_ = invSlots;
 
-            for (int i = 0; i < invSlots; i++) {
-                Parts_.push_back(partsfactory.CreatePart());
-            }
+            // Creating one of each type of part and storing it in the inventory:
+            Inventory_.push_back(partsfactory.CreatePart(HEAD));
+            Inventory_.push_back(partsfactory.CreatePart(CORE));
+            Inventory_.push_back(partsfactory.CreatePart(ARMS));
+            Inventory_.push_back(partsfactory.CreatePart(LEGS));
         }
 };
 

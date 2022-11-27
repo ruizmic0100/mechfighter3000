@@ -142,7 +142,7 @@ int renderer()
     Model ground((parentDir + groundPath).c_str());
     Model grass((parentDir + grassPath).c_str());
 
-    Player* PlayerInstance = PlayerInit();
+    Player PlayerInstance = PlayerInit();
 
 
     // Loop until the user closes the window:

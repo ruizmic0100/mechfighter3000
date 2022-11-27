@@ -14,6 +14,6 @@
 
 inline bool isOpen, showInventory;
 
-void MechMenu(Player* player);
+void MechMenu(Player& player);
 
 #endif // MECHMENU_CLASS_H

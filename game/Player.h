@@ -3,15 +3,15 @@
 
 #include <iostream>
 
-#include "Mech_Factory.h"
 #include "Inventory.h"
+#include "Mech_Factory.h"
 
-#define PLAYER_MAX_INVENTORY_SLOTS 5
+// TODO: Make this dynamic so we don't get out of range errors.
+#define PLAYER_MAX_INVENTORY_SLOTS 4
 
 class Player {
     public:
-        Frame* equippedFrame;
-        Mech* equippedMech;
+        Mech playerMech;
         Inventory PlayerInventory;
         
         Player() {
@@ -19,13 +19,14 @@ class Player {
             std::cout << "Player Initialized." << std::endl;
         };
 
-        void SetFrame(Frame* frame) {
-            this->equippedFrame = frame;
-            std::cout << "Frame: " << this->equippedFrame->Name_ << std::endl;
+        void BindMech(Mech mech) {
+            this->playerMech = mech;
         };
 };
 
-Player* PlayerInit();
+Player PlayerInit();
+
+void EquipPart(Part partToEquip, Player& player);
 
 
 #endif // PLAYER_CLASS_H
