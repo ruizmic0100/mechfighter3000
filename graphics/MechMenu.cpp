@@ -3,10 +3,13 @@
 float ImGuiWidth_Inventory = 300.f;
 float ImGuiHeight_Inventory = 300.f;
 
+float ImGuiWidth_Enemy = 500.0f;
+float ImGuiHeight_Enemy = 500.0f;
+
 static float progress = 0.0f;
 static float armorPointsBar = 0.0f;
 
-void MechMenu(Player& player) {
+void MechMenu(Player& player, Enemy& enemy) {
     armorPointsBar = player.playerMech.currentAP_;
 
     // Start the Dear ImGui Frame:
@@ -70,7 +73,7 @@ void MechMenu(Player& player) {
             showInventory = !showInventory;
 
         if (ImGui::Button("Fight"))
-            BattlePhase();
+            showEnemyWindow = !showEnemyWindow;
             
         ImGui::End();
     }
@@ -111,6 +114,17 @@ void MechMenu(Player& player) {
             ImGui::Separator();
         }
 
+        ImGui::End();
+    }
+
+    if (showEnemyWindow)
+    {
+        ImGui::SetNextWindowSize(ImVec2(ImGuiWidth_Enemy, ImGuiHeight_Enemy));
+        ImGui::Begin("Enemy Data");
+        ImGui::Text("%s", enemy.enemyMech.Name_.c_str());
+        ImGui::Text("%d", enemy.enemyMech.level_);
+        if (ImGui::Button("Close"))
+            showEnemyWindow = false;
         ImGui::End();
     }
 

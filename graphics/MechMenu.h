@@ -11,9 +11,10 @@
 #include "../game/Mech_Factory.h"
 #include "../game/Player.h"
 #include "../game/GameEventHandler.h"
+#include "../game/Enemy.h"
 
-inline bool isOpen, showInventory;
+inline bool isOpen, showInventory, showEnemyWindow;
 
-void MechMenu(Player& player);
+void MechMenu(Player& player, Enemy& enemy);
 
 #endif // MECHMENU_CLASS_H

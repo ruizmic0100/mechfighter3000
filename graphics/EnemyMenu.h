@@ -9,7 +9,9 @@
 
 #include "Renderer.h"
 #include "../game/Player.h"
+#include "../game/Enemy.h"
 
-void EnemyMenu();
+
+void EnemyMenu(Enemy enemy);
 
 #endif // ENEMY_MENU_H

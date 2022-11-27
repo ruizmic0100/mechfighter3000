@@ -30,12 +30,14 @@ void GameStart()
     }
 }
 
-Enemy SpawnEnemy()
-{
-    Enemy enemyInstance;
+// TODO: enemy and player instances should probably be held here.
+// LINK: ../graphics/renderer.cpp:146
+// Enemy SpawnEnemy()
+// {
+//     Enemy enemyInstance;
 
-    return enemyInstance;
-}
+//     return enemyInstance;
+// }
 
 void LoadingPhase()
 {
@@ -45,7 +47,7 @@ void LoadingPhase()
 void BattlePhase()
 {
     gamestate.state = BATTLE_PHASE;
-    Enemy enemy = SpawnEnemy();
+    // Enemy enemy = SpawnEnemy();
 
     // TODO: Find a better way to hold these bools.
     // NOTE: Might be good that I am doing this after everything is setup.

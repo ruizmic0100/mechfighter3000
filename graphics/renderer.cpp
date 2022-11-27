@@ -16,6 +16,7 @@
 #include "../game/Player.h"
 #include "MechMenu.h"
 #include "EnemyMenu.h"
+#include "../game/Enemy.h"
 
 
 // TODO: Add render dispatcher. It should take care of what gets updated to our next frame.
@@ -142,8 +143,9 @@ int renderer()
     Model ground((parentDir + groundPath).c_str());
     Model grass((parentDir + grassPath).c_str());
 
+    // TODO: Make this not be intialized here.
     Player PlayerInstance = PlayerInit();
-
+    Enemy EnemyInstance = EnemyInit(RUST_CRAB);
 
     // Loop until the user closes the window:
     while(!glfwWindowShouldClose(window)) {
@@ -175,13 +177,8 @@ int renderer()
         glfwPollEvents();
         
         if (RenderMechMenu) {
-            MechMenu(PlayerInstance);
+            MechMenu(PlayerInstance, EnemyInstance);
         }
-
-        if (RenderEnemyMenu) {
-            EnemyMenu();
-        }
-            
 
 
         // Sawp the back buffer with the front buffer:

@@ -6,6 +6,7 @@
 #include <string>
 
 #include "PartsFactory.h"
+#include "../util/Maths.h"
 
 /**
  * @brief This is will hold the parts of the mech. Will serve sort of as a blank template.
@@ -51,6 +52,9 @@ class Mech : public Frame
             Name_(Name), frame_(frame), head_(Head), core_(Core), arms_(Arms), legs_(Legs)
         {
             std::cout << "Creating Mech..." << std::endl;
+            this->SetName(Name);
+            this->SetLevel(getRand() / 10000);
+            this->fullyEquipped_ = false;
         };
 
         void SetName(std::string Name) {
