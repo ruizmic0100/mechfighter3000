@@ -7,7 +7,7 @@
 #include "Mech_Factory.h"
 
 // TODO: Make this dynamic so we don't get out of range errors.
-#define PLAYER_MAX_INVENTORY_SLOTS 4
+#define PLAYER_MAX_INVENTORY_SLOTS 7
 
 class Player {
     public:

@@ -8,6 +8,8 @@ float ImGuiHeight_Enemy = 500.0f;
 
 static float progress = 0.0f;
 static float armorPointsBar = 0.0f;
+    
+float avg = 0.0f;
 
 void MechMenu(Player& player, Enemy& enemy) {
     armorPointsBar = player.playerMech.currentAP_;
@@ -21,10 +23,33 @@ void MechMenu(Player& player, Enemy& enemy) {
     {
         static float f = 0.0f;
         static int counter = 0;
+        static bool animate = true;
 
         // Start of Mech Data Window.
         ImGui::Begin("Mech Data");
         ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+        ImGui::Checkbox("Animate", &animate);
+
+        static float values[90] = { 0 };
+        static int values_offset = 0;
+        char avgLabel[40];
+        if (animate)
+        {
+            static float refresh_time = ImGui::GetTime(); // Create dummy data at fixed 60 hz rate for the demo
+            for (; ImGui::GetTime() > refresh_time + 1.0f/30.0f; refresh_time += 1.0f/30.0f)
+            {
+                static float phase = 0.0f;
+                values[values_offset] = cosf(phase) + ImGui::GetIO().Framerate;
+                values_offset = (values_offset+1) % IM_ARRAYSIZE(values);
+                phase += 0.10f*values_offset;
+                avg += values[values_offset];
+                avg = (avg / 11);
+                if (values_offset % 10 == 0)
+                    avg = values[values_offset];
+            }
+        }
+        sprintf(avgLabel, "Avg: %.1f", avg * 10);
+        ImGui::PlotLines("Lines", values, IM_ARRAYSIZE(values), values_offset, avgLabel, -1.0f, 1.0f, ImVec2(100,80));
         ImGui::Separator();
 
         // Mech Name.
@@ -85,13 +110,15 @@ void MechMenu(Player& player, Enemy& enemy) {
         char Label[50];
         ImGui::SetNextWindowSize(ImVec2(ImGuiWidth_Inventory, ImGuiHeight_Inventory));
         ImGui::Begin("Inventory", &showInventory); // Pass a pointer to our bool variable (the window will have a closing button that will clear the bool)
-        for (int i = 0; i < player.PlayerInventory.inventorySlots_; i++) {
+
+        // Armor Parts Portion.
+        for (int i = 0; i < player.PlayerInventory.Inventory_.at(0).Parts.size(); i++) {
             // Name of Item and making it clickable:
-            sprintf(Label, "%s", player.PlayerInventory.Inventory_.at(i).Name.c_str());
+            sprintf(Label, "%s", player.PlayerInventory.Inventory_.at(0).Parts.at(i).Name.c_str());
             ImGui::Selectable( Label, &selection[i], ImGuiSelectableFlags_AllowDoubleClick );
 
             if (ImGui::IsItemHovered() && ImGui::IsMouseDoubleClicked(0)) {
-                EquipPart(player.PlayerInventory.Inventory_.at(i), player);
+                EquipPart(player.PlayerInventory.Inventory_.at(0).Parts.at(i), player);
             }
 
             if (ImGui::IsItemHovered())
@@ -99,19 +126,24 @@ void MechMenu(Player& player, Enemy& enemy) {
 
             ImGui::SameLine(150.0f);
             // What type of part:
-            if (player.PlayerInventory.Inventory_.at(i).Type == HEAD) ImGui::Text("HEAD");
-            if (player.PlayerInventory.Inventory_.at(i).Type == CORE) ImGui::Text("CORE");
-            if (player.PlayerInventory.Inventory_.at(i).Type == ARMS) ImGui::Text("ARMS");
-            if (player.PlayerInventory.Inventory_.at(i).Type == LEGS) ImGui::Text("LEGS");
+            if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == HEAD) ImGui::Text("HEAD");
+            if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == CORE) ImGui::Text("CORE");
+            if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == ARMS) ImGui::Text("ARMS");
+            if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == LEGS) ImGui::Text("LEGS");
 
             if (ImGui::IsItemHovered())
                 ImGui::SetTooltip("Type of part.");
             ImGui::SameLine(200.0f);
             // The item ID for dev:
-            ImGui::Text("%d", player.PlayerInventory.Inventory_.at(i).PartID);
+            ImGui::Text("%d", player.PlayerInventory.Inventory_.at(0).Parts.at(i).PartID);
             if (ImGui::IsItemHovered())
                 ImGui::SetTooltip("Part ID.");
             ImGui::Separator();
+        }
+
+        for (int i = 0; i < player.PlayerInventory.Inventory_.at(0).Weapons.size(); i++) {
+            sprintf(Label, "%s", player.PlayerInventory.Inventory_.at(0).Weapons.at(i).Name.c_str());
+            ImGui::Selectable( Label, &selection[i], ImGuiSelectableFlags_AllowDoubleClick );
         }
 
         ImGui::End();
