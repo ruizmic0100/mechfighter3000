@@ -7,6 +7,7 @@
 
 #include "PartsFactory.h"
 #include "../util/Maths.h"
+#include "../graphics/PopUpMenu.h"
 
 /**
  * @brief This is will hold the parts of the mech. Will serve sort of as a blank template.
@@ -30,9 +31,14 @@ class Frame
 class Mech : public Frame
 {
     private:
-        void checkIfFullyEquipped() {
-            if (!this->head_.Name.empty() && !this->core_.Name.empty() && !this->arms_.Name.empty() && !this->legs_.Name.empty())
+
+        bool checkIfFullyEquipped() {
+            if (!this->head_.Name.empty() && !this->core_.Name.empty() && !this->arms_.Name.empty() && !this->legs_.Name.empty()) {
                 this->fullyEquipped_ = true;
+                return true;
+            }
+            
+            return false;
         };
 
     public:
@@ -57,6 +63,35 @@ class Mech : public Frame
             this->fullyEquipped_ = false;
         };
 
+        bool checkIfSlotIsFull(PartType pType) {
+            switch (pType) {
+                case HEAD:
+                    if (this->head_.Name.empty())
+                        return false;
+                    return true;
+                    break;
+                case CORE:
+                    if (this->core_.Name.empty())
+                        return false;
+                    return true;
+                    break;
+                case ARMS:
+                    if (this->arms_.Name.empty())
+                        return false;
+                    return true;
+                    break;
+                case LEGS:
+                    if (this->legs_.Name.empty())
+                        return false;
+                    return true;
+                    break;
+                default:
+                    std::cout << "Could not decipher part type for checking mech slot." << std::endl;
+                    break;
+            }
+            return true; // Incase the switch statement breaks; return true to stop anything from propogating.
+        };
+
         void SetName(std::string Name) {
             this->Name_ = Name;
         };
@@ -70,31 +105,43 @@ class Mech : public Frame
         };
 
         void EquipHead(Part Head) {
-            this->head_ = Head;
+            if (!checkIfSlotIsFull(HEAD)) {
+                this->head_ = Head;
+                this->totalAP_ = CalculateTotalAP();
+                this->currentAP_ = CalculateTotalAP();
+            }
+
             checkIfFullyEquipped();
-            this->totalAP_ = CalculateTotalAP();
-            this->currentAP_ = CalculateTotalAP();
         };
 
         void EquipCore(Part Core) {
-            this->core_ = Core;
+            if (!checkIfSlotIsFull(CORE)) {
+                this->core_ = Core;
+                this->totalAP_ = CalculateTotalAP();
+                this->currentAP_ = CalculateTotalAP();
+            }
+
             checkIfFullyEquipped();
-            this->totalAP_ = CalculateTotalAP();
-            this->currentAP_ = CalculateTotalAP();
         };
 
         void EquipArms(Part Arms) {
-            this->arms_ = Arms;
+            if (!checkIfSlotIsFull(ARMS)) {
+                this->arms_ = Arms;
+                this->totalAP_ = CalculateTotalAP();
+                this->currentAP_ = CalculateTotalAP();
+            }
+
             checkIfFullyEquipped();
-            this->totalAP_ = CalculateTotalAP();
-            this->currentAP_ = CalculateTotalAP();
         };
 
         void EquipLegs(Part Legs) {
-            this->legs_ = Legs;
+            if (!checkIfSlotIsFull(LEGS)) {
+                this->legs_ = Legs;
+                this->totalAP_ = CalculateTotalAP();
+                this->currentAP_ = CalculateTotalAP();
+            }
+
             checkIfFullyEquipped();
-            this->totalAP_ = CalculateTotalAP();
-            this->currentAP_ = CalculateTotalAP();
         };
 
         void SetTotalAP(unsigned int ArmorPoints) {

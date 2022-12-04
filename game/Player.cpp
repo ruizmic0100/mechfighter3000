@@ -24,7 +24,7 @@ Player PlayerInit()
 
 void EquipPart(Part partToEquip, Player& player)
 {
-    std::cout << "Equipping Part: " << partToEquip.Name.c_str() << std::endl;
+    std::cout << "Trying to Equip Part: " << partToEquip.Name.c_str() << std::endl;
     switch (partToEquip.Type) {
         case HEAD:
             player.playerMech.EquipHead(partToEquip);

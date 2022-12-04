@@ -176,8 +176,8 @@ int renderer()
         // Poll for and process events(Refreshes the window basically):
         glfwPollEvents();
         
-        if (RenderMechMenu) {
-            MechMenu(PlayerInstance, EnemyInstance);
+        if (showMechMenu) {
+            RenderMechMenu(PlayerInstance, EnemyInstance);
         }
 
 

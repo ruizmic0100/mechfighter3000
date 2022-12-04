@@ -50,7 +50,7 @@ void Camera::Inputs(GLFWwindow* window)
         speed = 0.1f;
     }
     if (glfwGetKey(window, GLFW_KEY_TAB) == GLFW_PRESS) {
-        RenderMechMenu = true;
+        showMechMenu = true;
     }
 
     // Handles mouse inputs:

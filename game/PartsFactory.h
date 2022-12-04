@@ -3,6 +3,7 @@
 
 // TODO: Create a namespace for json object conversion. (https://github.com/nlohmann/json#examples:~:text=To%20make%20this%20work%20with%20one%20of%20your%20types%2C%20you%20only%20need%20to%20provide%20two%20functions%3A)
 // TODO: Move all member function code into cpp file instead of here.
+// TODO: Make an exists_ member bool or created_ for the part instances.
 
 #include "../json/json.h"
 

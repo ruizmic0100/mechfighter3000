@@ -5,7 +5,7 @@
 
 #include "PartsFactory.h"
 #include "WeaponFactory.h"
-
+#include "../graphics/PopUpMenu.h"
 
 inline wConfigs ASSAULTRIFLE = { 10, 10, 10, 100, 10, 10, 10, 10, 10 };
 

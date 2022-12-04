@@ -12,9 +12,17 @@
 #include "../game/Player.h"
 #include "../game/GameEventHandler.h"
 #include "../game/Enemy.h"
+#include "menu/imguipp.h"
+#include "menu/Settings.h"
 
-inline bool isOpen, showInventory, showEnemyWindow;
+inline bool isOpen, showNewMechMenu, showInventory, showEnemyWindow, showAlreadyEquippedPopUp;
 
-void MechMenu(Player& player, Enemy& enemy);
+void RenderMechMenu(Player& player, Enemy& enemy);
+
+namespace MechMenu
+{
+    void Theme();
+    void Render();
+}
 
 #endif // MECHMENU_CLASS_H
