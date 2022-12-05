@@ -17,12 +17,11 @@
 
 inline bool isOpen, showNewMechMenu, showInventory, showEnemyWindow, showAlreadyEquippedPopUp;
 
-void RenderMechMenu(Player& player, Enemy& enemy);
-
 namespace MechMenu
 {
     void Theme();
-    void Render();
+    void Render(Player& player, Enemy& enemy);
+    void CustomRendering();
 }
 
 #endif // MECHMENU_CLASS_H

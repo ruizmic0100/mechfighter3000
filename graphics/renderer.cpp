@@ -19,7 +19,7 @@
 #include "../game/Enemy.h"
 
 
-// TODO: Add render dispatcher. It should take care of what gets updated to our next frame.
+// TODO: Add render draw list. It should take care of what gets updated to our next frame.
 
 // Screen dimensions.
 const unsigned int width = 800;
@@ -97,8 +97,7 @@ int renderer()
     // Setup Dear ImGui context:
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
-    // ImGuiIO& io = ImGui::GetIO(); (void) io;
-    
+    ImGuiIO& io = ImGui::GetIO(); (void) io;
     
     // Setup Platform/Renderer backends:
     ImGui_ImplGlfw_InitForOpenGL(window, true);
@@ -177,7 +176,7 @@ int renderer()
         glfwPollEvents();
         
         if (showMechMenu) {
-            RenderMechMenu(PlayerInstance, EnemyInstance);
+            MechMenu::Render(PlayerInstance, EnemyInstance);
         }
 
 
@@ -189,6 +188,8 @@ int renderer()
     shaderProgram.Delete();
     grassProgram.Delete();
     // TODO: Call LightCube.Delete() here.
+
+    // Shuts down imgui.
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
