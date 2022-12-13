@@ -76,6 +76,28 @@ void MechMenu::Render(Player& player, Enemy& enemy)
             } else {
                 ImGui::Text("Legs: Nothing Equipped.");
             }
+            if (!player.playerMech.leftArmWeapon_.Name.empty()) {
+                ImGui::Text("Left Arm: Nothing Equipped.");
+            } else {
+                ImGui::Text("Left Arm: %s", player.playerMech.leftArmWeapon_.Name.c_str());
+            }
+            if (!player.playerMech.rightArmWeapon_.Name.empty()) {
+                ImGui::Text("Right Arm: Nothing Equipped.");
+            } else {
+                ImGui::Text("Right Arm: %s", player.playerMech.rightArmWeapon_.Name.c_str());
+            }
+            if (!player.playerMech.leftShoulderWeapon_.Name.empty()) {
+                ImGui::Text("Left Shoulder: Nothing Equipped.");
+            } else {
+                ImGui::Text("Left Shoulder: %s", player.playerMech.leftShoulderWeapon_.Name.c_str());
+            }
+            if (!player.playerMech.rightShoulderWeapon_.Name.empty()) {
+                ImGui::Text("Right Arm: Nothing Equipped.");
+            } else {
+                ImGui::Text("Right Arm: %s", player.playerMech.rightShoulderWeapon_.Name.c_str());
+            }
+
+            ImGui::Dummy(ImVec2(0.0f, 5.0f));
             
             ImGui::PushStyleColor(ImGuiCol_Button, Settings::Tab == 1 ? active : inactive);
             if (ImGui::Button("Button One", ImVec2(230 - 15, 41)))
@@ -189,28 +211,36 @@ void MechMenu::Render(Player& player, Enemy& enemy)
 
 
                 // Show a small label tooltip.
-                if (ImGui::IsItemHovered())
-                    ImGui::SetTooltip("Part name.");
+                if (ImGui::IsItemHovered()) {
+                    ImGui::BeginTooltip();
+                        ImGui::Text("Name "); ImGui::SameLine(); ImGui::Text(player.PlayerInventory.Inventory_.at(0).Parts.at(i).Name.c_str());
+                        ImGui::Text("Type "); ImGui::SameLine();
+                        if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == HEAD) ImGui::Text("HEAD");
+                        if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == CORE) ImGui::Text("CORE");
+                        if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == ARMS) ImGui::Text("ARMS");
+                        if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == LEGS) ImGui::Text("LEGS");
+                        ImGui::Text("Weight "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.Inventory_.at(0).Parts.at(i).Weight).c_str());
+                        ImGui::Text("Price "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.Inventory_.at(0).Parts.at(i).Price).c_str());
+                        ImGui::Text("Ballistic Defense "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.Inventory_.at(0).Parts.at(i).BallisticDefense).c_str());
+                        ImGui::Text("Energy Defense "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.Inventory_.at(0).Parts.at(i).EnergyDefense).c_str());
+                        ImGui::Text("Armor Points "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.Inventory_.at(0).Parts.at(i).ArmorPoints).c_str());
+                        ImGui::Text((player.PlayerInventory.Inventory_.at(0).Parts.at(i).Manufacturer).c_str());
+                        // ImGui::Text((player.PlayerInventory.Inventory_.at(0).Parts.at(i).Notes).c_str()); // FIXME: The json file only has one giant sentence no breaks so I am going to have to make something that breaks this up into equal blocks.
+                    ImGui::EndTooltip();
+                }
 
                 ImGui::SameLine(150.0f);
-                // What type of part:
+                // What type of part is equipped on the player:
                 if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == HEAD) ImGui::Text("HEAD");
                 if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == CORE) ImGui::Text("CORE");
                 if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == ARMS) ImGui::Text("ARMS");
                 if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == LEGS) ImGui::Text("LEGS");
-
-                // Show a small label tooltip.
-                if (ImGui::IsItemHovered())
-                    ImGui::SetTooltip("Type of part.");
 
                 ImGui::SameLine(200.0f);
 
                 // The item ID for dev:
                 ImGui::Text("%d", player.PlayerInventory.Inventory_.at(0).Parts.at(i).PartID);
 
-                // Show a small label tooltip.
-                if (ImGui::IsItemHovered())
-                    ImGui::SetTooltip("Part ID.");
                 ImGui::Separator();
             }
 

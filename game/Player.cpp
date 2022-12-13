@@ -18,6 +18,7 @@ Player PlayerInit()
 
     // Binding the Mech and player together.
     player.BindMech(MechInit());
+    player.playerMech.SetLevel(1);
 
     return player;
 }

@@ -2,6 +2,7 @@
 #define MECHMENU_CLASS_H
 
 #include <iostream>
+#include <string>
 
 #include "../imgui/imgui.h"
 #include "../imgui/imgui_impl_glfw.h"

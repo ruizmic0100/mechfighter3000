@@ -6,6 +6,7 @@
 #include <string>
 
 #include "PartsFactory.h"
+#include "WeaponFactory.h"
 #include "../util/Maths.h"
 #include "../graphics/PopUpMenu.h"
 
@@ -43,6 +44,7 @@ class Mech : public Frame
 
     public:
         Part head_, core_, arms_, legs_;
+        Weapon leftArmWeapon_, rightArmWeapon_, leftShoulderWeapon_, rightShoulderWeapon_;
         Frame frame_;
         std::string Name_;
         unsigned int level_;
@@ -142,6 +144,26 @@ class Mech : public Frame
             }
 
             checkIfFullyEquipped();
+        };
+
+        void EquipLeftArm(Weapon weapon) {
+            this->leftArmWeapon_ = weapon;
+            std::cout << "Equipped Left Arm Weapon." << std::endl;
+        };
+
+        void EquipRightArm(Weapon weapon) {
+            this->rightArmWeapon_ = weapon;
+            std::cout << "Equipped Right Arm Weapon." << std::endl;
+        };
+
+        void EquipLeftShoulder(Weapon weapon) {
+            this->leftShoulderWeapon_ = weapon;
+            std::cout << "Equipped Left Shoulder Weapon." << std::endl;
+        };
+
+        void EquipRightShoulder(Weapon weapon) {
+            this->rightShoulderWeapon_ = weapon;
+            std::cout << "Equipped Right Shoulder Weapon." << std::endl;
         };
 
         void SetTotalAP(unsigned int ArmorPoints) {
