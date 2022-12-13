@@ -60,15 +60,20 @@ typedef struct WeaponConfigs
     unsigned int Price_; // How much it is worth.
 } wConfigs;
 
-typedef struct Weapon
+typedef struct WeaponCompleted
 {
+    bool Initialized;
+    bool Equipped;
     WeaponType WType;
+    int slotCompatability; // 0: arms, 1: shoulders.
     wConfigs WeaponConfigs;
     std::string Name;
     std::string Manufacturer;
     std::string Notes;
     unsigned int weaponPartID;
-};
+
+    WeaponCompleted() : Initialized(false), Equipped(false) {}
+} Weapon;
 
 
 class WeaponFactory
@@ -88,11 +93,10 @@ class WeaponFactory
             weaponBP.Manufacturer = Manufacturer;
             weaponBP.Notes = Notes;
             weaponBP.weaponPartID = getRand();
-
             weaponBP.WType = wType;
-
             weaponBP.WeaponConfigs = WeaponConfigs;
-            std::cout << "Created weapon of " << wType << " type." << std::endl;
+            weaponBP.slotCompatability = 0;
+            std::cout << "Created weapon of " << wType << " type." << "With weaponPartID: " << weaponBP.weaponPartID << std::endl;
             return weaponBP;
         }
 };

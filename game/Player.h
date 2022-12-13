@@ -27,7 +27,9 @@ class Player {
 
 Player PlayerInit();
 
-void EquipPart(Part partToEquip, Player& player);
+void EquipPart(Part& partToEquip, Player& player);
+
+void EquipWeapon(Weapon& weaponToEquip, Player& player);
 
 
 #endif // PLAYER_CLASS_H

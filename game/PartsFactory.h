@@ -26,9 +26,10 @@ enum PartType {
 
 constexpr std::initializer_list<PartType> allPartTypes = {HEAD, CORE, ARMS, LEGS};
 
-typedef struct
+typedef struct PartCompleted
 {
     PartType Type;
+    bool Initialized;
     std::string Name;
     std::string Manufacturer;
     std::string Notes;
@@ -38,6 +39,8 @@ typedef struct
     unsigned int BallisticDefense;
     unsigned int EnergyDefense;
     unsigned int ArmorPoints;
+
+    PartCompleted() : Initialized(false) {}
 } Part;
 
 class PartsFactory

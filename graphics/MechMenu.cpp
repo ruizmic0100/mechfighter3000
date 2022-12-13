@@ -57,46 +57,45 @@ void MechMenu::Render(Player& player, Enemy& enemy)
 
             // ImGui::Separator();
             // Mech Equipped Parts:
-            ImGui::Text("Equipped Parts");
-            if (!player.playerMech.head_.Name.empty()) {
+            if (player.playerMech.head_.Initialized) {
                 ImGui::Text("Head: %s", player.playerMech.head_.Name.c_str());
             } else {
                 ImGui::Text("Head: Nothing Equipped.");
             }
-            if (!player.playerMech.core_.Name.empty()) {
+            if (player.playerMech.core_.Initialized) {
                 ImGui::Text("Core: %s", player.playerMech.core_.Name.c_str());
             } else {
                 ImGui::Text("Core: Nothing Equipped.");
             }
-            if (!player.playerMech.arms_.Name.empty()) {
+            if (player.playerMech.arms_.Initialized) {
                 ImGui::Text("Arms: %s", player.playerMech.arms_.Name.c_str());
             } else {
                 ImGui::Text("Arms: Nothing Equipped.");
             }
-            if (!player.playerMech.legs_.Name.empty()) {
+            if (player.playerMech.legs_.Initialized) {
                 ImGui::Text("Legs: %s", player.playerMech.legs_.Name.c_str());
             } else {
                 ImGui::Text("Legs: Nothing Equipped.");
             }
-            if (!player.playerMech.leftArmWeapon_.Name.empty()) {
-                ImGui::Text("Left Arm: Nothing Equipped.");
-            } else {
+            if (player.playerMech.leftArmWeapon_.Initialized) {
                 ImGui::Text("Left Arm: %s", player.playerMech.leftArmWeapon_.Name.c_str());
-            }
-            if (!player.playerMech.rightArmWeapon_.Name.empty()) {
-                ImGui::Text("Right Arm: Nothing Equipped.");
             } else {
+                ImGui::Text("Left Arm: Nothing Equipped.");
+            }
+            if (player.playerMech.rightArmWeapon_.Initialized) {
                 ImGui::Text("Right Arm: %s", player.playerMech.rightArmWeapon_.Name.c_str());
-            }
-            if (!player.playerMech.leftShoulderWeapon_.Name.empty()) {
-                ImGui::Text("Left Shoulder: Nothing Equipped.");
             } else {
-                ImGui::Text("Left Shoulder: %s", player.playerMech.leftShoulderWeapon_.Name.c_str());
-            }
-            if (!player.playerMech.rightShoulderWeapon_.Name.empty()) {
                 ImGui::Text("Right Arm: Nothing Equipped.");
+            }
+            if (player.playerMech.leftShoulderWeapon_.Initialized) {
+                ImGui::Text("Left Shoulder: %s", player.playerMech.leftShoulderWeapon_.Name.c_str());
             } else {
+                ImGui::Text("Left Shoulder: Nothing Equipped.");
+            }
+            if (player.playerMech.rightShoulderWeapon_.Initialized) {
                 ImGui::Text("Right Arm: %s", player.playerMech.rightShoulderWeapon_.Name.c_str());
+            } else {
+                ImGui::Text("Right Arm: Nothing Equipped.");
             }
 
             ImGui::Dummy(ImVec2(0.0f, 5.0f));
@@ -254,10 +253,18 @@ void MechMenu::Render(Player& player, Enemy& enemy)
             for (int i = 0; i < player.PlayerInventory.inventoryWeapons_.size(); i++) {
                 sprintf(Label, "%s", player.PlayerInventory.inventoryWeapons_.at(i).Name.c_str());
                 ImGui::Selectable( Label, &weaponSelection[i], ImGuiSelectableFlags_AllowDoubleClick );
-
-                ImGui::SameLine(200.0f);
-
+                // Equip the weapon.
+                if (ImGui::IsItemHovered() && ImGui::IsMouseDoubleClicked(0)) {
+                    /**
+                     * @note This should fail to equip if the slot is full.
+                    */
+                    EquipWeapon(player.PlayerInventory.inventoryWeapons_.at(i), player);
+                }
+                ImGui::SameLine(100.0f);
                 ImGui::Text(GetString(player.PlayerInventory.inventoryWeapons_.at(i).WType));
+                ImGui:: SameLine(200.0f);
+                ImGui::Text(std::to_string(player.PlayerInventory.inventoryWeapons_.at(i).weaponPartID).c_str());
+
             }
             ImGui::EndChild();
             // INVENTORY

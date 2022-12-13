@@ -18,12 +18,11 @@ Player PlayerInit()
 
     // Binding the Mech and player together.
     player.BindMech(MechInit());
-    player.playerMech.SetLevel(1);
 
     return player;
 }
 
-void EquipPart(Part partToEquip, Player& player)
+void EquipPart(Part& partToEquip, Player& player)
 {
     std::cout << "Trying to Equip Part: " << partToEquip.Name.c_str() << std::endl;
     switch (partToEquip.Type) {
@@ -41,6 +40,38 @@ void EquipPart(Part partToEquip, Player& player)
             break;
         default:
             std::cout << "Couldn't decipher part type to equip!" << std::endl;
+            break;
+    }
+}
+
+// TODO: Make whereToEquipItTo and actual type instead of just knowing the sequence for each slot.
+void EquipWeapon(Weapon& weaponToEquip, Player& player)
+{
+    switch (weaponToEquip.slotCompatability) {
+        case 0:
+            if (!player.playerMech.leftArmWeapon_.Equipped) {
+                std::cout << "Trying to equip " << weaponToEquip.Name << " on left arm." << std::endl;
+                player.playerMech.EquipLeftArm(weaponToEquip);
+            } else if (!player.playerMech.rightArmWeapon_.Equipped) {
+                std::cout << "Trying to equip " << weaponToEquip.Name << " on right arm." << std::endl;
+                player.playerMech.EquipRightArm(weaponToEquip);
+            } else {
+                std::cout << "Arm weapon slots full!" << std::endl;
+            }
+            break;
+        case 1:
+            if (!player.playerMech.leftShoulderWeapon_.Equipped) {
+                std::cout << "Trying to equip " << weaponToEquip.Name << " on left shoulder." << std::endl;
+                player.playerMech.EquipLeftShoulder(weaponToEquip);
+            } else if (!player.playerMech.rightShoulderWeapon_.Equipped) {
+                std::cout << "Trying to equip " << weaponToEquip.Name << " on right shoulder." << std::endl;
+                player.playerMech.EquipRightShoulder(weaponToEquip);
+            } else {
+                std::cout << "Shoulder weapon slots full!" << std::endl;
+            }
+            break;
+        default:
+            std::cout << "Could not equip weapon." << std::endl;
             break;
     }
 }

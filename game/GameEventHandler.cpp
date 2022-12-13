@@ -1,5 +1,6 @@
 #include "GameEventHandler.h"
 
+
 enum States
 {
     GAME_START = 0,
@@ -21,6 +22,7 @@ struct GameState
 
 void GameStart()
 {
+    srand((unsigned) time(NULL));
     gamestate.state = GAME_START;
     std::cout << "Game Start!" << std::endl;
     Start = true; // TODO: Make start menu.

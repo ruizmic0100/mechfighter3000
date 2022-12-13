@@ -4,10 +4,12 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <map>
 
 #include "PartsFactory.h"
 #include "WeaponFactory.h"
 #include "../util/Maths.h"
+#include "../util/enumFactory.h"
 #include "../graphics/PopUpMenu.h"
 
 /**
@@ -46,6 +48,7 @@ class Mech : public Frame
         Part head_, core_, arms_, legs_;
         Weapon leftArmWeapon_, rightArmWeapon_, leftShoulderWeapon_, rightShoulderWeapon_;
         Frame frame_;
+        // TODO: Make mechslots that show if equiped or not for the weapons.
         std::string Name_;
         unsigned int level_;
         unsigned int totalAP_;
@@ -112,7 +115,7 @@ class Mech : public Frame
                 this->totalAP_ = CalculateTotalAP();
                 this->currentAP_ = CalculateTotalAP();
             }
-
+            this->head_.Initialized = true;
             checkIfFullyEquipped();
         };
 
@@ -122,7 +125,7 @@ class Mech : public Frame
                 this->totalAP_ = CalculateTotalAP();
                 this->currentAP_ = CalculateTotalAP();
             }
-
+            this->core_.Initialized = true;
             checkIfFullyEquipped();
         };
 
@@ -132,7 +135,7 @@ class Mech : public Frame
                 this->totalAP_ = CalculateTotalAP();
                 this->currentAP_ = CalculateTotalAP();
             }
-
+            this->core_.Initialized = true;
             checkIfFullyEquipped();
         };
 
@@ -142,27 +145,35 @@ class Mech : public Frame
                 this->totalAP_ = CalculateTotalAP();
                 this->currentAP_ = CalculateTotalAP();
             }
-
+            this->legs_.Initialized = true;
             checkIfFullyEquipped();
         };
 
         void EquipLeftArm(Weapon weapon) {
             this->leftArmWeapon_ = weapon;
+            this->leftArmWeapon_.Equipped = true;
+            this->leftArmWeapon_.Initialized = true;
             std::cout << "Equipped Left Arm Weapon." << std::endl;
         };
 
         void EquipRightArm(Weapon weapon) {
             this->rightArmWeapon_ = weapon;
+            this->rightArmWeapon_.Equipped = true;
+            this->rightArmWeapon_.Initialized = true;
             std::cout << "Equipped Right Arm Weapon." << std::endl;
         };
 
         void EquipLeftShoulder(Weapon weapon) {
             this->leftShoulderWeapon_ = weapon;
+            this->leftShoulderWeapon_.Equipped = true;
+            this->leftShoulderWeapon_.Initialized =true;
             std::cout << "Equipped Left Shoulder Weapon." << std::endl;
         };
 
         void EquipRightShoulder(Weapon weapon) {
             this->rightShoulderWeapon_ = weapon;
+            this->rightShoulderWeapon_.Equipped = true;
+            this->rightShoulderWeapon_.Initialized = true;
             std::cout << "Equipped Right Shoulder Weapon." << std::endl;
         };
 
