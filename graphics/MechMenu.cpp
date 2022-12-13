@@ -5,11 +5,8 @@ DEFINE_ENUM(WeaponType, WEAPONTYPE)
 float ImGuiWidth_Inventory = 300.f;
 float ImGuiHeight_Inventory = 300.f;
 
-float ImGuiWidth_Enemy = 500.0f;
-float ImGuiHeight_Enemy = 500.0f;
-
-static float progress = 0.0f;
-static float armorPointsBar = 0.0f;
+float progress = 0.0f;
+float armorPointsBar = 0.0f;
     
 float avg = 0.0f;
 
@@ -102,12 +99,12 @@ void MechMenu::Render(Player& player, Enemy& enemy)
             
             // Make these do something.
             ImGui::PushStyleColor(ImGuiCol_Button, Settings::Tab == 1 ? active : inactive);
-            if (ImGui::Button("Button One", ImVec2(230 - 15, 41)))
+            if (ImGui::Button("Fight", ImVec2(230 - 15, 41)))
                 Settings::Tab = 1;
 
                 ImGui::Spacing();
                 ImGui::PushStyleColor(ImGuiCol_Button, Settings::Tab == 2 ? active : inactive);
-            if (ImGui::Button("Button Two", ImVec2(230 - 15, 41)))
+            if (ImGui::Button("Settings", ImVec2(230 - 15, 41)))
                 Settings::Tab = 2;
 
             ImGui::PopStyleColor(2);
@@ -269,14 +266,8 @@ void MechMenu::Render(Player& player, Enemy& enemy)
             ImGui::EndChild();
             // INVENTORY
 
-            if (showEnemyWindow) {
-                ImGui::SetNextWindowSize(ImVec2(ImGuiWidth_Enemy, ImGuiHeight_Enemy));
-                ImGui::Begin("Enemy Data");
-                ImGui::Text("%s", enemy.enemyMech.Name_.c_str());
-                ImGui::Text("%d", enemy.enemyMech.level_);
-                if (ImGui::Button("Close"))
-                    showEnemyWindow = false;
-                ImGui::End();
+            if (Settings::Tab == 1) {
+                EnemyMenu(player, enemy);
             }
         }
         ImGui::End();

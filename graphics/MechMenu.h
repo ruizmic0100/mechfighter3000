@@ -13,10 +13,13 @@
 #include "../game/Player.h"
 #include "../game/GameEventHandler.h"
 #include "../game/Enemy.h"
+#include "EnemyMenu.h"
 #include "menu/imguipp.h"
 #include "menu/Settings.h"
 
-inline bool isOpen, showNewMechMenu, showInventory, showEnemyWindow, showAlreadyEquippedPopUp;
+inline bool isOpen, showNewMechMenu, showInventory, showAlreadyEquippedPopUp;
+
+extern float progress, armorPointsBar;
 
 namespace MechMenu
 {

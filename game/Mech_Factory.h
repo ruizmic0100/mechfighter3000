@@ -64,8 +64,10 @@ class Mech : public Frame
         {
             std::cout << "Creating Mech..." << std::endl;
             this->SetName(Name);
-            this->SetLevel(getRand() / 10000);
+            this->SetLevel(0);
             this->fullyEquipped_ = false;
+            this->totalAP_ = this->CalculateTotalAP(); // TODO: Make this just automatically set the total and currernt AP.
+            this->currentAP_ = this->CalculateTotalAP();
         };
 
         bool checkIfSlotIsFull(PartType pType) {

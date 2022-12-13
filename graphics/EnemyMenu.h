@@ -7,10 +7,12 @@
 #include "../imgui/imgui_impl_glfw.h"
 #include "../imgui/imgui_impl_opengl3.h"
 
-// #include "Renderer.h"
-// #include "../game/Player.h"
-// #include "../game/Enemy.h"
+#include "Renderer.h"
+#include "MechMenu.h"
+#include "../game/Player.h"
+#include "../game/Enemy.h"
+#include "./menu/Settings.h"
 
-// void EnemyMenu(Enemy enemy);
+void EnemyMenu(Player& player, Enemy& enemy);
 
 #endif // ENEMY_MENU_H
