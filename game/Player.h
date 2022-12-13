@@ -19,6 +19,7 @@ class Player {
             std::cout << "Player Initialized." << std::endl;
         };
 
+        // NOTE: Why is this not in the constructor?
         void BindMech(Mech mech) {
             this->playerMech = mech;
         };

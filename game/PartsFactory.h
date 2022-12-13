@@ -24,6 +24,8 @@ enum PartType {
     LEGS
 };
 
+constexpr std::initializer_list<PartType> allPartTypes = {HEAD, CORE, ARMS, LEGS};
+
 typedef struct
 {
     PartType Type;

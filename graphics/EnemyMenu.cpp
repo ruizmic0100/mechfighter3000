@@ -1,7 +1,7 @@
 #include "EnemyMenu.h"
 
 
-void EnemyMenu(Enemy enemy)
-{
+// void EnemyMenu(Enemy enemy)
+// {
 
-}
+// }

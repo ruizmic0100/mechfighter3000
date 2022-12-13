@@ -6,28 +6,39 @@
 #include <string>
 
 #include "../util/Maths.h"
+#include "../util/enumFactory.h"
+#define WEAPONTYPE(XX) \
+    XX(HANDGUN, =0) \
+    XX(RIFLE, =1) \
+    XX(MACHINE_GUN, =2) \
+    XX(SNIPER_RIFLE, =3) \
+    XX(PLASMA_CANNON, =4) \
+
+// enum WeaponType
+// {
+//     HANDGUN = 0,
+//     RIFLE,
+//     MACHINE_GUN,
+//     SNIPER_RIFLE,
+//     BAZOOKA,
+//     FLAMETHROWER,
+//     PULSE_RIFLE,
+//     LASER_RIFLE,
+//     LASER_BLADE,
+//     MISSILE,
+//     ROCKET,
+//     CHAIN_GUN,
+//     SLUG_GUN,
+//     GRENADE_LAUNCHER,
+//     PULSE_CANNON,
+//     LASER_CANNON,
+//     PLASMA_CANNON,
+// };
+
+DECLARE_ENUM(WeaponType, WEAPONTYPE)
 
 
-enum WeaponType
-{
-    HANDGUN = 0,
-    RIFLE,
-    MACHINE_GUN,
-    SNIPER_RIFLE,
-    BAZOOKA,
-    FLAMETHROWER,
-    PULSE_RIFLE,
-    LASER_RIFLE,
-    LASER_BLADE,
-    MISSILE,
-    ROCKET,
-    CHAIN_GUN,
-    SLUG_GUN,
-    GRENADE_LAUNCHER,
-    PULSE_CANNON,
-    LASER_CANNON,
-    PLASMA_CANNON,
-};
+constexpr std::initializer_list<WeaponType> testWeaponTypes = {HANDGUN, RIFLE, MACHINE_GUN, SNIPER_RIFLE, PLASMA_CANNON};
 
 typedef struct WeaponConfigs
 {
@@ -86,5 +97,7 @@ class WeaponFactory
         }
 };
 
+
+WeaponConfigs CreateRandomWeaponConfigs();
 
 #endif // WEAPON_FACTORY_H

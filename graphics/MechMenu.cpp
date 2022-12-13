@@ -1,5 +1,7 @@
 #include "MechMenu.h"
 
+DEFINE_ENUM(WeaponType, WEAPONTYPE)
+
 float ImGuiWidth_Inventory = 300.f;
 float ImGuiHeight_Inventory = 300.f;
 
@@ -99,6 +101,7 @@ void MechMenu::Render(Player& player, Enemy& enemy)
 
             ImGui::Dummy(ImVec2(0.0f, 5.0f));
             
+            // Make these do something.
             ImGui::PushStyleColor(ImGuiCol_Button, Settings::Tab == 1 ? active : inactive);
             if (ImGui::Button("Button One", ImVec2(230 - 15, 41)))
                 Settings::Tab = 1;
@@ -114,7 +117,7 @@ void MechMenu::Render(Player& player, Enemy& enemy)
             ImGui::SetCursorPosY(ImGui::GetWindowHeight() - 30);
             imguipp::center_text_ex("MechMenu", 230, 1, false);
         }
-
+        /* ----------------------------------------------- Next Column -------------------------------------------------------------*/
         ImGui::NextColumn();
         // Right side
         {
@@ -122,6 +125,7 @@ void MechMenu::Render(Player& player, Enemy& enemy)
             static int counter = 0;
             static bool animate = true;
 
+            // FPS GRAPH
             ImGui::BeginChild("FPS", ImVec2(400, 180), true);
             ImGui::SetWindowFontScale(1.5);
             ImGui::Text("FPS");
@@ -153,6 +157,7 @@ void MechMenu::Render(Player& player, Enemy& enemy)
             sprintf(avgLabel, "Avg: %.1f", avg);
             ImGui::PlotLines("Lines", values, IM_ARRAYSIZE(values), values_offset, avgLabel, -1.0f, 1.0f, ImVec2(100,80));
             ImGui::EndChild();
+            // FPS GRAPH
 
             // Dumper Tab
             if (Settings::Tab == 2) {
@@ -175,10 +180,11 @@ void MechMenu::Render(Player& player, Enemy& enemy)
                 ImGui::PopStyleColor();
                 if (ImGui::Button(" Save to folder", ImVec2(205, 32))) {}
             }
+            // Dumper Tab
 
-
-            /* ------------------Inventory----------------- */
-            static bool selection[5] = { false, false, false, false, false };
+            // INVENTORY
+            static bool partSelection[5] = { false, false, false, false, false };
+            static bool weaponSelection[5] = { false, false, false, false, false };
             char Label[50];
             ImGui::BeginChild("Inventory", ImVec2(400,300), true);
             ImGui::SetWindowFontScale(1.5);
@@ -188,10 +194,10 @@ void MechMenu::Render(Player& player, Enemy& enemy)
             ImGui::SetNextWindowSize(ImVec2(ImGuiWidth_Inventory, ImGuiHeight_Inventory));
 
             // Armor Parts Portion.
-            for (int i = 0; i < player.PlayerInventory.Inventory_.at(0).Parts.size(); i++) {
+            for (int i = 0; i < player.PlayerInventory.inventoryParts_.size(); i++) {
                 // Name of Item and making it clickable:
-                sprintf(Label, "%s", player.PlayerInventory.Inventory_.at(0).Parts.at(i).Name.c_str());
-                ImGui::Selectable( Label, &selection[i], ImGuiSelectableFlags_AllowDoubleClick );
+                sprintf(Label, "%s", player.PlayerInventory.inventoryParts_.at(i).Name.c_str());
+                ImGui::Selectable( Label, &partSelection[i], ImGuiSelectableFlags_AllowDoubleClick );
 
                 // Equip the part if double clicked.
                 if (ImGui::IsItemHovered() && ImGui::IsMouseDoubleClicked(0)) {
@@ -206,50 +212,55 @@ void MechMenu::Render(Player& player, Enemy& enemy)
                     /**
                      * @note This should fail to equip if the slot is full.
                     */
-                    EquipPart(player.PlayerInventory.Inventory_.at(0).Parts.at(i), player);
+                    EquipPart(player.PlayerInventory.inventoryParts_.at(i), player);
                 }
 
 
                 // Show a small label tooltip.
                 if (ImGui::IsItemHovered()) {
                     ImGui::BeginTooltip();
-                        ImGui::Text("Name "); ImGui::SameLine(); ImGui::Text(player.PlayerInventory.Inventory_.at(0).Parts.at(i).Name.c_str());
-                        ImGui::Text("Type "); ImGui::SameLine();
-                        if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == HEAD) ImGui::Text("HEAD");
-                        if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == CORE) ImGui::Text("CORE");
-                        if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == ARMS) ImGui::Text("ARMS");
-                        if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == LEGS) ImGui::Text("LEGS");
-                        ImGui::Text("Weight "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.Inventory_.at(0).Parts.at(i).Weight).c_str());
-                        ImGui::Text("Price "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.Inventory_.at(0).Parts.at(i).Price).c_str());
-                        ImGui::Text("Ballistic Defense "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.Inventory_.at(0).Parts.at(i).BallisticDefense).c_str());
-                        ImGui::Text("Energy Defense "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.Inventory_.at(0).Parts.at(i).EnergyDefense).c_str());
-                        ImGui::Text("Armor Points "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.Inventory_.at(0).Parts.at(i).ArmorPoints).c_str());
-                        ImGui::Text((player.PlayerInventory.Inventory_.at(0).Parts.at(i).Manufacturer).c_str());
+                        ImGui::Text("Name: "); ImGui::SameLine(); ImGui::Text(player.PlayerInventory.inventoryParts_.at(i).Name.c_str());
+                        ImGui::Text("Type: "); ImGui::SameLine();
+                        if (player.PlayerInventory.inventoryParts_.at(i).Type == HEAD) ImGui::Text("HEAD");
+                        if (player.PlayerInventory.inventoryParts_.at(i).Type == CORE) ImGui::Text("CORE");
+                        if (player.PlayerInventory.inventoryParts_.at(i).Type == ARMS) ImGui::Text("ARMS");
+                        if (player.PlayerInventory.inventoryParts_.at(i).Type == LEGS) ImGui::Text("LEGS");
+                        ImGui::Text("Weight: "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.inventoryParts_.at(i).Weight).c_str());
+                        ImGui::Text("Price: "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.inventoryParts_.at(i).Price).c_str());
+                        ImGui::Text("Ballistic Defense: "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.inventoryParts_.at(i).BallisticDefense).c_str());
+                        ImGui::Text("Energy Defense: "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.inventoryParts_.at(i).EnergyDefense).c_str());
+                        ImGui::Text("Armor Points: "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.inventoryParts_.at(i).ArmorPoints).c_str());
+                        ImGui::Text((player.PlayerInventory.inventoryParts_.at(i).Manufacturer).c_str());
                         // ImGui::Text((player.PlayerInventory.Inventory_.at(0).Parts.at(i).Notes).c_str()); // FIXME: The json file only has one giant sentence no breaks so I am going to have to make something that breaks this up into equal blocks.
                     ImGui::EndTooltip();
                 }
 
                 ImGui::SameLine(150.0f);
                 // What type of part is equipped on the player:
-                if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == HEAD) ImGui::Text("HEAD");
-                if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == CORE) ImGui::Text("CORE");
-                if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == ARMS) ImGui::Text("ARMS");
-                if (player.PlayerInventory.Inventory_.at(0).Parts.at(i).Type == LEGS) ImGui::Text("LEGS");
+                if (player.PlayerInventory.inventoryParts_.at(i).Type == HEAD) ImGui::Text("HEAD");
+                if (player.PlayerInventory.inventoryParts_.at(i).Type == CORE) ImGui::Text("CORE");
+                if (player.PlayerInventory.inventoryParts_.at(i).Type == ARMS) ImGui::Text("ARMS");
+                if (player.PlayerInventory.inventoryParts_.at(i).Type == LEGS) ImGui::Text("LEGS");
 
                 ImGui::SameLine(200.0f);
 
                 // The item ID for dev:
-                ImGui::Text("%d", player.PlayerInventory.Inventory_.at(0).Parts.at(i).PartID);
+                ImGui::Text("%d", player.PlayerInventory.inventoryParts_.at(i).PartID);
 
                 ImGui::Separator();
             }
 
-            for (int i = 0; i < player.PlayerInventory.Inventory_.at(0).Weapons.size(); i++) {
-                sprintf(Label, "%s", player.PlayerInventory.Inventory_.at(0).Weapons.at(i).Name.c_str());
-                ImGui::Selectable( Label, &selection[i], ImGuiSelectableFlags_AllowDoubleClick );
+            // NOTE: This second forloop necessary?
+            for (int i = 0; i < player.PlayerInventory.inventoryWeapons_.size(); i++) {
+                sprintf(Label, "%s", player.PlayerInventory.inventoryWeapons_.at(i).Name.c_str());
+                ImGui::Selectable( Label, &weaponSelection[i], ImGuiSelectableFlags_AllowDoubleClick );
+
+                ImGui::SameLine(200.0f);
+
+                ImGui::Text(GetString(player.PlayerInventory.inventoryWeapons_.at(i).WType));
             }
             ImGui::EndChild();
-            /* Inventory End*/
+            // INVENTORY
 
             if (showEnemyWindow) {
                 ImGui::SetNextWindowSize(ImVec2(ImGuiWidth_Enemy, ImGuiHeight_Enemy));
