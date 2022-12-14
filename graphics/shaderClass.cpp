@@ -14,7 +14,7 @@ std::string get_file_contents(const char* filename)
         in.close();
         return(contents);
     }
-    std::cout << "\nCouldn't Getting File Contents" << std::endl;
+    std::cout << "\nCouldn't Getting File Contents: " << filename << std::endl;
     throw(errno);
 }
 

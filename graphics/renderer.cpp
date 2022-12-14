@@ -137,10 +137,12 @@ int renderer()
     std::string parentDir = (std::filesystem::current_path().std::filesystem::path::parent_path()).string();
     std::string groundPath = "/graphics/models/ground/scene.gltf";
     std::string grassPath = "/graphics/models/grass/scene.gltf";
+    std::string devMechPath = "/graphics/models/devmech/scene.gltf";
 
     // Load in models:
     Model ground((parentDir + groundPath).c_str());
     Model grass((parentDir + grassPath).c_str());
+    Model devMech((parentDir + devMechPath).c_str());
 
     // TODO: Make this not be intialized here.
     Player PlayerInstance = PlayerInit();
@@ -163,11 +165,14 @@ int renderer()
         camera.updateMatrix(45.0f, 0.1f, 400.0f);
 
         // Draw a model:
-        ground.Draw(shaderProgram, camera);
+        // ground.Draw(shaderProgram, camera);
+
+        devMech.Draw(shaderProgram, camera);
+
 
         // Disable cull face so that grass and windows have both faces:
         glDisable(GL_CULL_FACE);
-        grass.Draw(grassProgram, camera);
+        // grass.Draw(grassProgram, camera);
 
         // Render light cube:
         lightcubeinst_1.renderLightCube(camera);

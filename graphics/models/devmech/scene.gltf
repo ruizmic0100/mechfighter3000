@@ -1,0 +1,255 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v3.2.40",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1,
+                2,
+                3
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "name" : "RefernceImage",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ],
+            "scale" : [
+                2.17051100730896,
+                2.17051100730896,
+                2.17051100730896
+            ],
+            "translation" : [
+                2.8428759574890137,
+                3.081444263458252,
+                -10.02248477935791
+            ]
+        },
+        {
+            "name" : "RefernceImage.001",
+            "rotation" : [
+                0.5000000596046448,
+                0.5,
+                -0.5,
+                0.5
+            ],
+            "scale" : [
+                2.17051100730896,
+                2.17051100730896,
+                2.17051100730896
+            ],
+            "translation" : [
+                -6.861752986907959,
+                3.081444263458252,
+                -2.812419891357422
+            ]
+        },
+        {
+            "mesh" : 0,
+            "name" : "DevMech",
+            "rotation" : [
+                0,
+                0,
+                0.20840781927108765,
+                0.9780420064926147
+            ],
+            "scale" : [
+                0.5035240650177002,
+                0.5035240650177002,
+                0.5035240650177002
+            ],
+            "translation" : [
+                0.14320240914821625,
+                3.0774083137512207,
+                -0.23633410036563873
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Plane",
+            "scale" : [
+                6.004882335662842,
+                6.004882335662842,
+                6.004882335662842
+            ],
+            "translation" : [
+                0,
+                0,
+                -5.736958026885986
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "devmetal",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.33491310477256775,
+                    0.3914033770561218,
+                    0.5925780534744263,
+                    1
+                ],
+                "metallicFactor" : 0.8503937125205994,
+                "roughnessFactor" : 0.625984251499176
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.003",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Plane",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 1356,
+            "max" : [
+                4.8707380294799805,
+                6.175262928009033,
+                1.8725510835647583
+            ],
+            "min" : [
+                -4.916702747344971,
+                -6.802198886871338,
+                -1.8552525043487549
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 1356,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 1356,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 2034,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 8,
+            "max" : [
+                1,
+                2.602316379547119,
+                1
+            ],
+            "min" : [
+                -1,
+                0,
+                -1
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 8,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 8,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 12,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 16272,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 16272,
+            "byteOffset" : 16272
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 10848,
+            "byteOffset" : 32544
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4068,
+            "byteOffset" : 43392
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 96,
+            "byteOffset" : 47460
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 96,
+            "byteOffset" : 47556
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 64,
+            "byteOffset" : 47652
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 24,
+            "byteOffset" : 47716
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 47740,
+            "uri" : "scene.bin"
+        }
+    ]
+}
