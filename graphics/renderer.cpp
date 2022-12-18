@@ -17,6 +17,7 @@
 #include "MechMenu.h"
 #include "EnemyMenu.h"
 #include "../game/Enemy.h"
+#include "Animation.h"
 
 
 // TODO: Add render draw list. It should take care of what gets updated to our next frame.
@@ -137,16 +138,19 @@ int renderer()
     std::string parentDir = (std::filesystem::current_path().std::filesystem::path::parent_path()).string();
     std::string groundPath = "/graphics/models/ground/scene.gltf";
     std::string grassPath = "/graphics/models/grass/scene.gltf";
-    std::string devMechPath = "/graphics/models/devmech/scene.gltf";
+    std::string testModelPath = "/graphics/models/testmodel/scene.gltf";
 
     // Load in models:
     Model ground((parentDir + groundPath).c_str());
     Model grass((parentDir + grassPath).c_str());
-    Model devMech((parentDir + devMechPath).c_str());
+    Model testModel((parentDir + testModelPath).c_str());
 
     // TODO: Make this not be intialized here.
     Player PlayerInstance = PlayerInit();
     Enemy EnemyInstance = EnemyInit(RUST_CRAB);
+
+    glm::vec3 spawnLocation(0.0f, 0.0f, 0.0f);
+    glm::vec3 translationVector(1.0f, 0.0f, 0.0f);
 
     // Loop until the user closes the window:
     while(!glfwWindowShouldClose(window)) {
@@ -165,10 +169,11 @@ int renderer()
         camera.updateMatrix(45.0f, 0.1f, 400.0f);
 
         // Draw a model:
-        // ground.Draw(shaderProgram, camera);
+        ground.Draw(shaderProgram, camera);
 
-        devMech.Draw(shaderProgram, camera);
-
+        // testModel.Draw(shaderProgram, camera);
+        translateModelOverADistance(shaderProgram, camera, testModel, glm::vec3(10.0f, 10.0f, 10.0f));
+        
 
         // Disable cull face so that grass and windows have both faces:
         glDisable(GL_CULL_FACE);

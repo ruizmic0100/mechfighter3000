@@ -21,6 +21,14 @@ class Model
         glm::vec3 scale = glm::vec3(1.0f, 1.0f, 1.0f)
         );
 
+        std::vector<glm::vec3> GetTranslationMeshes() {
+            return this->translationsMeshes;
+        }
+
+        std::vector<Mesh> GetMeshes() {
+            return this->meshes;
+        }
+
     private:
         // Variables for easy access.
         const char* file;
