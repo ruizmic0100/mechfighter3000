@@ -226,7 +226,6 @@ std::vector<Texture> Model::getTextures()
     for (unsigned int i = 0; i < JSON["images"].size(); i++) {
         // uri of current texture.
         std::string texPath = JSON["images"][i]["uri"];
-        std::cout << "Texture Path: " << texPath << std::endl;
 
         // Check if the texture has already been loaded:
         bool skip = false;
@@ -247,13 +246,11 @@ std::vector<Texture> Model::getTextures()
                 textures.push_back(diffuse);
                 loadedTex.push_back(diffuse);
                 loadedTexName.push_back(texPath);
-                std::cout << "Ran through loading baseColor of diffuse texture." << std::endl;
             } else if (texPath.find("metallicRoughness") != std::string::npos || texPath.find("specular") != std::string::npos) {
                 Texture specular = Texture((fileDirectory + texPath).c_str(), "specular", loadedTex.size());
                 textures.push_back(specular);
                 loadedTex.push_back(specular);
                 loadedTexName.push_back(texPath);
-                std::cout << "Ran through loading metallicRoughness of diffuse texture." << std::endl;
             }
         }
     }

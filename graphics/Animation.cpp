@@ -7,7 +7,6 @@ void translateModelOverADistance(Shader& shader, Camera& camera, Model& model, g
     std::vector<Mesh> meshData = model.GetMeshes();
 
 
-    while (x != endLocation.x && y != endLocation.y && z != endLocation.z) {
-        x++; y++; z++;
-    }
+    // while (x != endLocation.x && y != endLocation.y && z != endLocation.z) {
+    // }
 }

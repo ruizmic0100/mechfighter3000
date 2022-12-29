@@ -20,7 +20,6 @@ void MechMenu::Render(Player& player, Enemy& enemy)
     armorPointsBar = player.playerMech.currentAP_;
 
 
-
     {
         ImGui::Begin("MechMenu");
         ImGui::Columns(2, "columns");
@@ -75,24 +74,24 @@ void MechMenu::Render(Player& player, Enemy& enemy)
                 ImGui::Text("Legs: Nothing Equipped.");
             }
             if (player.playerMech.leftArmWeapon_.Initialized) {
-                ImGui::Text("Left Arm: %s", player.playerMech.leftArmWeapon_.Name.c_str());
+                ImGui::Text("Left Arm Weapon: %s", player.playerMech.leftArmWeapon_.Name.c_str());
             } else {
-                ImGui::Text("Left Arm: Nothing Equipped.");
+                ImGui::Text("Left Arm Weapon: Nothing Equipped.");
             }
             if (player.playerMech.rightArmWeapon_.Initialized) {
-                ImGui::Text("Right Arm: %s", player.playerMech.rightArmWeapon_.Name.c_str());
+                ImGui::Text("Right Arm Weapon: %s", player.playerMech.rightArmWeapon_.Name.c_str());
             } else {
-                ImGui::Text("Right Arm: Nothing Equipped.");
+                ImGui::Text("Right Arm Weapon: Nothing Equipped.");
             }
             if (player.playerMech.leftShoulderWeapon_.Initialized) {
-                ImGui::Text("Left Shoulder: %s", player.playerMech.leftShoulderWeapon_.Name.c_str());
+                ImGui::Text("Left Shoulder Weapon: %s", player.playerMech.leftShoulderWeapon_.Name.c_str());
             } else {
-                ImGui::Text("Left Shoulder: Nothing Equipped.");
+                ImGui::Text("Left Shoulder Weapon: Nothing Equipped.");
             }
             if (player.playerMech.rightShoulderWeapon_.Initialized) {
-                ImGui::Text("Right Arm: %s", player.playerMech.rightShoulderWeapon_.Name.c_str());
+                ImGui::Text("Right Arm Weapon: %s", player.playerMech.rightShoulderWeapon_.Name.c_str());
             } else {
-                ImGui::Text("Right Arm: Nothing Equipped.");
+                ImGui::Text("Right Arm Weapon: Nothing Equipped.");
             }
 
             ImGui::Dummy(ImVec2(0.0f, 5.0f));
@@ -152,6 +151,8 @@ void MechMenu::Render(Player& player, Enemy& enemy)
             }
             sprintf(avgLabel, "Avg: %.1f", avg);
             ImGui::PlotLines("Lines", values, IM_ARRAYSIZE(values), values_offset, avgLabel, -1.0f, 1.0f, ImVec2(100,80));
+            if (ImGui::Button("Change Light Color"))
+                ChangeLightColor = !ChangeLightColor;
             ImGui::EndChild();
             // FPS GRAPH
 

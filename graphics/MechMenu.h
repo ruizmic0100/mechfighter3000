@@ -17,7 +17,7 @@
 #include "menu/imguipp.h"
 #include "menu/Settings.h"
 
-inline bool isOpen, showNewMechMenu, showInventory, showAlreadyEquippedPopUp;
+inline bool isOpen, showNewMechMenu, showInventory, showAlreadyEquippedPopUp, ChangeLightColor=false;
 
 extern float progress, armorPointsBar;
 

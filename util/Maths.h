@@ -6,4 +6,6 @@
 
 unsigned int getRand();
 
+float getRandFloat();
+
 #endif // MATHS_UTILS_H

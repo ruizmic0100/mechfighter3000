@@ -64,7 +64,7 @@ void LightCube::createLightCube()
     LightCube::lightShaderptr_->Activate();
     glUniformMatrix4fv(glGetUniformLocation(LightCube::lightShaderptr_->ID, "model"), 1, GL_FALSE, glm::value_ptr(LightCube::lightModel_));
     glUniform4f(glGetUniformLocation(LightCube::lightShaderptr_->ID, "lightColor"), LightCube::lightColor_.x, LightCube::lightColor_.y, LightCube::lightColor_.z, LightCube::lightColor_.w);
-};
+}
 
 void LightCube::renderLightCube(Camera& camera)
 {
@@ -72,4 +72,12 @@ void LightCube::renderLightCube(Camera& camera)
     camera.Matrix(*LightCube::lightShaderptr_, "camMatrix");
     LightCube::lightVAO_.Bind();
     glDrawElements(GL_TRIANGLES, sizeof(lightIndices) / sizeof(int), GL_UNSIGNED_INT, 0);
-};
+}
+
+// TODO: This should probably call a rebake pipeline.
+void LightCube::SetLightColor(glm::vec4 lightColor)
+{
+    this->lightColor_ = lightColor;
+    LightCube::lightShaderptr_->Activate();
+    glUniform4f(glGetUniformLocation(LightCube::lightShaderptr_->ID, "lightColor"), LightCube::lightColor_.x, LightCube::lightColor_.y, LightCube::lightColor_.z, LightCube::lightColor_.w);
+}

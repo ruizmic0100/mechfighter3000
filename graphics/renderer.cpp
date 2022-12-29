@@ -20,6 +20,7 @@
 #include "Animation.h"
 
 
+
 // TODO: Add render draw list. It should take care of what gets updated to our next frame.
 
 // Screen dimensions.
@@ -47,6 +48,9 @@ float rectangleVertices[] =
     -1.0f, 1.0f, 0.0f, 1.0f
 };
 
+// Relative Path for parent DIR.
+std::string parentDir = (std::filesystem::current_path().std::filesystem::path::parent_path()).string();
+
 // TODO: Add compare and randf functions to utils/math file.
 // Compare function:
 int compare(const void* a, const void* b)
@@ -58,6 +62,58 @@ int compare(const void* a, const void* b)
 float randf()
 {
     return -1.0f + (rand() / (RAND_MAX / 2.0f));
+}
+
+// TODO: Finish this. It's suppose to generate the shader program objects and generate a list of them.
+//       The list will hopefully go into the render pipeline where a system of callbacks/signals will
+//       cause the baking process to re-run if any changes are necessary. (Real-time lighting part 1 ig).
+/** @brief Shader Program Generation.
+ * 1. We create a Shader Program Object by passing in a vertex & frag shader.
+ * 2. 
+*/
+void GenerateShaderProgramObjects()
+{
+    LightCube lightcubeinst_1(10);
+    lightcubeinst_1.createLightCube();
+    Shader shaderProgram("graphics/shaders/default.vert", "graphics/shaders/default.frag");
+    Shader grassProgram("graphics/shaders/default.vert", "graphics/shaders/grass.frag");
+
+    shaderProgram.Activate();
+    glUniform4f(glGetUniformLocation(shaderProgram.ID, "lightColor"), lightcubeinst_1.lightColor_.x, lightcubeinst_1.lightColor_.y, lightcubeinst_1.lightColor_.z, lightcubeinst_1.lightColor_.w);
+    glUniform3f(glGetUniformLocation(shaderProgram.ID, "lightPos"), lightcubeinst_1.lightColor_.x, lightcubeinst_1.lightColor_.y, lightcubeinst_1.lightColor_.z);
+    grassProgram.Activate();
+    glUniform4f(glGetUniformLocation(grassProgram.ID, "lightColor"), lightcubeinst_1.lightColor_.x, lightcubeinst_1.lightColor_.y, lightcubeinst_1.lightColor_.z, lightcubeinst_1.lightColor_.w);
+    glUniform3f(glGetUniformLocation(grassProgram.ID, "lightPos"), lightcubeinst_1.lightColor_.x, lightcubeinst_1.lightColor_.y, lightcubeinst_1.lightColor_.z);
+}
+
+
+
+/** @brief Model Loading
+        1. .gltf standard makes use of the json file structure to organize the model data. Create a path to the scene.gltf.
+        2. Create the model object.
+        3. Draw the model object.
+
+    TODO: this list is getting copied might want to fix this to either be created on the heap.
+    TODO: grass needs to be rendered seperately so that culling can be used correctly.
+*/
+std::vector<Model> LoadModels()
+{
+    std::vector<Model> model_list_temp;
+
+    // Relative path setup for each model specifically
+    std::string groundPath = "/graphics/models/ground/scene.gltf";
+    std::string grassPath = "/graphics/models/grass/scene.gltf";
+    std::string testModelPath = "/graphics/models/testmodel/scene.gltf";
+
+    Model ground((parentDir + groundPath).c_str());
+    // Model grass((parentDir + grassPath).c_str());
+    Model testModel((parentDir + testModelPath).c_str());
+
+    model_list_temp.push_back(ground);
+    // model_list_temp.push_back(grass);
+    model_list_temp.push_back(testModel);
+
+    return model_list_temp;
 }
 
 
@@ -106,7 +162,6 @@ int renderer()
 
     // TODO: Load Fonts Section
 
-
     // Generates Shader object using shaders default.vert and default.frag:
     LightCube lightcubeinst_1(10);
     lightcubeinst_1.createLightCube();
@@ -134,23 +189,11 @@ int renderer()
     // Creates camera object.
     Camera camera(width, height, glm::vec3(0.0f, 0.0f, 2.0f));
 
-    // Relative path setup:
-    std::string parentDir = (std::filesystem::current_path().std::filesystem::path::parent_path()).string();
-    std::string groundPath = "/graphics/models/ground/scene.gltf";
-    std::string grassPath = "/graphics/models/grass/scene.gltf";
-    std::string testModelPath = "/graphics/models/testmodel/scene.gltf";
-
-    // Load in models:
-    Model ground((parentDir + groundPath).c_str());
-    Model grass((parentDir + grassPath).c_str());
-    Model testModel((parentDir + testModelPath).c_str());
+    std::vector<Model> model_list = LoadModels();
 
     // TODO: Make this not be intialized here.
     Player PlayerInstance = PlayerInit();
     Enemy EnemyInstance = EnemyInit(RUST_CRAB);
-
-    glm::vec3 spawnLocation(0.0f, 0.0f, 0.0f);
-    glm::vec3 translationVector(1.0f, 0.0f, 0.0f);
 
     // Loop until the user closes the window:
     while(!glfwWindowShouldClose(window)) {
@@ -164,22 +207,29 @@ int renderer()
         // NOTE: this might need to be placed in a time loop to make it not dependent on FPS.
         // RenderHandler will choose here what to render...
         // For now just using simple keybinds on camera input.
-        camera.Inputs(window);
+       camera.Inputs(window);
         // Updates and exports the camera matrix to the vertex shader:
         camera.updateMatrix(45.0f, 0.1f, 400.0f);
 
-        // Draw a model:
-        ground.Draw(shaderProgram, camera);
-
-        // testModel.Draw(shaderProgram, camera);
-        translateModelOverADistance(shaderProgram, camera, testModel, glm::vec3(10.0f, 10.0f, 10.0f));
-        
+        // Draw all the models:
+        for (std::vector<Model>::iterator it = model_list.begin(); it != model_list.end(); it++)
+            it->Draw(shaderProgram, camera);
 
         // Disable cull face so that grass and windows have both faces:
-        glDisable(GL_CULL_FACE);
+        // glDisable(GL_CULL_FACE);
         // grass.Draw(grassProgram, camera);
 
         // Render light cube:
+        if (ChangeLightColor == true) {
+            std::cout << "Changing Light Color: " << std::endl;
+            lightcubeinst_1.SetLightColor(glm::vec4(getRandFloat(), getRandFloat(), getRandFloat(), getRandFloat()));
+            std::cout << lightcubeinst_1.lightColor_.x << std::endl;
+            // lightcubeinst_1.lightPos_ = glm::vec3(0.0f, 1.0f, 0.0f);
+            shaderProgram.Activate();
+            glUniform4f(glGetUniformLocation(shaderProgram.ID, "lightColor"), lightcubeinst_1.lightColor_.x, lightcubeinst_1.lightColor_.y, lightcubeinst_1.lightColor_.z, lightcubeinst_1.lightColor_.w);
+            glUniform3f(glGetUniformLocation(shaderProgram.ID, "lightPos"), lightcubeinst_1.lightColor_.x, lightcubeinst_1.lightColor_.y, lightcubeinst_1.lightColor_.z);
+            ChangeLightColor = !ChangeLightColor;
+        }
         lightcubeinst_1.renderLightCube(camera);
 
         // Poll for and process events(Refreshes the window basically):

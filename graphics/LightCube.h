@@ -17,11 +17,14 @@ class LightCube
 
     LightCube(float scalingFactor) { Scale(scalingFactor); };
 
+    // TODO: Create constructor that takes in color and pos.
     void createLightCube();
 
     void renderLightCube(Camera& camera);
 
     void Scale(float scalingFactor);
+
+    void SetLightColor(glm::vec4 lightColor);
 };
 
 #endif // LIGHTCUBE_CLASS_H

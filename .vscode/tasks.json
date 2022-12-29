@@ -14,10 +14,10 @@
 		},
 		{
 			"type": "shell",
-			"label": "Start Game",
+			"label": "Start Visual Studio Project",
 			"command": "start build/mechfighter3000.sln",
 			"group": "build",
-			"detail": "Start Game in Visual Studio"
+			"detail": "Start the project in Visual Studio"
 		}
 	]
 }
