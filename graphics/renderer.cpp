@@ -104,14 +104,17 @@ std::vector<Model> LoadModels()
     std::string groundPath = "/graphics/models/ground/scene.gltf";
     std::string grassPath = "/graphics/models/grass/scene.gltf";
     std::string testModelPath = "/graphics/models/testmodel/scene.gltf";
+    std::string TestAreaPath = "/graphics/models/TestArea/scene.gltf";
 
-    Model ground((parentDir + groundPath).c_str());
+    // Model ground((parentDir + groundPath).c_str());
     // Model grass((parentDir + grassPath).c_str());
-    Model testModel((parentDir + testModelPath).c_str());
+    // Model testModel((parentDir + testModelPath).c_str());
+    Model TestArea((parentDir + TestAreaPath).c_str());
 
-    model_list_temp.push_back(ground);
+    // model_list_temp.push_back(ground);
     // model_list_temp.push_back(grass);
-    model_list_temp.push_back(testModel);
+    // model_list_temp.push_back(testModel);
+    model_list_temp.push_back(TestArea);
 
     return model_list_temp;
 }
@@ -187,7 +190,7 @@ int renderer()
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     // Creates camera object.
-    Camera camera(width, height, glm::vec3(0.0f, 0.0f, 2.0f));
+    Camera camera(width, height, glm::vec3(0.0f, 0.0f, 1.0f));
 
     std::vector<Model> model_list = LoadModels();
 
@@ -212,8 +215,12 @@ int renderer()
         camera.updateMatrix(45.0f, 0.1f, 400.0f);
 
         // Draw all the models:
-        for (std::vector<Model>::iterator it = model_list.begin(); it != model_list.end(); it++)
-            it->Draw(shaderProgram, camera);
+        for (std::vector<Model>::iterator it = model_list.begin(); it != model_list.end(); it++) {
+            if (it == model_list.begin())
+                it->Draw(shaderProgram, camera, glm::vec3(0.0f, 1.5f, -8.0f), glm::quat(cos(glm::radians(270.0f/2)), 0, sin(glm::radians(270.0f/2))*1, 0.0f));
+            else
+                it->Draw(shaderProgram, camera);
+        }
 
         // Disable cull face so that grass and windows have both faces:
         // glDisable(GL_CULL_FACE);
