@@ -9,8 +9,8 @@
 class LightCube
 {
     public:
-    glm::vec4 lightColor_ = glm::vec4(.80f, .20f, .20f, 0.8f);
-    glm::vec3 lightPos_ = glm::vec3(0.0f, 5.0f, 0.0f);
+    glm::vec4 lightColor_ = glm::vec4(1.0f, 1.0f, 1.0f, 0.9f);
+    glm::vec3 lightPos_ = glm::vec3(0.0f, 5.0f, -20.0f);
     glm::mat4 lightModel_ = glm::mat4(1.0f);
     VAO lightVAO_;
     Shader* lightShaderptr_;

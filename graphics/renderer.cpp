@@ -166,7 +166,7 @@ int renderer()
     // TODO: Load Fonts Section
 
     // Generates Shader object using shaders default.vert and default.frag:
-    LightCube lightcubeinst_1(10);
+    LightCube lightcubeinst_1(4);
     lightcubeinst_1.createLightCube();
     Shader shaderProgram("graphics/shaders/default.vert", "graphics/shaders/default.frag");
     Shader grassProgram("graphics/shaders/default.vert", "graphics/shaders/grass.frag");
@@ -217,7 +217,7 @@ int renderer()
         // Draw all the models:
         for (std::vector<Model>::iterator it = model_list.begin(); it != model_list.end(); it++) {
             if (it == model_list.begin())
-                it->Draw(shaderProgram, camera, glm::vec3(0.0f, 1.5f, -8.0f), glm::quat(cos(glm::radians(270.0f/2)), 0, sin(glm::radians(270.0f/2))*1, 0.0f));
+                it->Draw(shaderProgram, camera, glm::vec3(0.0f, 1.0f, -8.0f), glm::quat(cos(glm::radians(270.0f/2)), 0, sin(glm::radians(270.0f/2))*1, 0.0f));
             else
                 it->Draw(shaderProgram, camera);
         }
