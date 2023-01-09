@@ -9,7 +9,6 @@
 #include "../graphics/PopUpMenu.h"
 #include "../util/NameGenerator.h"
 
-inline wConfigs ASSAULTRIFLE = { 10, 10, 10, 100, 10, 10, 10, 10, 10 };
 
 class Inventory
 {
@@ -32,20 +31,17 @@ class Inventory
                     std::cout << "Inventory Full!" << std::endl;
                     break;
                 } else {
-                    this->inventoryParts_.push_back(pf.CreatePart(pT));
+                    this->inventoryParts_.push_back(pf.CreatePart(pT, 1));
                     this->InventorySlotsLeft_--;
                 }
             }
 
             // Create a couple weapons and storing it a temp weapon buffer.
-            for (auto wT: testWeaponTypes) {
-                if (this->InventorySlotsLeft_ == 0) {
-                    std::cout << "Inventory Full!" << std::endl;
-                    break;
-                } else {
-                    this->inventoryWeapons_.push_back(wf.CreateWeapon(wT, CreateRandomWeaponConfigs(), RandomString(), "Dev", "Test Weapon"));
-                    this->InventorySlotsLeft_--;
-                }
+            if (this->InventorySlotsLeft_ == 0) {
+                std::cout << "Inventory Full!" << std::endl;
+            } else {
+                this->inventoryWeapons_.push_back(wf.CreateWeapon(HANDGUN, 0));
+                this->InventorySlotsLeft_--;
             }
 
             std::cout << "Weapon Inventory: " << this->inventoryWeapons_.at(0).Name << std::endl;

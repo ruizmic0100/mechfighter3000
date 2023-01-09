@@ -14,8 +14,6 @@
 #include "../imgui/imgui_impl_opengl3.h"
 
 #include "shaderClass.h"
-#include "MechMenu.h"
-#include "Renderer.h"
 
 class Camera
 {

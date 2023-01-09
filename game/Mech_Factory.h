@@ -66,6 +66,8 @@ class Mech : public Frame
             this->SetName(Name);
             this->SetLevel(0);
             this->fullyEquipped_ = false;
+            this->leftArmWeapon_.Equipped=false;
+            this->rightArmWeapon_.Equipped=false;
             this->totalAP_ = this->CalculateTotalAP(); // TODO: Make this just automatically set the total and currernt AP.
             this->currentAP_ = this->CalculateTotalAP();
         };
@@ -137,7 +139,7 @@ class Mech : public Frame
                 this->totalAP_ = CalculateTotalAP();
                 this->currentAP_ = CalculateTotalAP();
             }
-            this->core_.Initialized = true;
+            this->arms_.Initialized = true;
             checkIfFullyEquipped();
         };
 

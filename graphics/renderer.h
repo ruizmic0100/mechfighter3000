@@ -20,14 +20,6 @@
 
 #include <iostream>
 
-inline bool showMechMenu, RenderMainMenu, RenderBattleMenu, RenderLootMenu, RenderEnemyMenu;
-
-class Renderer
-{
-    public:
-};
-
-
 int renderer();
 
 

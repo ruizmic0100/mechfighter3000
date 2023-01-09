@@ -43,6 +43,7 @@ add_custom_target(copy_resources ALL
         COMMENT "Copying PARTS.json into binary directory..."
         COMMAND ${CMAKE_COMMAND} -E copy
         ${PROJECT_SOURCE_DIR}/game/PARTS.json
+        ${PROJECT_SOURCE_DIR}/game/WEAPONS.json
         ${PROJECT_BINARY_DIR}/game/
         COMMENT "FINISHED COPYING ALL RESOURCES INTO BINARY DIRECTORY!"
 )

@@ -1,0 +1,74 @@
+{
+    "Handgun": [
+        {   
+            "Name": "MWG-HGBL-90",
+            "Manufacturer": "Mirage",
+            "WeaponType": "HandGun",
+            "Notes": "Multi-fire hand gun.",
+            "WeaponID": 0,
+            "Price": 1000,
+            "Weight": 174,
+            "EnergyCost": 30,
+            "AttackPower": 176,
+            "PhysicalArmorReduction": 1,
+            "PhysicalArmorPiercingFactor": 0,
+            "ImpactFactor": 1,
+            "MeleeAbility": 30,
+            "Recoil": 1,
+            "AimPrecisions": 90,
+            "InitialSpeed": 150,
+            "ReloadTime": 1000,
+            "NumberOfMagazines": 5,
+            "SimultaneousFireCount": 3,
+            "EnergyChargeRequired": 30
+        }
+    ],
+    "Rifle" : [
+        {
+            "Name": "",
+            "Manufacturer": "",
+            "WeaponType": "",
+            "Notes": "",
+            "WeaponID": "",
+            "Price": "",
+            "Weight": "",
+            "EnergyCost": "",
+            "AttackPower": "",
+            "PhysicalArmorReduction": "",
+            "PhysicalArmorPiercingFactor": "",
+            "ImpactFactor": "",
+            "MeleeAbility": "",
+            "Recoil": "",
+            "AimPrecisions": "",
+            "InitialSpeed": "",
+            "ReloadTime": "",
+            "NumberOfMagazines": "",
+            "SimultaneousFireCount": "",
+            "EnergyChargeRequired": ""
+        }
+    ],
+    "Machine Gun": [
+        {
+            "Name": "",
+            "Manufacturer": "",
+            "WeaponType": "",
+            "Notes": "",
+            "WeaponID": "",
+            "Price": "",
+            "Weight": "",
+            "EnergyCost": "",
+            "AttackPower": "",
+            "PhysicalArmorReduction": "",
+            "PhysicalArmorPiercingFactor": "",
+            "ImpactFactor": "",
+            "MeleeAbility": "",
+            "Recoil": "",
+            "AimPrecisions": "",
+            "InitialSpeed": "",
+            "ReloadTime": "",
+            "NumberOfMagazines": "",
+            "SimultaneousFireCount": "",
+            "EnergyChargeRequired": ""
+        }
+    ]
+}

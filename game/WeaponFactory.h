@@ -1,12 +1,19 @@
 #ifndef WEAPON_FACTORY_H
 #define WEAPON_FACTORY_H
 
+#include "../json/json.h"
+
 #include <iostream>
+#include <fstream>
+#include <filesystem>
 #include <vector>
 #include <string>
 
 #include "../util/Maths.h"
 #include "../util/enumFactory.h"
+
+using json = nlohmann::json;
+
 #define WEAPONTYPE(XX) \
     XX(HANDGUN, =0) \
     XX(RIFLE, =1) \
@@ -50,9 +57,9 @@ typedef struct WeaponConfigs
     unsigned int ImpactFactor_; // Higher impact means the quicker their stun bar builds.
     unsigned int MeleeAbility_; // How much damage when used as a melee weapon.
     unsigned int Recoil_; // How hard it is to take precise repeated shots with the weapon.
-    unsigned int AimPrecisions_; // Initial accuracy of the weapon.
-    unsigned int InitialSpeed_; // Which weapon is faster.
-    unsigned int ReloadTime_; // How long in seconds it takes to reload the weapon.
+    unsigned int AimPrecisions_; // Initial accuracy of the weapon. (%)
+    unsigned int InitialSpeed_; // Which weapon is faster. (ms)
+    unsigned int ReloadTime_; // How long in seconds it takes to reload the weapon. (ms)
     unsigned int NumberOfMagazines_; // How much reserved ammo for the weapon.
     unsigned int MagazineCapacity_; // How much ammo per reload.
     unsigned int SimultaneousFireCount_; // What the ammo expendeture is per action.
@@ -70,6 +77,7 @@ typedef struct WeaponCompleted
     std::string Name;
     std::string Manufacturer;
     std::string Notes;
+    unsigned int rarity;
     unsigned int weaponPartID;
 
     WeaponCompleted() : Initialized(false), Equipped(false) {}
@@ -79,24 +87,52 @@ typedef struct WeaponCompleted
 class WeaponFactory
 {
     public:
+        json data_;
         std::vector<Weapon> Weapons;
 
         // Empty Constructor for ease of use.
         WeaponFactory() {
-            
+            std::string parentDir = (std::filesystem::current_path().std::filesystem::path::parent_path()).string();
+            std::ifstream f(parentDir + "/game/WEAPONS.json");
+
+            this->data_ = json::parse(f);
         }
 
-        Weapon CreateWeapon(WeaponType wType, wConfigs WeaponConfigs, std::string Name, std::string Manufacturer, std::string Notes) {
+        Weapon CreateWeapon(WeaponType wType, unsigned int weaponOffset) {
             Weapon weaponBP;
 
-            weaponBP.Name = Name;
-            weaponBP.Manufacturer = Manufacturer;
-            weaponBP.Notes = Notes;
-            weaponBP.weaponPartID = getRand();
-            weaponBP.WType = wType;
-            weaponBP.WeaponConfigs = WeaponConfigs;
-            weaponBP.slotCompatability = 0;
-            std::cout << "Created weapon of " << wType << " type." << "With weaponPartID: " << weaponBP.weaponPartID << std::endl;
+            switch (wType) {
+                case HANDGUN:
+                    weaponBP.rarity = getRandRarity();
+                    weaponBP.slotCompatability = 0;
+
+                    weaponBP.Name = this->data_["Handgun"][weaponOffset]["Name"].get<std::string>();
+                    weaponBP.Manufacturer = this->data_["Handgun"][weaponOffset]["Manufacturer"].get<std::string>();
+                    weaponBP.WType = wType;
+                    weaponBP.Notes = this->data_["Handgun"][weaponOffset]["Notes"].get<std::string>();
+                    weaponBP.weaponPartID = this->data_["Handgun"][weaponOffset]["WeaponID"].get<int>() + getRandDependingOnRarity(weaponBP.rarity);
+                    weaponBP.WeaponConfigs.Price_ = this->data_["Handgun"][weaponOffset]["Price"].get<int>();
+                    weaponBP.WeaponConfigs.Weight_ = this->data_["Handgun"][weaponOffset]["Weight"].get<int>() + getRandDependingOnRarity(weaponBP.rarity);
+                    weaponBP.WeaponConfigs.EnergyCost_ = this->data_["Handgun"][weaponOffset]["EnergyCost"].get<int>() + getRandDependingOnRarity(weaponBP.rarity);
+                    weaponBP.WeaponConfigs.AttackPower_ = this->data_["Handgun"][weaponOffset]["AttackPower"].get<int>() + getRandDependingOnRarity(weaponBP.rarity);
+                    weaponBP.WeaponConfigs.PhysicalArmorReduction_ = this->data_["Handgun"][weaponOffset]["PhysicalArmorReduction"].get<int>() + getRandDependingOnRarity(weaponBP.rarity);
+                    weaponBP.WeaponConfigs.PhysicalArmorPiercingFactor_ = this->data_["Handgun"][weaponOffset]["PhysicalArmorPiercingFactor"].get<int>() + getRandDependingOnRarity(weaponBP.rarity);
+                    weaponBP.WeaponConfigs.ImpactFactor_ = this->data_["Handgun"][weaponOffset]["ImpactFactor"].get<int>() + getRandDependingOnRarity(weaponBP.rarity);
+                    weaponBP.WeaponConfigs.MeleeAbility_ = this->data_["Handgun"][weaponOffset]["MeleeAbility"].get<int>() + getRandDependingOnRarity(weaponBP.rarity);
+                    weaponBP.WeaponConfigs.Recoil_ = this->data_["Handgun"][weaponOffset]["Recoil"].get<int>() + getRandDependingOnRarity(weaponBP.rarity);
+                    weaponBP.WeaponConfigs.AimPrecisions_ = this->data_["Handgun"][weaponOffset]["AimPrecisions"].get<int>() + getRandDependingOnRarity(weaponBP.rarity);
+                    weaponBP.WeaponConfigs.InitialSpeed_ = this->data_["Handgun"][weaponOffset]["InitialSpeed"].get<int>() + getRandDependingOnRarity(weaponBP.rarity);
+                    weaponBP.WeaponConfigs.ReloadTime_ = this->data_["Handgun"][weaponOffset]["ReloadTime"].get<int>() + getRandDependingOnRarity(weaponBP.rarity);
+                    weaponBP.WeaponConfigs.NumberOfMagazines_ = this->data_["Handgun"][weaponOffset]["NumberOfMagazines"].get<int>() + getRandDependingOnRarity(weaponBP.rarity);
+                    weaponBP.WeaponConfigs.SimultaneousFireCount_ = this->data_["Handgun"][weaponOffset]["SimultaneousFireCount"].get<int>() + getRandDependingOnRarity(weaponBP.rarity);
+                    weaponBP.WeaponConfigs.EnergyChargeRequired_ = this->data_["Handgun"][weaponOffset]["EnergyChargeRequired"].get<int>() + getRandDependingOnRarity(weaponBP.rarity);
+
+                    std::cout << "Created weapon of " << wType << " type " << "With weaponPartID: " << weaponBP.weaponPartID << std::endl;
+                    break;
+                default:
+                    std::cout << "Could not interpret wType when creating weapon" << std::endl;
+                    break;
+            }
             return weaponBP;
         }
 };

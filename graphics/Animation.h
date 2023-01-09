@@ -6,7 +6,6 @@
 #include "../imgui/imgui_impl_opengl3.h"
 
 #include "Model.h"
-#include "Mesh.h"
 
 void translateModelOverADistance(Shader& shader, Camera& camera, Model& model, glm::vec3 endLocation);
 

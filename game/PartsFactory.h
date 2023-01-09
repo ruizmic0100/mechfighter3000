@@ -1,7 +1,7 @@
 #ifndef PARTS_FACTORY_H
 #define PARTS_FACTORY_H
 
-// TODO: Create a namespace for json object conversion. (https://github.com/nlohmann/json#examples:~:text=To%20make%20this%20work%20with%20one%20of%20your%20types%2C%20you%20only%20need%20to%20provide%20two%20functions%3A)
+// TODO: Create a namespace for json object conversion. (https://github.com/nlohmann/json#examples:~:text=To%2partOffsetmake%2partOffsetthis%2partOffsetwork%2partOffsetwith%2partOffsetone%2partOffsetof%2partOffsetyour%2partOffsettypes%2C%2partOffsetyou%2partOffsetonly%2partOffsetneed%2partOffsetto%2partOffsetprovide%2partOffsettwo%2partOffsetfunctions%3A)
 // TODO: Move all member function code into cpp file instead of here.
 // TODO: Make an exists_ member bool or created_ for the part instances.
 
@@ -24,6 +24,14 @@ enum PartType {
     LEGS
 };
 
+enum Rarity {
+    RUST = 0,
+    CIVILIAN,
+    MILITARY,
+    ALIEN
+};
+
+// NOTE: Is this still used?
 constexpr std::initializer_list<PartType> allPartTypes = {HEAD, CORE, ARMS, LEGS};
 
 typedef struct PartCompleted
@@ -39,6 +47,7 @@ typedef struct PartCompleted
     unsigned int BallisticDefense;
     unsigned int EnergyDefense;
     unsigned int ArmorPoints;
+    unsigned int rarity;
 
     PartCompleted() : Initialized(false) {}
 } Part;
@@ -60,11 +69,9 @@ class PartsFactory
         Part GetPart(int PartID) {
         };
 
-        Part CreatePart(PartType typeOfPart) {
+        Part CreatePart(PartType typeOfPart, unsigned int partOffset) {
             Part tempPart;
             std::string partNameBase, partNameComplete;
-            unsigned int randomNum = getRand();
-            std::string randomNum_str = std::to_string(randomNum);
 
             switch (typeOfPart) {
                 case HEAD:
@@ -72,132 +79,148 @@ class PartsFactory
                     tempPart.Type = typeOfPart;
 
                     // Create unique name:
-                    partNameBase = this->data_["Heads"][0]["Name"].get<std::string>();
-                    partNameComplete = partNameBase + randomNum_str;
+                    partNameBase = this->data_["Heads"][partOffset]["Name"].get<std::string>();
+                    partNameComplete = partNameBase;
                     tempPart.Name = partNameComplete;
 
+                    // Create a rarity:
+                    tempPart.rarity = getRandRarity();
+
                     // Set Manufacturer:
-                    tempPart.Manufacturer = this->data_["Heads"][0]["Manufacturer"];
+                    tempPart.Manufacturer = this->data_["Heads"][partOffset]["Manufacturer"];
 
                     // Set Notes:
-                    tempPart.Notes = this->data_["Heads"][0]["Notes"];
+                    tempPart.Notes = this->data_["Heads"][partOffset]["Notes"];
 
                     // Create unique PartID:
-                    tempPart.PartID = this->data_["Heads"][0]["PartID"].get<int>() + getRand();
+                    tempPart.PartID = this->data_["Heads"][partOffset]["PartID"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
 
                     // Create unique price:
-                    tempPart.Price = this->data_["Heads"][0]["Price"].get<int>() + getRand();
+                    tempPart.Price = this->data_["Heads"][partOffset]["Price"].get<int>();
 
                     // Create unique weight:
-                    tempPart.Weight = this->data_["Heads"][0]["Weight"].get<int>() + getRand();
+                    tempPart.Weight = this->data_["Heads"][partOffset]["Weight"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
 
                     // Create unique ballistic defense:
-                    tempPart.BallisticDefense = this->data_["Heads"][0]["BallisticDefense"].get<int>() + getRand();
+                    tempPart.BallisticDefense = this->data_["Heads"][partOffset]["BallisticDefense"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
 
                     // Create unique energy defense:
-                    tempPart.EnergyDefense = this->data_["Heads"][0]["EnergyDefense"].get<int>() + getRand();
+                    tempPart.EnergyDefense = this->data_["Heads"][partOffset]["EnergyDefense"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
 
                     // Create unique armor points:
-                    tempPart.ArmorPoints = this->data_["Heads"][0]["ArmorPoints"].get<int>() + getRand();
+                    tempPart.ArmorPoints = this->data_["Heads"][partOffset]["ArmorPoints"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
+
                     break;
                 case CORE:
                     std::cout << "Creating Part of type " << typeOfPart << std::endl;
                     tempPart.Type = typeOfPart;
 
                     // Create unique name:
-                    partNameBase = this->data_["Core"][0]["Name"].get<std::string>();
-                    partNameComplete = partNameBase + randomNum_str;
+                    partNameBase = this->data_["Core"][partOffset]["Name"].get<std::string>();
+                    partNameComplete = partNameBase;
                     tempPart.Name = partNameComplete;
 
+                    // Create a rarity:
+                    tempPart.rarity = getRandRarity();
+
                     // Set Manufacturer:
-                    tempPart.Manufacturer = this->data_["Core"][0]["Manufacturer"];
+                    tempPart.Manufacturer = this->data_["Core"][partOffset]["Manufacturer"];
 
                     // Set Notes:
-                    tempPart.Notes = this->data_["Core"][0]["Notes"];
+                    tempPart.Notes = this->data_["Core"][partOffset]["Notes"];
 
                     // Create unique PartID:
-                    tempPart.PartID = this->data_["Core"][0]["PartID"].get<int>() + getRand();
+                    tempPart.PartID = this->data_["Core"][partOffset]["PartID"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
 
                     // Create unique price:
-                    tempPart.Price = this->data_["Core"][0]["Price"].get<int>() + getRand();
+                    tempPart.Price = this->data_["Core"][partOffset]["Price"].get<int>();
 
                     // Create unique weight:
-                    tempPart.Weight = this->data_["Core"][0]["Weight"].get<int>() + getRand();
+                    tempPart.Weight = this->data_["Core"][partOffset]["Weight"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
 
                     // Create unique ballistic defense:
-                    tempPart.BallisticDefense = this->data_["Core"][0]["BallisticDefense"].get<int>() + getRand();
+                    tempPart.BallisticDefense = this->data_["Core"][partOffset]["BallisticDefense"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
 
                     // Create unique energy defense:
-                    tempPart.EnergyDefense = this->data_["Core"][0]["EnergyDefense"].get<int>() + getRand();
+                    tempPart.EnergyDefense = this->data_["Core"][partOffset]["EnergyDefense"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
 
                     // Create unique armor points:
-                    tempPart.ArmorPoints = this->data_["Core"][0]["ArmorPoints"].get<int>() + getRand();
+                    tempPart.ArmorPoints = this->data_["Core"][partOffset]["ArmorPoints"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
+
                     break;
                 case ARMS:
                     std::cout << "Creating Part of type " << typeOfPart << std::endl;
                     tempPart.Type = typeOfPart;
 
                     // Create unique name:
-                    partNameBase = this->data_["Arms"][0]["Name"].get<std::string>();
-                    partNameComplete = partNameBase + randomNum_str;
+                    partNameBase = this->data_["Arms"][partOffset]["Name"].get<std::string>();
+                    partNameComplete = partNameBase;
                     tempPart.Name = partNameComplete;
 
+                    // Create a rarity:
+                    tempPart.rarity = getRandRarity();
+
                     // Set Manufacturer:
-                    tempPart.Manufacturer = this->data_["Arms"][0]["Manufacturer"];
+                    tempPart.Manufacturer = this->data_["Arms"][partOffset]["Manufacturer"];
 
                     // Set Notes:
-                    tempPart.Notes = this->data_["Arms"][0]["Notes"];
+                    tempPart.Notes = this->data_["Arms"][partOffset]["Notes"];
 
                     // Create unique PartID:
-                    tempPart.PartID = this->data_["Arms"][0]["PartID"].get<int>() + getRand();
+                    tempPart.PartID = this->data_["Arms"][partOffset]["PartID"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
 
                     // Create unique price:
-                    tempPart.Price = this->data_["Arms"][0]["Price"].get<int>() + getRand();
+                    tempPart.Price = this->data_["Arms"][partOffset]["Price"].get<int>();
 
                     // Create unique weight:
-                    tempPart.Weight = this->data_["Arms"][0]["Weight"].get<int>() + getRand();
+                    tempPart.Weight = this->data_["Arms"][partOffset]["Weight"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
 
                     // Create unique ballistic defense:
-                    tempPart.BallisticDefense = this->data_["Arms"][0]["BallisticDefense"].get<int>() + getRand();
+                    tempPart.BallisticDefense = this->data_["Arms"][partOffset]["BallisticDefense"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
 
                     // Create unique energy defense:
-                    tempPart.EnergyDefense = this->data_["Arms"][0]["EnergyDefense"].get<int>() + getRand();
+                    tempPart.EnergyDefense = this->data_["Arms"][partOffset]["EnergyDefense"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
 
                     // Create unique armor points:
-                    tempPart.ArmorPoints = this->data_["Arms"][0]["ArmorPoints"].get<int>() + getRand();
+                    tempPart.ArmorPoints = this->data_["Arms"][partOffset]["ArmorPoints"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
+
                     break;
                 case LEGS:
                     std::cout << "Creating Part of type " << typeOfPart << std::endl;
                     tempPart.Type = typeOfPart;
 
                     // Create unique name:
-                    partNameBase = this->data_["Legs"][0]["Name"].get<std::string>();
-                    partNameComplete = partNameBase + randomNum_str;
+                    partNameBase = this->data_["Legs"][partOffset]["Name"].get<std::string>();
+                    partNameComplete = partNameBase;
                     tempPart.Name = partNameComplete;
 
+                    // Create a rarity:
+                    tempPart.rarity = getRandRarity();
+
                     // Set Manufacturer:
-                    tempPart.Manufacturer = this->data_["Legs"][0]["Manufacturer"];
+                    tempPart.Manufacturer = this->data_["Legs"][partOffset]["Manufacturer"];
 
                     // Set Notes:
-                    tempPart.Notes = this->data_["Legs"][0]["Notes"];
+                    tempPart.Notes = this->data_["Legs"][partOffset]["Notes"];
 
                     // Create unique PartID:
-                    tempPart.PartID = this->data_["Legs"][0]["PartID"].get<int>() + getRand();
+                    tempPart.PartID = this->data_["Legs"][partOffset]["PartID"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
 
                     // Create unique price:
-                    tempPart.Price = this->data_["Legs"][0]["Price"].get<int>() + getRand();
+                    tempPart.Price = this->data_["Legs"][partOffset]["Price"].get<int>();
 
                     // Create unique weight:
-                    tempPart.Weight = this->data_["Legs"][0]["Weight"].get<int>() + getRand();
+                    tempPart.Weight = this->data_["Legs"][partOffset]["Weight"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
 
                     // Create unique ballistic defense:
-                    tempPart.BallisticDefense = this->data_["Legs"][0]["BallisticDefense"].get<int>() + getRand();
+                    tempPart.BallisticDefense = this->data_["Legs"][partOffset]["BallisticDefense"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
 
                     // Create unique energy defense:
-                    tempPart.EnergyDefense = this->data_["Legs"][0]["EnergyDefense"].get<int>() + getRand();
+                    tempPart.EnergyDefense = this->data_["Legs"][partOffset]["EnergyDefense"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
 
                     // Create unique armor points:
-                    tempPart.ArmorPoints = this->data_["Legs"][0]["ArmorPoints"].get<int>() + getRand();
+                    tempPart.ArmorPoints = this->data_["Legs"][partOffset]["ArmorPoints"].get<int>() + getRandDependingOnRarity(tempPart.rarity);
+
                     break;
                 default:
                     std::cout << "Did not specify the type of part wanting to be created!" << std::endl;

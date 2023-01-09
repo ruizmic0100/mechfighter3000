@@ -4,10 +4,8 @@
 
 #include <iostream>
 
-#include <GLFW/glfw3.h>
-
-#include "../graphics/Renderer.h"
 #include "../util/logging.h"
+
 #include "GameEventHandler.h"
 
 

@@ -1,27 +1,27 @@
-#if _WIN32
-#include <windows.h>
-#endif
-
 #include "../imgui/imgui.h"
 #include "../imgui/imgui_impl_glfw.h"
 #include "../imgui/imgui_impl_opengl3.h"
 
+#if _WIN32
+#include <windows.h>
+#endif
+
+#include <iostream>
 #include <filesystem>
-#include "math.h"
-#include "Model.h"
+
+#include "renderer.h"
 #include "LightCube.h"
-
-#include "Renderer.h"
-#include "../game/Mech_Factory.h"
-#include "../game/Player.h"
-#include "MechMenu.h"
-#include "EnemyMenu.h"
-#include "../game/Enemy.h"
-#include "Animation.h"
-
-
+#include "Model.h"
+#include "Player.h"
+#include "Enemy.h"
+#include "PlayerMechMenu.h"
+#include "RenderList.h"
+#include "Input.h"
+#include "BattleMenu.h"
 
 // TODO: Add render draw list. It should take care of what gets updated to our next frame.
+// NOTE: Sorta adding here a render list but needs more work...
+extern bool renderPlayerMechMenu=false, renderMainMenu=false, renderBattleMenu=false, renderLootMenu=false;
 
 // Screen dimensions.
 const unsigned int width = 800;
@@ -35,18 +35,6 @@ float rotationsWin[numWindows];
 // Takes care of drawing the windows in the right order.
 unsigned int orderDraw[numWindows];
 float distanceCamera[numWindows];
-
-float rectangleVertices[] =
-{
-    // Coords       // texCoords
-    1.0f, -1.0f, 1.0f, 0.0f,
-    -1.0f, -1.0f, 0.0f, 0.0f,
-    -1.0f, 1.0f, 0.0f, 1.0f,
-
-    1.0f, 1.0f, 1.0f, 1.0f,
-    1.0f, -1.0f, 1.0f, 0.0f,
-    -1.0f, 1.0f, 0.0f, 1.0f
-};
 
 // Relative Path for parent DIR.
 std::string parentDir = (std::filesystem::current_path().std::filesystem::path::parent_path()).string();
@@ -101,19 +89,10 @@ std::vector<Model> LoadModels()
     std::vector<Model> model_list_temp;
 
     // Relative path setup for each model specifically
-    std::string groundPath = "/graphics/models/ground/scene.gltf";
-    std::string grassPath = "/graphics/models/grass/scene.gltf";
-    std::string testModelPath = "/graphics/models/testmodel/scene.gltf";
     std::string TestAreaPath = "/graphics/models/TestArea/scene.gltf";
 
-    // Model ground((parentDir + groundPath).c_str());
-    // Model grass((parentDir + grassPath).c_str());
-    // Model testModel((parentDir + testModelPath).c_str());
     Model TestArea((parentDir + TestAreaPath).c_str());
 
-    // model_list_temp.push_back(ground);
-    // model_list_temp.push_back(grass);
-    // model_list_temp.push_back(testModel);
     model_list_temp.push_back(TestArea);
 
     return model_list_temp;
@@ -163,6 +142,10 @@ int renderer()
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init(glsl_version);
 
+    /* ------------------------ Init Sequence Finished ---------------------------*/
+
+    Input auxInputs;
+
     // TODO: Load Fonts Section
 
     // Generates Shader object using shaders default.vert and default.frag:
@@ -198,6 +181,15 @@ int renderer()
     Player PlayerInstance = PlayerInit();
     Enemy EnemyInstance = EnemyInit(RUST_CRAB);
 
+
+    // Variables to create periodic events for FPS:
+    double prevTime = 0.0f;
+    double crntTime = 0.0f;
+    double timeDiff;
+
+    // Keeps track of the amount of frames in timeDiff
+    unsigned int counter = 0;
+
     // Loop until the user closes the window:
     while(!glfwWindowShouldClose(window)) {
         // Render Here:
@@ -206,11 +198,21 @@ int renderer()
         glClearColor(0.07f, 0.13f, 0.17f, 1.0f); // Color of the background.
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Clean the back buffer and assign the new color to it.
 
-        // Handles camera inputs:
-        // NOTE: this might need to be placed in a time loop to make it not dependent on FPS.
-        // RenderHandler will choose here what to render...
-        // For now just using simple keybinds on camera input.
-       camera.Inputs(window);
+        // Updated counter and times.
+        crntTime = glfwGetTime();
+        timeDiff = crntTime - prevTime;
+        counter++;
+
+        if (timeDiff >= 1.0/30.0) {
+            // Resets times and counter.
+            prevTime = crntTime;
+            counter = 0;
+            camera.Inputs(window); // Handles camera inputs.
+        }
+
+        // Handles other player inputs that aren't movement/looking.
+        auxInputs.Inputs(window);
+
         // Updates and exports the camera matrix to the vertex shader:
         camera.updateMatrix(45.0f, 0.1f, 400.0f);
 
@@ -242,8 +244,9 @@ int renderer()
         // Poll for and process events(Refreshes the window basically):
         glfwPollEvents();
         
-        if (showMechMenu) {
-            MechMenu::Render(PlayerInstance, EnemyInstance);
+
+        if (renderPlayerMechMenu) {
+            Render(PlayerInstance, EnemyInstance);
         }
 
 

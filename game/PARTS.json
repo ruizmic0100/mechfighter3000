@@ -11,6 +11,18 @@
         "BallisticDefense": 757,
         "EnergyDefense": 357,
         "ArmorPoints": 1768
+        },
+        {
+        "Name": "Magika-Head-Base",
+        "Manufacturer": "Magika",
+        "PartType": "Head",
+        "Notes": "A Basic Head",
+        "PartID": 10,
+        "Price": 1000,
+        "Weight": 215,
+        "BallisticDefense": 500,
+        "EnergyDefense": 315,
+        "ArmorPoints": 100
         }
     ],
     "Core": [
@@ -25,6 +37,18 @@
             "BallisticDefense": 2574,
             "EnergyDefense": 2312,
             "ArmorPoints": 12408
+        },
+        {
+        "Name": "Magika-Core-Base",
+        "Manufacturer": "Magika",
+        "PartType": "Core",
+        "Notes": "A Basic Core",
+        "PartID": 11,
+        "Price": 1000,
+        "Weight": 1500,
+        "BallisticDefense": 1000,
+        "EnergyDefense": 850,
+        "ArmorPoints": 2000
         }
     ],
     "Arms": [
@@ -39,6 +63,18 @@
             "BallisticDefense": 1833,
             "EnergyDefense": 1809,
             "ArmorPoints": 8432
+        },
+        {
+        "Name": "Magika-Arm-Base",
+        "Manufacturer": "Magika",
+        "PartType": "Arms",
+        "Notes": "Basic Arms",
+        "PartID": 12,
+        "Price": 1000,
+        "Weight": 815,
+        "BallisticDefense": 800,
+        "EnergyDefense": 615,
+        "ArmorPoints": 450
         }
     ],
     "Legs": [
@@ -53,6 +89,18 @@
             "BallisticDefense": 2310,
             "EnergyDefense": 2709,
             "ArmorPoints": 10008
+        },
+        {
+        "Name": "Magika-Legs-Base",
+        "Manufacturer": "Magika",
+        "PartType": "Legs",
+        "Notes": "Basic Legs",
+        "PartID": 13,
+        "Price": 1000,
+        "Weight": 1000,
+        "BallisticDefense": 500,
+        "EnergyDefense": 315,
+        "ArmorPoints": 780
         }
     ]
 }

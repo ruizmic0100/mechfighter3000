@@ -2,6 +2,13 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"type": "shell",
+			"label": "Start Visual Studio Project",
+			"command": "start build/mechfighter3000.sln",
+			"group": "build",
+			"detail": "Start the project in Visual Studio"
+		},
+		{
 			"type": "cmake",
 			"label": "CMake: build",
 			"command": "build",
@@ -11,13 +18,6 @@
 			"group": "build",
 			"problemMatcher": [],
 			"detail": "CMake template build task"
-		},
-		{
-			"type": "shell",
-			"label": "Start Visual Studio Project",
-			"command": "start build/mechfighter3000.sln",
-			"group": "build",
-			"detail": "Start the project in Visual Studio"
 		}
 	]
 }

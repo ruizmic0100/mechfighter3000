@@ -49,9 +49,6 @@ void Camera::Inputs(GLFWwindow* window)
     } else if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_RELEASE) {
         speed = 0.1f;
     }
-    if (glfwGetKey(window, GLFW_KEY_TAB) == GLFW_PRESS) {
-        showMechMenu = true;
-    }
 
     // Handles mouse inputs:
     if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS && !io.WantCaptureMouse) {
