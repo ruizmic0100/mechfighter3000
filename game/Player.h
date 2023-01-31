@@ -13,8 +13,10 @@ class Player {
     public:
         Mech playerMech;
         Inventory PlayerInventory;
+        unsigned int playerLevel_;
+        int experiencePoints_;
         
-        Player() {
+        Player() : playerLevel_(1), experiencePoints_(0) {
             this->PlayerInventory.generateInventory(PLAYER_MAX_INVENTORY_SLOTS);
             std::cout << "Player Initialized." << std::endl;
         };
@@ -23,6 +25,18 @@ class Player {
         void BindMech(Mech mech) {
             this->playerMech = mech;
         };
+
+        void ExperienceGain(int points) {
+            this->experiencePoints_ += points;
+        }
+
+        void LevelUp() {
+            this->playerLevel_++;
+        }
+
+        unsigned int GetLevel() {
+            return this->playerLevel_;
+        }
 };
 
 Player PlayerInit();

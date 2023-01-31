@@ -51,12 +51,13 @@ class Mech : public Frame
         // TODO: Make mechslots that show if equiped or not for the weapons.
         std::string Name_;
         unsigned int level_;
+        int experiencePoints_;
         unsigned int totalAP_;
         int currentAP_;
         bool fullyEquipped_;
 
         // Used to create an empty blank template.
-        Mech() { this->totalAP_ = 0; this->currentAP_ = 0; }; // FIXME: Have to zero initialize these for some reason...
+        Mech() : experiencePoints_(0) { this->totalAP_ = 0; this->currentAP_ = 0; }; // FIXME: Have to zero initialize these for some reason...
 
         // Custom Mech constructor that allocates all the necessary components for quick creation.
         Mech(std::string Name, Frame frame, Part Head, Part Core, Part Arms, Part Legs) :
@@ -64,7 +65,8 @@ class Mech : public Frame
         {
             std::cout << "Creating Mech..." << std::endl;
             this->SetName(Name);
-            this->SetLevel(0);
+            this->SetLevel(1);
+            this-> experiencePoints_(0);
             this->fullyEquipped_ = false;
             this->leftArmWeapon_.Equipped=false;
             this->rightArmWeapon_.Equipped=false;

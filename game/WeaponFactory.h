@@ -79,8 +79,9 @@ typedef struct WeaponCompleted
     std::string Notes;
     unsigned int rarity;
     unsigned int weaponPartID;
+    unsigned int weaponLevel;
 
-    WeaponCompleted() : Initialized(false), Equipped(false) {}
+    WeaponCompleted() : Initialized(false), Equipped(false), weaponLevel(1) {}
 } Weapon;
 
 

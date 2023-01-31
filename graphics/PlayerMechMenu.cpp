@@ -43,7 +43,8 @@ void Render(Player& player, Enemy& enemy, unsigned int menu_textures)
             ImGui::Dummy(ImVec2(0.0f, 5.0f));
 
             // Mech Level.
-            ImGui::Text("Lv. %u", player.playerMech.level_);
+            ImGui::Text("Player Lv. %u", player.playerLevel_);
+            ImGui::Text("Mech Lv. %u", player.playerMech.level_);
 
             // Mech Exp bar.
             ImGui::Text("Exp");
@@ -308,6 +309,7 @@ void Render(Player& player, Enemy& enemy, unsigned int menu_textures)
                         ImGui::Text("Name: "); ImGui::SameLine(); ImGui::Text(player.PlayerInventory.inventoryWeapons_.at(i).Name.c_str());
                         ImGui::Text("Type: "); ImGui::SameLine();
                         if (player.PlayerInventory.inventoryWeapons_.at(i).WType == HANDGUN) ImGui::Text("Handgun"); // TODO: Add the rest of the types.
+                        ImGui::Text("Level: "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.inventoryWeapons_.at(i).weaponLevel).c_str());
                         ImGui::Text("Price: "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.inventoryWeapons_.at(i).WeaponConfigs.Price_).c_str());
                         ImGui::Text("Weight: "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.inventoryWeapons_.at(i).WeaponConfigs.Weight_).c_str());
                         ImGui::Text("Attack Power: "); ImGui::SameLine(); ImGui::Text(std::to_string(player.PlayerInventory.inventoryWeapons_.at(i).WeaponConfigs.AttackPower_).c_str());

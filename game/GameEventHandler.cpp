@@ -13,6 +13,11 @@ void SetGameState(States gamestateToSetTo)
     gamestate.curr_state = gamestateToSetTo;
 }
 
+void DeliverExperience()
+{
+    
+}
+
 void GameStart()
 {
     srand((unsigned) time(NULL));
@@ -54,6 +59,7 @@ void BattlePhase()
 void LootPhase()
 {
     printf("LootPhase()\n");
+    DeliverExperience();
     renderBattleMenu = false;
     gamestate.curr_state = LOOT_PHASE;
 }
