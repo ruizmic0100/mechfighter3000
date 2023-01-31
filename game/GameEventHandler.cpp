@@ -3,19 +3,14 @@
 
 GameState gamestate;
 
-enum BattleResults {
-    DEFEATED = 0,
-    SUCCEEDED = 1,
-    TACTICAL_RETREAT = 2
-};
-
-struct BattleData {
-    BattleResults outcome;
-} Battle;
-
 int GetGameState()
 {
     return gamestate.curr_state;
+}
+
+void SetGameState(States gamestateToSetTo)
+{
+    gamestate.curr_state = gamestateToSetTo;
 }
 
 void GameStart()
@@ -51,6 +46,9 @@ void BattlePhase()
     gamestate.curr_state = BATTLE_PHASE;
     // Enemy enemy = SpawnEnemy();
     renderBattleMenu = true;
+    BattleState turns;
+
+    std::cout << "Battle Sequence: " << turns.getCurrentState() << std::endl;
 }
 
 void LootPhase()
@@ -76,7 +74,7 @@ void PlayerWeaponAttack(Player& player, Enemy& enemy, unsigned int whichWeapon)
     switch (whichWeapon) {
         case 0: // Left arm weapon.
             enemy.enemyMech.currentAP_ -= player.playerMech.leftArmWeapon_.WeaponConfigs.AttackPower_; // TODO: Add in all the different calculations needed.
-            if (enemy.enemyMech.currentAP_ <= 0) { // FIXME: Can't seem to get this to work
+            if (enemy.enemyMech.currentAP_ <= 0) {
                 enemy.enemyMech.currentAP_ = 0;
                 LootPhase();
             }

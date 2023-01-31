@@ -7,6 +7,7 @@
 #include "renderer.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "BattleSequence.h"
 
 enum States
 {
@@ -30,6 +31,8 @@ struct GameState
 inline bool Start;
 
 int GetGameState();
+
+void SetGameState();
 
 void GameStart();
 

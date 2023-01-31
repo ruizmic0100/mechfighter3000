@@ -153,28 +153,28 @@ class Mech : public Frame
             checkIfFullyEquipped();
         };
 
-        void EquipLeftArm(Weapon weapon) {
+        void EquipLeftArmWeapon(Weapon weapon) {
             this->leftArmWeapon_ = weapon;
             this->leftArmWeapon_.Equipped = true;
             this->leftArmWeapon_.Initialized = true;
             std::cout << "Equipped Left Arm Weapon." << std::endl;
         };
 
-        void EquipRightArm(Weapon weapon) {
+        void EquipRightArmWeapon(Weapon weapon) {
             this->rightArmWeapon_ = weapon;
             this->rightArmWeapon_.Equipped = true;
             this->rightArmWeapon_.Initialized = true;
             std::cout << "Equipped Right Arm Weapon." << std::endl;
         };
 
-        void EquipLeftShoulder(Weapon weapon) {
+        void EquipLeftShoulderWeapon(Weapon weapon) {
             this->leftShoulderWeapon_ = weapon;
             this->leftShoulderWeapon_.Equipped = true;
             this->leftShoulderWeapon_.Initialized =true;
             std::cout << "Equipped Left Shoulder Weapon." << std::endl;
         };
 
-        void EquipRightShoulder(Weapon weapon) {
+        void EquipRightShoulderWeapon(Weapon weapon) {
             this->rightShoulderWeapon_ = weapon;
             this->rightShoulderWeapon_.Equipped = true;
             this->rightShoulderWeapon_.Initialized = true;

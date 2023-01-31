@@ -51,10 +51,10 @@ void EquipWeapon(Weapon& weaponToEquip, Player& player)
         case 0:
             if (!player.playerMech.leftArmWeapon_.Equipped) {
                 std::cout << "Trying to equip " << weaponToEquip.Name << " on left arm." << std::endl;
-                player.playerMech.EquipLeftArm(weaponToEquip);
+                player.playerMech.EquipLeftArmWeapon(weaponToEquip);
             } else if (!player.playerMech.rightArmWeapon_.Equipped) {
                 std::cout << "Trying to equip " << weaponToEquip.Name << " on right arm." << std::endl;
-                player.playerMech.EquipRightArm(weaponToEquip);
+                player.playerMech.EquipRightArmWeapon(weaponToEquip);
             } else {
                 std::cout << "Arm weapon slots full!" << std::endl;
             }
@@ -62,10 +62,10 @@ void EquipWeapon(Weapon& weaponToEquip, Player& player)
         case 1:
             if (!player.playerMech.leftShoulderWeapon_.Equipped) {
                 std::cout << "Trying to equip " << weaponToEquip.Name << " on left shoulder." << std::endl;
-                player.playerMech.EquipLeftShoulder(weaponToEquip);
+                player.playerMech.EquipLeftShoulderWeapon(weaponToEquip);
             } else if (!player.playerMech.rightShoulderWeapon_.Equipped) {
                 std::cout << "Trying to equip " << weaponToEquip.Name << " on right shoulder." << std::endl;
-                player.playerMech.EquipRightShoulder(weaponToEquip);
+                player.playerMech.EquipRightShoulderWeapon(weaponToEquip);
             } else {
                 std::cout << "Shoulder weapon slots full!" << std::endl;
             }
@@ -74,4 +74,6 @@ void EquipWeapon(Weapon& weaponToEquip, Player& player)
             std::cout << "Could not equip weapon." << std::endl;
             break;
     }
+
+    std::cout << "Weapon " << weaponToEquip.Name << " equipped status: " << weaponToEquip.Equipped << std::endl;
 }
