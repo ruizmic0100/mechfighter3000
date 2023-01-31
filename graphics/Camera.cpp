@@ -1,11 +1,43 @@
 #include "Camera.h"
 
+
+// Playground function: Cutscene Camera.
+void Camera::CutsceneCamera()
+{
+    glm::mat4 view = glm::mat4(1.0f);
+    glm::mat4 projection = glm::mat4(1.0f);
+
+    Position += 10;
+
+    view = glm::lookAt(Position, Position + Orientation, Up);
+    projection = glm::perspective(glm::radians(45.0f), (float)(width / height), 0.1f, 400.0f);
+
+    cameraMatrix = projection * view;
+    printf("Cutscene...\n");
+    for(int sleepCnt=0; sleepCnt <= 100000; sleepCnt++) {};
+    Position -= 5;
+}
+
+void Camera::resetCamera()
+{
+    glm::mat4 view = glm::mat4(1.0f);
+    glm::mat4 projection = glm::mat4(1.0f);
+
+    Position = glm::vec3(0.0f, 0.0f, 1.0f);
+
+    view = glm::lookAt(Position, Position + Orientation, Up);
+    projection = glm::perspective(glm::radians(45.0f), (float)(width / height), 0.1f, 400.0f);
+    printf("reseting camera...\n");
+    cameraMatrix = projection * view;
+}
+
 Camera::Camera(int width, int height, glm::vec3 position)
 {
     Camera::width = width;
     Camera::height = height;
     Position = position;
 }
+
 
 void Camera::updateMatrix(float FOVdeg, float nearPlane, float farPlane)
 {
@@ -48,6 +80,12 @@ void Camera::Inputs(GLFWwindow* window)
         speed = 0.4f;
     } else if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_RELEASE) {
         speed = 0.1f;
+    }
+    if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS) {
+        CutsceneCamera();
+    }
+    if (glfwGetKey(window, GLFW_KEY_0) == GLFW_PRESS) {
+        resetCamera();
     }
 
     // Handles mouse inputs:

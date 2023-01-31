@@ -14,7 +14,7 @@
 extern bool isOpen, showInventory, showAlreadyEquippedPopUp, ChangeLightColor;
 
 void Theme();
-void Render(Player& player, Enemy& enemy);
+void Render(Player& player, Enemy& enemy, unsigned int menu_textures);
 void CustomRendering();
 
 #endif // PLAYER_MECHMENU_CLASS_H

@@ -52,7 +52,7 @@ class Mech : public Frame
         std::string Name_;
         unsigned int level_;
         unsigned int totalAP_;
-        unsigned int currentAP_;
+        int currentAP_;
         bool fullyEquipped_;
 
         // Used to create an empty blank template.

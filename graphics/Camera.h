@@ -40,6 +40,8 @@ class Camera
 
         Camera(int width, int height, glm::vec3 position);
 
+        void CutsceneCamera();
+        void resetCamera();
         // Updates and exports the camera matrix to the vertex shader.
         void updateMatrix(float FOVdeg, float nearPlane, float farPlane);
         void Matrix(Shader& shader, const char* uniform);

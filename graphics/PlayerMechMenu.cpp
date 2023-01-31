@@ -17,7 +17,7 @@ bool ChangeLightColor=false, isOpen=false;
 // Used for the fps chart.
 float avg = 0.0f;
 
-void Render(Player& player, Enemy& enemy)
+void Render(Player& player, Enemy& enemy, unsigned int menu_textures)
 {
 
     // Start the Dear ImGui Frame:
@@ -39,6 +39,7 @@ void Render(Player& player, Enemy& enemy)
             ImGui::SetWindowFontScale(1.5);
             ImGui::Text("%s", player.playerMech.Name_.c_str());
             ImGui::SetWindowFontScale(1);
+            ImGui::Image((void*)(intptr_t)menu_textures, ImVec2(32, 32));
             ImGui::Dummy(ImVec2(0.0f, 5.0f));
 
             // Mech Level.

@@ -41,12 +41,13 @@ void GameStart()
 
 void LoadingPhase()
 {
+    printf("LoadingPhase()\n");
     gamestate.curr_state = LOADING_PHASE;
 }
 
 void BattlePhase()
 {
-
+    printf("BattlePhase()\n");
     gamestate.curr_state = BATTLE_PHASE;
     // Enemy enemy = SpawnEnemy();
     renderBattleMenu = true;
@@ -54,15 +55,15 @@ void BattlePhase()
 
 void LootPhase()
 {
+    printf("LootPhase()\n");
     renderBattleMenu = false;
     gamestate.curr_state = LOOT_PHASE;
-
-
 }
 
 // TODO: Make this actually a main menu with game start - settings - exit game.
 void MainMenuPhase()
 {
+    printf("MainMenuPhase()\n");
     gamestate.curr_state = MAINMENU_PHASE;
     renderer();
 }
@@ -74,12 +75,10 @@ void PlayerWeaponAttack(Player& player, Enemy& enemy, unsigned int whichWeapon)
     // Call loot phase
     switch (whichWeapon) {
         case 0: // Left arm weapon.
-            if ((enemy.enemyMech.currentAP_ -= player.playerMech.leftArmWeapon_.WeaponConfigs.AttackPower_) <= 0) {
+            enemy.enemyMech.currentAP_ -= player.playerMech.leftArmWeapon_.WeaponConfigs.AttackPower_; // TODO: Add in all the different calculations needed.
+            if (enemy.enemyMech.currentAP_ <= 0) { // FIXME: Can't seem to get this to work
                 enemy.enemyMech.currentAP_ = 0;
-                Battle.outcome = SUCCEEDED;
-                gamestate.curr_state = LOOT_PHASE;
-            } else {
-                enemy.enemyMech.currentAP_ -= player.playerMech.leftArmWeapon_.WeaponConfigs.AttackPower_;
+                LootPhase();
             }
             break;
         case 1: // Right arm weapon.
