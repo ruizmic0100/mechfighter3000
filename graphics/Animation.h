@@ -7,7 +7,7 @@
 
 #include "Model.h"
 
-void translateModelOverADistance(Shader& shader, Camera& camera, Model& model, glm::vec3 endLocation);
+void translateModelOverADistance(Shader& shader, Camera& camera, glm::vec3* startLocation, glm::vec3 endLocation);
 
 
 

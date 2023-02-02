@@ -18,6 +18,7 @@
 #include "RenderList.h"
 #include "Input.h"
 #include "BattleMenu.h"
+#include "Animation.h"
 
 // TODO: Add render draw list. It should take care of what gets updated to our next frame.
 // NOTE: Sorta adding here a render list but needs more work...
@@ -90,13 +91,10 @@ std::vector<Model> LoadModels()
 
     // Relative path setup for each model specifically
     std::string TestAreaPath = "/graphics/models/TestArea/scene.gltf";
-    std::string devcubePath = "/graphics/models/devcube/scene.gltf";
 
     Model TestArea((parentDir + TestAreaPath).c_str());
-    Model devcube((parentDir + devcubePath).c_str());
 
     model_list_temp.push_back(TestArea);
-    model_list_temp.push_back(devcube);
 
     return model_list_temp;
 }
@@ -227,6 +225,10 @@ int renderer()
     double crntTime = 0.0f;
     double timeDiff;
 
+    // Animation event loop setup:
+    double animPrevTime = 0.0f;
+    double animDiff = 0.0f;
+
     // Keeps track of the amount of frames in timeDiff
     unsigned int counter = 0;
 
@@ -240,7 +242,12 @@ int renderer()
 
     bool ret = LoadTextureFromFile(image, &mechhead_texture, &my_image_width, &my_image_height);
     IM_ASSERT(ret);
+
+    std::string devcubePath = "/graphics/models/devcube/scene.gltf";
     
+    Model devcube((parentDir + devcubePath).c_str());
+
+    glm::vec3* spawnPoint = new glm::vec3(0.0f, 0.0f, -10.0f);
 
     // Loop until the user closes the window:
     while(!glfwWindowShouldClose(window)) {
@@ -254,6 +261,10 @@ int renderer()
         crntTime = glfwGetTime();
         timeDiff = crntTime - prevTime;
         counter++;
+
+        // Animation loop times.
+        animDiff = crntTime - animPrevTime;
+
 
         if (timeDiff >= 1.0/30.0) {
             // Resets times and counter.
@@ -272,9 +283,19 @@ int renderer()
         for (std::vector<Model>::iterator it = model_list.begin(); it != model_list.end(); it++) {
             if (it == model_list.begin())
                 it->Draw(shaderProgram, camera, glm::vec3(0.0f, 1.0f, -8.0f), glm::quat(cos(glm::radians(270.0f/2)), 0, sin(glm::radians(270.0f/2))*1, 0.0f));
-            else
-                it->Draw(shaderProgram, camera, glm::vec3(-3.0f, 1.0f, -10.0f));
+            // else
+                // it->Draw(shaderProgram, camera, glm::vec3(-3.0f, 1.0f, -10.0f));
         }
+
+        // devcube.Draw(shaderProgram, camera, *spawnPoint); // Spawn location of dev cube
+
+        // NOTE(MSR): You need to translate the object at a certain fps but keep the object drawn.
+        // Animation loop (30fps)
+        if (animDiff >= 1.0f/30.0f) {
+            animPrevTime = crntTime;
+            translateModelOverADistance(shaderProgram, camera, spawnPoint, glm::vec3(7.0f, 1.0f, -10.0f));
+        }
+        devcube.Draw(shaderProgram, camera, *spawnPoint); // Spawn location of dev cube
 
         // Disable cull face so that grass and windows have both faces:
         // glDisable(GL_CULL_FACE);
