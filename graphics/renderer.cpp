@@ -90,10 +90,13 @@ std::vector<Model> LoadModels()
 
     // Relative path setup for each model specifically
     std::string TestAreaPath = "/graphics/models/TestArea/scene.gltf";
+    std::string devcubePath = "/graphics/models/devcube/scene.gltf";
 
     Model TestArea((parentDir + TestAreaPath).c_str());
+    Model devcube((parentDir + devcubePath).c_str());
 
     model_list_temp.push_back(TestArea);
+    model_list_temp.push_back(devcube);
 
     return model_list_temp;
 }
@@ -181,7 +184,6 @@ int renderer()
     ImGui_ImplOpenGL3_Init(glsl_version);
 
     /* ------------------------ Init Sequence Finished ---------------------------*/
-
     Input auxInputs;
 
     // TODO: Load Fonts Section
@@ -271,7 +273,7 @@ int renderer()
             if (it == model_list.begin())
                 it->Draw(shaderProgram, camera, glm::vec3(0.0f, 1.0f, -8.0f), glm::quat(cos(glm::radians(270.0f/2)), 0, sin(glm::radians(270.0f/2))*1, 0.0f));
             else
-                it->Draw(shaderProgram, camera);
+                it->Draw(shaderProgram, camera, glm::vec3(-3.0f, 1.0f, -10.0f));
         }
 
         // Disable cull face so that grass and windows have both faces:

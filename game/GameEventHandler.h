@@ -34,6 +34,8 @@ int GetGameState();
 
 void SetGameState();
 
+void DeliverExperience(Player& player, Enemy& enemy);
+
 void GameStart();
 
 Enemy SpawnEnemy();
@@ -42,7 +44,7 @@ void LoadingPhase();
 
 void BattlePhase();
 
-void LootPhase();
+void LootPhase(Player& player, Enemy& enemy);
 
 void MainMenuPhase();
 

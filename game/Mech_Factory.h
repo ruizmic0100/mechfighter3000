@@ -66,7 +66,7 @@ class Mech : public Frame
             std::cout << "Creating Mech..." << std::endl;
             this->SetName(Name);
             this->SetLevel(1);
-            this-> experiencePoints_(0);
+            this->experiencePoints_ = 0;
             this->fullyEquipped_ = false;
             this->leftArmWeapon_.Equipped=false;
             this->rightArmWeapon_.Equipped=false;

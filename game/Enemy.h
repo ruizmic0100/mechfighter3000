@@ -22,8 +22,9 @@ class Enemy
         std::vector<Part> Loot_;
         std::string Name_;
         unsigned int enemyLevel_;
+        int enemyExperience_;
 
-        Enemy(EnemyTypes enemyType) : enemyLevel_(1) {
+        Enemy(EnemyTypes enemyType) : enemyLevel_(1), enemyExperience_(10){
             PartsFactory pf;
             
             switch (enemyType) {

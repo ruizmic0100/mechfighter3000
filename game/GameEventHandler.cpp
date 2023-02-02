@@ -13,9 +13,10 @@ void SetGameState(States gamestateToSetTo)
     gamestate.curr_state = gamestateToSetTo;
 }
 
-void DeliverExperience()
+void DeliverExperience(Player& player, Enemy& enemy)
 {
-    
+    player.ExperienceGain(enemy.enemyExperience_);
+    printf("Player gained %d experience.\n", enemy.enemyExperience_);
 }
 
 void GameStart()
@@ -56,20 +57,25 @@ void BattlePhase()
     std::cout << "Battle Sequence: " << turns.getCurrentState() << std::endl;
 }
 
-void LootPhase()
+void LootPhase(Player& player, Enemy& enemy)
 {
     printf("LootPhase()\n");
-    DeliverExperience();
     renderBattleMenu = false;
     gamestate.curr_state = LOOT_PHASE;
+    DeliverExperience(player, enemy);
+    MainMenuPhase();
 }
 
+bool rendererStarted = false;
 // TODO: Make this actually a main menu with game start - settings - exit game.
 void MainMenuPhase()
 {
     printf("MainMenuPhase()\n");
     gamestate.curr_state = MAINMENU_PHASE;
-    renderer();
+    if (!rendererStarted) {
+        rendererStarted = true;
+        renderer();
+    }
 }
 
 void PlayerWeaponAttack(Player& player, Enemy& enemy, unsigned int whichWeapon)
@@ -82,7 +88,7 @@ void PlayerWeaponAttack(Player& player, Enemy& enemy, unsigned int whichWeapon)
             enemy.enemyMech.currentAP_ -= player.playerMech.leftArmWeapon_.WeaponConfigs.AttackPower_; // TODO: Add in all the different calculations needed.
             if (enemy.enemyMech.currentAP_ <= 0) {
                 enemy.enemyMech.currentAP_ = 0;
-                LootPhase();
+                LootPhase(player, enemy);
             }
             break;
         case 1: // Right arm weapon.

@@ -49,7 +49,8 @@ void Render(Player& player, Enemy& enemy, unsigned int menu_textures)
             // Mech Exp bar.
             ImGui::Text("Exp");
             ImGui::SameLine(160.0f);
-            ImGui::Text("Left: [TODO]");
+            progress = (float)player.experiencePoints_/100;
+            ImGui::Text("Left: %i", (50 - player.experiencePoints_));
             ImGui::ProgressBar(progress, ImVec2(260.0f, 20.0f));
 
             // Mech AP bar.
